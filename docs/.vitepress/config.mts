@@ -20,7 +20,7 @@ const insertScript = (html: string) => {
 
 export default defineConfig(
   withMermaid({
-    title: 'LongPort OpenAPI',
+    title: 'LongPort Developers',
     appearance: true,
     lastUpdated: true,
     cleanUrls: true,

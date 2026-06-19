@@ -1,6 +1,6 @@
 # Editing documentation
 
-Thank you for your interest in the LongPort OpenAPI documentation! We appreciate your feedback, edits, and additions to our content. This page covers the basic steps for editing our documentation.
+Thank you for your interest in the LongPort Developers documentation! We appreciate your feedback, edits, and additions to our content. This page covers the basic steps for editing our documentation.
 
 ## Editing documents in GitHub
 
@@ -8,7 +8,7 @@ We've tried to make editing an existing, public file as simple as possible.
 
 ### To edit a documentation
 
-1. Browse to the [LongPort OpenAPI Docs](https://open.longportapp.com/docs) article that you want to update.
+1. Browse to the [LongPort Developers Docs](https://open.longportapp.com/docs) article that you want to update.
 
 1. Then click the **Edit this page** or **Edit page** link.
 
@@ -25,7 +25,7 @@ We've tried to make editing an existing, public file as simple as possible.
 
 1. Using Markdown language, make your changes to the file. For info about how to edit content using Markdown, see the GitHub's [Mastering Markdown](https://guides.github.com/features/mastering-markdown/) documentation.
 
-   If your Longbridge staff, please reading and following the [Longbridge Writing Style Guide](https://longbridge.feishu.cn/wiki/wikcnqOEWHe43bdSLMP0S42vvvg) and the [OpenAPI Writing Guide](https://longbridge.feishu.cn/wiki/wikcnb0RtZ8OEuAodGBXaOL6Nxh).
+   If you are LongPort staff, please read and follow the internal writing style guide and OpenAPI writing guide.
 
 1. Make your suggested change, and then select **Preview changes** to make sure it looks correct.
 
@@ -56,7 +56,7 @@ We use [Bun](https://bun.sh/) to development and build.
 ```shell
 $ bun install
 
-# Start docusaurus server
+# Start VitePress server
 $ bun run dev
 ```
 
@@ -66,13 +66,12 @@ $ bun run dev
 .
 ├── README.md
 ├── docs // All documentation in here
-│   ├── .vitepress // vitepress config
+│   ├── .vitepress // VitePress config and theme source
 │   ├── en
 │   ├── zh-CN
 │   └── zh-HK
 
-├── src // Documentation website source code.
-├── docusaurus.config.js // Documentation website contributions.
+├── script // Documentation generation scripts.
 ├── tsconfig.json
 └── package.json
 ```

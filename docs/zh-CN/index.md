@@ -6,8 +6,8 @@ titleTemplate: 灵活支持程序化交易
 hero:
   image:
     src: https://pub.lbkrs.com/files/202503/2CChxYnHQXeW9eRu/code.svg
-    alt: Longbridge
-  text: 'LongPort OpenAPI'
+    alt: LongPort
+  text: 'LongPort Developers'
   tagline: 稳定 · 安全 · 快速
   actions:
     - theme: brand
@@ -18,9 +18,7 @@ hero:
 features:
   - icon: <img src="https://pub.lbkrs.com/files/202503/7C3YBFzrQsnQ9rma/icon-code.svg" width="48" height="48"/>
     title: 多样接入
-    details: 支持 HTTP WebSocket 私有二进制长连接协议及多语言 SDK，灵活接入
-    link: /zh-CN/docs/
-    linkText: 开始使用
+    details: 提供 HTTP/WebSocket APIs、AI 友好的 CLI 和 MCP，以及多种语言的 API SDKs
   - icon: <img src="https://pub.lbkrs.com/files/202503/cHW5RsNJNYv6Z7RM/icon-cloud.svg" width="48" height="48" />
     title: 弹性扩展
     details: 混合云原生微服务架构，24/7 在线运行，异地容灾，弹性伸缩，确保持续可靠性。

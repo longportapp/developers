@@ -5,7 +5,7 @@ slug: /how-to-access-api
 sidebar_position: 1
 ---
 
-本部分內容主要介紹 LongPort OpenAPI 的基礎訊息，包括如何存取 API、如何使用 API、如何取得 API 介面文件等，內容較為原始。
+本部分內容主要介紹 LongPort Developers 的基礎訊息，包括如何存取 API、如何使用 API、如何取得 API 介面文件等，內容較為原始。
 
 :::success 提示
 建議可以直接採用 SDK 的方式存取 API，SDK 已經封裝了 API 的呼叫方式，使用起來更方便。

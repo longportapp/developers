@@ -36,11 +36,11 @@ const beianText = computed(() => {
 const links = computed(() => {
   return [
     {
-      href: `https://support.longbridgewhale.com/topics/misc.disable/lp-user-agreement?locale=${locale.value}`,
+      href: `https://support.longportapp.com/topics/misc.disable/lp-user-agreement?locale=${locale.value}`,
       label: t('side-footer.section-terms.terms-of-service'),
     },
     {
-      href: `https://support.longbridgewhale.com/topics/misc/privacy-policy?locale=${locale.value}`,
+      href: `https://support.longportapp.com/topics/misc/privacy-policy?locale=${locale.value}`,
       label: t('side-footer.section-terms.privacy-policy'),
     },
   ]

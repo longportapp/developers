@@ -1,138 +1,37 @@
 ---
-sidebar_position: 6
+sidebar_position: 8
 slug: /llm
 sidebar_label: LLM
 sidebarCollapsed: true
 id: llm
 ---
 
-# LLM 组件
+# 面向 LLM 的文档访问
 
-我们提供了一些用于 LLM（大型语言模型）的组件，您可以轻松访问和分析金融数据、实时市场数据，甚至可以让 AI 提交订单。
+LongPort Developers 文档提供了适合 AI 工具读取的文本入口。你可以使用轻量索引、完整文本包，或者为单个页面追加 `.md` 获取 Markdown 版本。
 
-<video src="https://pub.lbkrs.com/files/202503/SGozJNWBfYpta73i/longport-mcp.mp4" width="100%" autoplay loop controls  />
+## llms.txt
 
-是的，您可以通过 LongPort OpenAPI 使用我们的 LLM 组件，今天就开始吧！
+当 AI 客户端要求填写 LLMs Text 地址时，优先使用 `llms.txt`。
 
-## LLMs 文本
+- https://open.longportapp.com/llms.txt
+- 适合：快速索引、AI 编辑器自定义 Docs、发现相关页面。
 
-OpenAPI 文档遵循 [LLMs 文本](https://llmstxt.org/) 提供 [llms.txt](https://open.longportapp.com/llms.txt) 以及每个文档的 Markdown 文件，基于这个 LLMs 文本，你可以为 AI 提供 LongPort OpenAPI 完整的文档字典作为 AI 辅助生成开发的参考信息，这样 AI 能生成出来的代码可以更准确。
+## llms-full.txt
 
-- [https://open.longportapp.com/llms.txt](https://open.longportapp.com/llms.txt) - 大约 2104 个 token。
+当 AI 工具可以读取更大的上下文，或者你需要一次性导入完整文档内容时，使用 `llms-full.txt`。
 
-我们的每个文档也都提供 Markdown 格式，当您访问它们时，只需在 URL 后添加 `.md` 后缀。
+- https://open.longportapp.com/llms-full.txt
+- 适合：离线导入、完整项目上下文、本地检索索引。
 
-例如：
+## Markdown 页面
+
+每个文档页面也都有 Markdown 版本。访问时在页面 URL 后追加 `.md` 即可。
+
+示例：
 
 - https://open.longportapp.com/docs/getting-started.md
-- https://open.longportapp.com/docs/quote/pull/static.md
+- https://open.longportapp.com/docs/quote/overview.md
+- https://open.longportapp.com/skill/install.md
 
-### 演示
-
-<video src="https://assets.lbkrs.com/uploads/030b2d42-c693-4290-aff1-9cfa6d819644/92fcb37035f4cc6fea390f63d18da7b5.mp4" width="100%" autoplay loop controls  />
-
-### Cursor 内使用
-
-打开 Cursor，打开命令面板（`Command + Shift + P`）搜索并选择 **Add New Custom Docs**，并在出来的对话框中输入 LongPort OpenAPI 的 LLMs Text 地址：
-
-```
-https://open.longportapp.com/llms.txt
-```
-
-添加成功后，Cursor Settings 里面会是这样：
-
-<img src="https://assets.lbkrs.com/uploads/5d5d037f-d8fb-42ed-aa5e-6c59bd65d066/scr-20250423-qrgl.png" />
-
-接下来你可以在 AI 的会话中，**@Add Context** 的 `docs` 菜单下选择刚才添加的 Docs，这样接下来与 AI 的会话中，AI 将会使用这些文档作为上下文。
-
-<img src="https://assets.lbkrs.com/uploads/4c3c37d5-ead7-4854-8c8d-e8e77cdcd967/scr-20250423-qoxl.png" />
-
-## MCP
-
-我们正在为 LongPort OpenAPI 构建 [MCP](https://modelcontextprotocol.io/) 实现（基于我们的 SDK），您可以在支持 [MCP](https://modelcontextprotocol.io/) 的每个平台上使用它。
-
-并且在我们的 GitHub 组织中也是开源的。
-
-[https://github.com/longportapp/openapi](https://github.com/longportapp/openapi/tree/main/mcp)
-
-### 安装
-
-开始之前阅读 [快速开始](/docs/getting-started) 并获得您的 `LONGPORT_APP_KEY`、`LONGPORT_APP_SECRET` 和 `LONGPORT_ACCESS_TOKEN`。
-
-#### macOS 或 Linux
-
-你可以在“终端”下面运行下面的脚本来直接安装：
-
-```bash
-curl -sSL https://raw.githubusercontent.com/longportapp/openapi/refs/heads/main/mcp/install | bash
-```
-
-脚本执行完后，`longport-mcp` 将会安装到 `/usr/local/bin/` 目录下，运行下面的命令验证是否正确：
-
-```bash
-longport-mcp -h
-```
-
-#### Windows
-
-请访问 [https://github.com/longportapp/openapi/releases](https://github.com/longportapp/openapi/releases) 下载 `longport-mcp-x86_64-pc-windows-msvc.zip` 并解压获得 `longport-mcp.exe`。
-
-### 示例提示
-
-完成服务器设置并连接后，您可以与 AI 进行以下对话：
-
-- AAPL 和 TSLA 股票的当前价格是多少？
-- 特斯拉在过去一个月的表现如何？
-- 查一下港股、美股主要指数的最新行情数据。
-- 查一下 TSLA 和 AAPL 在过去一年的股票价格历史。
-- 比较 TSLA、AAPL 和 NVDA 在过去 3 个月的表现。
-- 为我持有的股票生成投资组合表现图表，并返回数据表和饼图（直接返回结果，不要生成代码）。
-- 检查我持有股票的最新价格，如果下跌/上涨超过 3%，以市场价格卖出（如果下跌）或买入（如果上涨）三分之一。
-
-### Cursor 内使用
-
-打开命令面板（`Command + Shift + P`），选择 **Cursor Settings** 进入 Cursor Settings 界面，并选择 **MCP Servers** 点击 **Add new global MCP server** 按钮。
-
-在打开的 `mcp.json` 文件中增加下面的内容，请替换 `your-app-key`、`your-app-secret` 和 `your-access-token` 为您的实际值：
-
-```json
-{
-  "mcpServers": {
-    "longport-mcp": {
-      "command": "/usr/local/bin/longport-mcp",
-      "env": {
-        "LONGPORT_APP_KEY": "your-app-key",
-        "LONGPORT_APP_SECRET": "your-app-secret",
-        "LONGPORT_ACCESS_TOKEN": "your-access-token"
-      }
-    }
-  }
-}
-```
-
-效果演示：
-
-<img src="https://assets.lbkrs.com/uploads/415db9a3-a5e7-4610-87d7-75cf7146c706/scr-20250423-menf.png" />
-
-### Cherry Studio 配置
-
-在这一部分，我们将向您展示如何在您的 AI 聊天中配置 LongPort MCP（截图使用了 [Cherry Studio](https://cherry-ai.com/)）。
-
-> NOTE: 请注意更新一下 Cherry Studio 到最新的版本，本文截图的时候使用的是 v1.5.6。
-
-**使用 STDIO 模式：**
-
-确保您已经配置了环境变量并在系统中安装了 `longport-mcp` 命令行工具。
-
-![](https://pub.lbkrs.com/files/202503/QRuojGfGL1Lay7rs/SCR-20250331-jajy.png)
-
-如果你是 Windows，可以参考下面图的配置方式，你可以把 `E:\` 换成 `longport-mcp.exe` 所在的具体路径。
-为了避免一些其他影响，建议你放在 `C:\longport-mcp.exe` 先尝试一下，成功以后，然后再放到其他位置。
-
-![](https://assets.lbctrl.com/uploads/4ff72c40-b651-438d-a98d-71dd76d78014/scr-20250814-nfrg.png)
-
-如果你在中国大陆，你可能还需要往环境变量配置里面额外增加 `LONGPORT_REGION=cn`，这会让你走我们中国大陆的 CDN 服务器连接，已获得更好的稳定性。
-
-```
-LONGPORT_REGION=cn
-```
+当你只想给 AI 一个精确来源，而不是导入整套文档时，建议使用单页 Markdown。

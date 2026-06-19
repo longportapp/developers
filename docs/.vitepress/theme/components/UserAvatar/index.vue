@@ -26,6 +26,10 @@ const list = computed<{ title: string; href: string }[]>(() => [
     href: localePath('/account'),
   },
   {
+    title: t('userMenu.connectAI'),
+    href: '/connect',
+  },
+  {
     title: t('JJTHzcLZRxvS2W-2IwWMn'),
     href: localePath('/log-out'),
   },

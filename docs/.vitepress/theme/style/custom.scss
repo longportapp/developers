@@ -6,3 +6,40 @@
     background-color: transparent;
   }
 }
+
+.standalone-ai-page {
+  .VPHome {
+    padding-top: 40px;
+    padding-bottom: 72px;
+  }
+
+  .VPHome > .vp-doc.container {
+    width: 100%;
+    max-width: 920px;
+    padding-top: 32px;
+    padding-right: 24px;
+    padding-bottom: 48px;
+    padding-left: 24px;
+  }
+
+  .vp-doc h1 {
+    margin-top: 0;
+    text-align: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .standalone-ai-page {
+    .VPHome {
+      padding-top: 56px;
+      padding-bottom: 96px;
+    }
+
+    .VPHome > .vp-doc.container {
+      padding-top: 48px;
+      padding-right: 32px;
+      padding-bottom: 72px;
+      padding-left: 32px;
+    }
+  }
+}

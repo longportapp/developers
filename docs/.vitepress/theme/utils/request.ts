@@ -33,7 +33,7 @@ export function createDynamicRequest(
   options?: Partial<Pick<ApiConfig, 'baseUrl' | 'timeout'>>
 ) {
   const API_BASE_URL = endsWith(location.hostname, '.xyz')
-    ? 'https://openapi.longbridge.xyz'
+    ? 'https://openapi.longportapp.com'
     : endsWith(location.hostname, '.cn')
       ? 'https://openapi.longportapp.cn'
       : 'https://openapi.longportapp.com'

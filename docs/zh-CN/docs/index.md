@@ -1,19 +1,32 @@
 ---
-sidebar_position: -999
+sidebar_position: 0
 title: OpenAPI 介绍
 id: getting_started_introduce
 ---
 
-LongPort OpenAPI 为有研发能力的投资者提供程序化行情交易接口，助力投资者根据自身投资策略搭建交易或行情策略分析工具。覆盖以下类别功能：
+LongPort Developers 提供 OpenAPI、SDK、CLI、MCP、Skill 和适合 LLM 读取的文档入口，用于构建行情、资产组合、交易和 AI agent 工作流。
+
+你可以直接使用 HTTP / WebSocket API，也可以通过 SDK 集成，或通过 LongPort Skill、CLI、MCP、LLMs Text 将 AI 工具接入 LongPort Developers。
+
+## 可以构建什么
+
+LongPort Developers 为有研发能力的投资者和开发者提供程序化行情交易接口，覆盖以下能力：
 
 - 交易类 - 创建、修改、撤销订单，当日/历史订单及成交记录的查询等
 - 行情类 - 实时行情报价、历史行情数的获取等
 - 资产类 - 实时账户资产、持仓、现金查询等
 - 实时订阅 - 提供行情实时报价以及订单状态实时变更信息推送
 
-## 接口类型
+## 接入方式
 
-LongPort 提供接入底层服务的 HTTP / WebSockets 接口以及封装在上层的 SDK（Python / C++ ...）等多种接入方式，灵活选择。
+| 方式 | 适用场景 | 入口 |
+| --- | --- | --- |
+| OpenAPI | 直接通过 HTTP 和 WebSocket 构建行情、账户和交易系统 | [快速开始](/zh-CN/docs/getting-started) |
+| SDK | 使用支持的语言开发应用，避免手写协议细节 | [SDK](/zh-CN/sdk) |
+| Skill | 让 AI 助手获得可复用的 LongPort 工作流知识和安全安装引导 | [Skill](/zh-CN/skill) |
+| CLI | 终端工作流、脚本，以及可执行 shell 命令的本地 AI agent | [CLI](/zh-CN/docs/cli) |
+| MCP | 将支持 MCP 的 AI 客户端通过 HTTP 接入 140+ LongPort Developers tools | [MCP](/zh-CN/docs/mcp) |
+| LLMs Text | 通过 `llms.txt`、`llms-full.txt` 和单页 Markdown 向 AI 工具提供文档 | [LLMs Text](/zh-CN/docs/llm) |
 
 ## 如何开通
 

@@ -6,12 +6,12 @@ export const zhCNConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
   head: [
     ['meta', { property: 'og:url', content: 'https://open.longportapp.com' }],
     ['meta', { property: 'og:type', content: 'website' }],
-    ['meta', { property: 'og:title', content: 'LongPort OpenAPI：灵活支持程序化交易' }],
+    ['meta', { property: 'og:title', content: 'LongPort Developers：灵活支持程序化交易' }],
     [
       'meta',
       {
         property: 'og:description',
-        content: 'LongPort OpenAPI 为您提供灵活多样的接入服务，满足您的量化交易需求，快速构建您的交易策略。',
+        content: 'LongPort Developers 为您提供灵活多样的接入服务，满足您的量化交易需求，快速构建您的交易策略。',
       },
     ],
     [
@@ -23,7 +23,7 @@ export const zhCNConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
     ['link', { rel: 'canonical', href: 'https://open.longportapp.com/zh-CN/' }],
   ],
   title: 'LongPort API 文档',
-  description: 'LongPort OpenAPI 为您提供灵活多样的接入服务，满足您的量化交易需求，快速构建您的交易策略。',
+  description: 'LongPort Developers 为您提供灵活多样的接入服务，满足您的量化交易需求，快速构建您的交易策略。',
   themeConfig: {
     logoLink: {
       link: '/zh-CN',

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 4
 slug: getting-started
 title: 快速开始
 id: getting-started
@@ -7,7 +7,7 @@ id: getting-started
 
 ## 前言
 
-[LongPort OpenAPI SDK](https://github.com/longportapp/openapi) 基于 Rust 底层提供标准实现，目前我们已经发布了 Python、Node.js、Rust、C++/C、Java 等多种编程语言 SDK，其他语言的支持后面会陆续推出。
+[LongPort Developers SDK](https://github.com/longportapp/openapi) 基于 Rust 底层提供标准实现，目前我们已经发布了 Python、Node.js、Rust、C++/C、Java 等多种编程语言 SDK，其他语言的支持后面会陆续推出。
 
 ## API Host
 
@@ -106,11 +106,11 @@ go get github.com/longportapp/openapi-go
 ### 开通开发中账户
 
 1. 下载 [LongPort](https://longportapp.com/download)，并完成开户
-2. 从 [LongPort OpenAPI](https://open.longportapp.com) 官网获取 `App Key`, `App Secret`, `Access Token` 等信息。
+2. 从 [LongPort Developers](https://open.longportapp.com) 官网获取 `App Key`, `App Secret`, `Access Token` 等信息。
 
    **_获取 App Key, App Secret, Access Token 等信息_**
 
-   访问 [LongPort OpenAPI](https://open.longportapp.com) 网站，登录后，进入“个人中心”。
+   访问 [LongPort Developers](https://open.longportapp.com) 网站，登录后，进入“个人中心”。
 
    在页面上会给出“应用凭证”凭证信息，我们拿到以后设置环境变量，便于后面开发使用方便。
 
@@ -134,7 +134,7 @@ go get github.com/longportapp/openapi-go
 
 环境变量**非必要**条件，如设置不方便或遇到问题难以解决，可不用环境变量，而是直接在代码里用参数来初始化。
 
-LongPort OpenAPI SDK 的 `Config` 均可以直接传入 `app_key`, `app_secret`, `access_token` 等参数来初始化，注意看后面的例子注释内 `Init config without ENV` 的部分。
+LongPort Developers SDK 的 `Config` 均可以直接传入 `app_key`, `app_secret`, `access_token` 等参数来初始化，注意看后面的例子注释内 `Init config without ENV` 的部分。
 
 :::
 
@@ -1039,11 +1039,11 @@ Order {
 }
 ```
 
-上面例子已经完整演示了如何使用 SDK 访问 OpenAPI 的接口，更多其他接口请详细阅读 [LongPort OpenAPI 文档](https://longportapp.github.io/openapi/)，根据不同的接口使用。
+上面例子已经完整演示了如何使用 SDK 访问 OpenAPI 的接口，更多其他接口请详细阅读 [LongPort Developers 文档](https://longportapp.github.io/openapi/)，根据不同的接口使用。
 
 ## 更多例子
 
-我们在 LongPort OpenAPI Python SDK 的 GitHub 仓库中提供了上面几个例子的完整代码，当然后期我们也会持续往里面补充或更新。
+我们在 LongPort Developers Python SDK 的 GitHub 仓库中提供了上面几个例子的完整代码，当然后期我们也会持续往里面补充或更新。
 
 https://github.com/longportapp/openapi/tree/master/examples
 

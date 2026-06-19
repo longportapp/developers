@@ -7,20 +7,18 @@ hero:
   image:
     src: https://pub.lbkrs.com/files/202503/2CChxYnHQXeW9eRu/code.svg
     alt: LongPort
-  text: 'LongPort OpenAPI'
+  text: 'LongPort Developers'
   tagline: Stable · Safe · Fast
   actions:
     - theme: brand
-      text: Apply
+      text: Get Started
       link: /auth
       target: _self
 
 features:
   - icon: <img src="https://pub.lbkrs.com/files/202503/7C3YBFzrQsnQ9rma/icon-code.svg" width="48" height="48"/>
     title: Multiple Access Methods
-    details: Support HTTP/WebSocket/Longbridge binary protocol and multi-language SDK, allowing flexible access
-    link: docs/
-    linkText: Getting Started
+    details: Provides HTTP/WebSocket APIs, AI-friendly CLI and MCP, plus API SDKs in multiple languages.
 
   - icon: <img src="https://pub.lbkrs.com/files/202503/cHW5RsNJNYv6Z7RM/icon-cloud.svg" width="48" height="48" />
     title: Resilient Scalability

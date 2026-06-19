@@ -8,7 +8,7 @@ hero:
   image:
     src: https://pub.lbkrs.com/files/202503/2CChxYnHQXeW9eRu/code.svg
     alt: LongPort
-  text: 'LongPort OpenAPI'
+  text: 'LongPort Developers'
   tagline: 穩定 · 安全 · 快速
   actions:
     - theme: brand
@@ -19,9 +19,7 @@ hero:
 features:
   - icon: <img src="https://pub.lbkrs.com/files/202503/7C3YBFzrQsnQ9rma/icon-code.svg" width="48" height="48"/>
     title: 多樣接入
-    details: 支持 HTTP WebSocket 私有二進制長鏈接協議及多語言 SDK，靈活接入
-    link: /zh-HK/docs/
-    linkText: 開始使用
+    details: 提供 HTTP/WebSocket APIs、AI 友好的 CLI 和 MCP，以及多種語言的 API SDKs
   - icon: <img src="https://pub.lbkrs.com/files/202503/cHW5RsNJNYv6Z7RM/icon-cloud.svg" width="48" height="48" />
     title: 彈性擴展
     details: 混合雲原生微服務架構，24/7 在線運行，異地容災，彈性伸縮，確保持續可靠性。

@@ -5,7 +5,7 @@ slug: /how-to-access-api
 sidebar_position: 1
 ---
 
-本部分内容主要介绍 LongPort OpenAPI 的基础信息，包括如何访问 API、如何使用 API、如何获取 API 接口文档等，内容比较原始。
+本部分内容主要介绍 LongPort Developers 的基础信息，包括如何访问 API、如何使用 API、如何获取 API 接口文档等，内容比较原始。
 
 :::success 提示
 建议可以直接采用 SDK 的方式访问 API，SDK 已经封装了 API 的调用方式，使用起来更加方便。

@@ -1,9 +1,9 @@
 /**
- * Longbridge OpenAPI WebSocket 客户端
+ * LongPort Developers WebSocket 客户端
  * 支持二进制协议、握手认证、行情订阅等功能
  */
 
-import { LongbridgeApiClient } from './http-client'
+import { LongPortApiClient } from './http-client'
 
 // ==================== 类型定义 ====================
 
@@ -231,10 +231,10 @@ function concatArrayBuffers(buffer1: ArrayBuffer, buffer2: ArrayBuffer): ArrayBu
 
 // ==================== WebSocket 客户端 ====================
 
-export class LongbridgeWebSocketClient {
+export class LongPortWebSocketClient {
   private config: Required<WebSocketConfig>
   private ws: WebSocket | null = null
-  private apiClient: LongbridgeApiClient
+  private apiClient: LongPortApiClient
   private isConnected = false
   private isConnecting = false
   private reconnectCount = 0
@@ -255,7 +255,7 @@ export class LongbridgeWebSocketClient {
       ...config,
     }
 
-    this.apiClient = new LongbridgeApiClient({
+    this.apiClient = new LongPortApiClient({
       appKey: this.config.appKey,
       accessToken: this.config.accessToken,
       appSecret: this.config.appSecret,
@@ -708,13 +708,13 @@ export class LongbridgeWebSocketClient {
 /**
  * 创建 WebSocket 客户端实例
  */
-export function createWebSocketClient(config: WebSocketConfig): LongbridgeWebSocketClient {
-  return new LongbridgeWebSocketClient(config)
+export function createWebSocketClient(config: WebSocketConfig): LongPortWebSocketClient {
+  return new LongPortWebSocketClient(config)
 }
 
 // ==================== 默认导出 ====================
 
 export default {
-  LongbridgeWebSocketClient,
+  LongPortWebSocketClient,
   createWebSocketClient,
 }
