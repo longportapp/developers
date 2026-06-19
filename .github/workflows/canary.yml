@@ -36,7 +36,7 @@ jobs:
       - name: Build canary
         run: bun run build:canary
         env:
-          VITE_PORTAL_GATEWAY_BASE_URL: 'https://m.longportapp.com'
+          VITE_PORTAL_GATEWAY_BASE_URL: 'https://m.longbridge.xyz'
 
       - name: Upload to Aliyun OSS
         run: |
