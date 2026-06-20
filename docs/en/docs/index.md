@@ -4,9 +4,9 @@ title: Introduction
 id: getting_started_introduce
 ---
 
-LongPort Developers provides OpenAPI, SDKs, CLI, MCP, Skill, and LLM-readable documentation for building market data, portfolio, trading, and AI-agent workflows.
+LongPort Developers provides OpenAPI, SDKs, MCP, Skill, and LLM-readable documentation for building market data, portfolio, trading, and AI-agent workflows.
 
-Use the platform directly through HTTP / WebSocket APIs, integrate through SDKs, or connect AI tools through LongPort Skill, CLI, MCP, and LLMs Text.
+Use the platform directly through HTTP / WebSocket APIs, integrate through SDKs, or connect AI tools through LongPort Skill, MCP, and LLMs Text.
 
 ## What You Can Build
 
@@ -24,7 +24,6 @@ LongPort Developers provides programmatic quote and trading interfaces for inves
 | OpenAPI | Direct HTTP and WebSocket integration for market data, account, and trading systems | [Getting Started](/docs/getting-started) |
 | SDK | Application development in supported languages without hand-writing protocol details | [SDK](/sdk) |
 | Skill | Giving AI assistants reusable LongPort workflow knowledge and safe setup guidance | [Skill](/skill) |
-| CLI | Terminal workflows, scripts, and local AI agents that can run shell commands | [CLI](/docs/cli) |
 | MCP | Connecting MCP-compatible AI clients to 140+ LongPort Developers tools over HTTP | [MCP](/docs/mcp) |
 | LLMs Text | Feeding docs to AI tools through `llms.txt`, `llms-full.txt`, and page-level Markdown | [LLMs Text](/docs/llm) |
 

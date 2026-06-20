@@ -18,7 +18,7 @@ hero:
 features:
   - icon: <img src="https://pub.lbkrs.com/files/202503/7C3YBFzrQsnQ9rma/icon-code.svg" width="48" height="48"/>
     title: Multiple Access Methods
-    details: Provides HTTP/WebSocket APIs, AI-friendly CLI and MCP, plus API SDKs in multiple languages.
+    details: Provides HTTP/WebSocket APIs, AI-friendly MCP, and API SDKs in multiple languages.
 
   - icon: <img src="https://pub.lbkrs.com/files/202503/cHW5RsNJNYv6Z7RM/icon-cloud.svg" width="48" height="48" />
     title: Resilient Scalability

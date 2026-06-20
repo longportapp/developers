@@ -5,7 +5,7 @@ const lang = 'zh-HK'
 const docsSidebar = genMarkdowDocs(lang, 'docs')
 
 function withoutStandaloneAiTooling(items: DefaultTheme.SidebarItem[]): DefaultTheme.SidebarItem[] {
-  return items.filter((item) => item.link !== '/docs/cli' && item.link !== '/docs/mcp')
+  return items.filter((item) => item.link !== '/docs/mcp')
 }
 
 export const sidebar: DefaultTheme.Sidebar = {

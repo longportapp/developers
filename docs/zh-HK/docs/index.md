@@ -3,9 +3,9 @@ sidebar_position: 0
 title: OpenAPI 介紹
 id: getting_started_introduce
 ---
-LongPort Developers 提供 OpenAPI、SDK、CLI、MCP、Skill 和適合 LLM 讀取的文件入口，用於構建行情、資產組合、交易和 AI agent 工作流。
+LongPort Developers 提供 OpenAPI、SDK、MCP、Skill 和適合 LLM 讀取的文件入口，用於構建行情、資產組合、交易和 AI agent 工作流。
 
-你可以直接使用 HTTP / WebSocket API，也可以通過 SDK 集成，或通過 LongPort Skill、CLI、MCP、LLMs Text 將 AI 工具接入 LongPort Developers。
+你可以直接使用 HTTP / WebSocket API，也可以通過 SDK 集成，或通過 LongPort Skill、MCP、LLMs Text 將 AI 工具接入 LongPort Developers。
 
 ## 可以構建什麼
 
@@ -23,7 +23,6 @@ LongPort Developers 為有研發能力的投資者和開發者提供程序化行
 | OpenAPI | 直接通過 HTTP 和 WebSocket 構建行情、帳戶和交易系統 | [快速開始](/zh-HK/docs/getting-started) |
 | SDK | 使用支持的語言開發應用，避免手寫協議細節 | [SDK](/zh-HK/sdk) |
 | Skill | 讓 AI 助手獲得可複用的 LongPort 工作流知識和安全安裝引導 | [Skill](/zh-HK/skill) |
-| CLI | 終端工作流、腳本，以及可執行 shell 命令的本地 AI agent | [CLI](/zh-HK/docs/cli) |
 | MCP | 將支持 MCP 的 AI 客戶端通過 HTTP 接入 140+ LongPort Developers tools | [MCP](/zh-HK/docs/mcp) |
 | LLMs Text | 通過 `llms.txt`、`llms-full.txt` 和單頁 Markdown 向 AI 工具提供文件 | [LLMs Text](/zh-HK/docs/llm) |
 

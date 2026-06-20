@@ -31,7 +31,6 @@ If the client asks for a transport type, choose HTTP or Streamable HTTP.
 - **Cursor**: Settings -> MCP Servers -> Add Remote MCP Server.
 - **Claude Desktop**: edit `~/Library/Application Support/Claude/claude_desktop_config.json` on macOS or `%APPDATA%\Claude\claude_desktop_config.json` on Windows.
 - **Zed**: use the `context_servers` key in `~/.config/zed/settings.json`.
-- **Gemini CLI**: use the `mcpServers` key in `~/.gemini/settings.json`.
 - **Warp**: Settings -> AI -> MCP Servers -> Add.
 
 ## OAuth Authorization Flow

@@ -8,7 +8,7 @@ pageClass: standalone-ai-page
 
 # LongPort Skill
 
-LongPort Skill 为 AI 工具提供可复用的 OpenAPI 指令、CLI 命令知识、标的代码约定和安全检查。适用于支持 Skill 文件或自定义可复用指令的 AI 客户端。
+LongPort Skill 为 AI 工具提供可复用的 OpenAPI 指令、MCP 连接引导、标的代码约定和安全检查。适用于支持 Skill 文件或自定义可复用指令的 AI 客户端。
 
 ## 使用 AI 安装
 
@@ -42,7 +42,7 @@ And complete login and test with a market data query.
 ## 提供能力
 
 - 面向行情、资产组合和交易任务的 OpenAPI 工作流引导。
-- LongPort CLI 命令约定和标的代码格式。
+- MCP 连接引导和标的代码格式。
 - 只读优先的验证提示词。
 - 指向 LLM 可读文档的链接。
 
@@ -54,4 +54,4 @@ And complete login and test with a market data query.
 展示 NVDA.US 和 TSLA.US 最近 5 个交易日的表现。
 ```
 
-Skill 会引导 AI 采用 LongPort CLI 或 MCP，从 OpenAPI 获取市场行情或你的账户资产信息。
+Skill 会引导 AI 采用 LongPort MCP，从 OpenAPI 获取市场行情或你的账户资产信息。

@@ -8,7 +8,7 @@ pageClass: standalone-ai-page
 
 # LongPort Skill
 
-LongPort Skill gives AI tools reusable OpenAPI instructions, CLI command knowledge, symbol conventions, and safety checks. Use it when your AI client supports Skill files or custom reusable instructions.
+LongPort Skill gives AI tools reusable OpenAPI instructions, MCP connection guidance, symbol conventions, and safety checks. Use it when your AI client supports Skill files or custom reusable instructions.
 
 ## Install With AI
 
@@ -42,7 +42,7 @@ Supplemental details: [Install guide](/skill/install)
 ## What It Provides
 
 - OpenAPI workflow guidance for quote, portfolio, and trading tasks.
-- LongPort CLI command conventions and symbol format.
+- MCP connection guidance and symbol format.
 - Read-only-first verification prompts.
 - Links to LLM-readable documentation.
 
@@ -54,4 +54,4 @@ After installing the Skill, ask your AI tool questions like:
 Show the recent 5-day performance of NVDA.US and TSLA.US.
 ```
 
-The Skill guides AI to use LongPort CLI or MCP to retrieve market data or your account asset information from OpenAPI.
+The Skill guides AI to use LongPort MCP to retrieve market data or your account asset information from OpenAPI.

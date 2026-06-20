@@ -18,7 +18,7 @@ hero:
 features:
   - icon: <img src="https://pub.lbkrs.com/files/202503/7C3YBFzrQsnQ9rma/icon-code.svg" width="48" height="48"/>
     title: 多样接入
-    details: 提供 HTTP/WebSocket APIs、AI 友好的 CLI 和 MCP，以及多种语言的 API SDKs
+    details: 提供 HTTP/WebSocket APIs、AI 友好的 MCP，以及多种语言的 API SDKs
   - icon: <img src="https://pub.lbkrs.com/files/202503/cHW5RsNJNYv6Z7RM/icon-cloud.svg" width="48" height="48" />
     title: 弹性扩展
     details: 混合云原生微服务架构，24/7 在线运行，异地容灾，弹性伸缩，确保持续可靠性。
