@@ -1,12 +1,12 @@
 ---
-sidebar_position: 1
+sidebar_position: 4
 slug: getting-started
 title: Getting Started
 ---
 
 ## Foreword
 
-LongPort OpenAPI SDK is implemented based on Rust we have released SDK for Python, Node.js, Rust, C++/C and Java ..., and support for other languages will be launched in the future.
+LongPort Developers SDK is implemented based on Rust we have released SDK for Python, Node.js, Rust, C++/C and Java ..., and support for other languages will be launched in the future.
 
 ## API Host
 
@@ -103,11 +103,11 @@ Let's take obtaining assets as an example to demonstrate how to use the SDK.
 ## Configuration
 
 1. Download App and open an account.
-2. Get App Key, App Secret, Access Token and other information from [LongPort OpenAPI](https://open.longportapp.com) official website
+2. Get App Key, App Secret, Access Token and other information from [LongPort Developers](https://open.longportapp.com) official website
 
    **_Get App Key, App Secret, Access Token and other information_**
 
-   Login the [LongPort OpenAPI](https://open.longportapp.com) website, and enter the "User Center".
+   Login the [LongPort Developers](https://open.longportapp.com) website, and enter the "User Center".
 
    The "application credential" credential information will be given on the page. After we get it, we will set the environment variable, which is convenient for later development and use.
 
@@ -131,7 +131,7 @@ We recommend that you set the environment variables. For the convenience of demo
 
 The ENV variables are **not necessary** conditions, if it is inconvenient to set the ENV variables or encounter problems that are difficult to solve, you can not set the ENV variables, but directly use the parameters in the code to initialize.
 
-The `Config` in LongPort OpenAPI SDK can be directly passed in parameters such as `app_key`, `app_secret`, `access_token` to initialize, pay attention to the comments in the example code below `Init config without ENV`.
+The `Config` in LongPort Developers SDK can be directly passed in parameters such as `app_key`, `app_secret`, `access_token` to initialize, pay attention to the comments in the example code below `Init config without ENV`.
 
 :::
 
@@ -1043,11 +1043,11 @@ Order {
 }
 ```
 
-The above example has fully demonstrated how to use the SDK to access the OpenAPI interface. For more interfaces, please read the [LongPort OpenAPI Documentation](https://open.longportapp.com/docs) in detail and use them according to different interfaces.
+The above example has fully demonstrated how to use the SDK to access the OpenAPI interface. For more interfaces, please read the [LongPort Developers Documentation](https://open.longportapp.com/docs) in detail and use them according to different interfaces.
 
 ## More Examples
 
-We provide the complete code of the above examples in the GitHub repository of LongPort OpenAPI Python SDK, and we will continue to add or update it later.
+We provide the complete code of the above examples in the GitHub repository of LongPort Developers Python SDK, and we will continue to add or update it later.
 
 https://github.com/longportapp/openapi/tree/master/examples
 

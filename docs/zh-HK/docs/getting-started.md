@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 4
 slug: /getting-started
 title: 快速開始
 id: getting-started
@@ -7,7 +7,7 @@ id: getting-started
 
 ## 前言
 
-LongPort OpenAPI SDK 基於 Rust 底層提供標準實現，目前我們已經發布了 Python, Node.js, Rust, C++/C, Java 等多種編程語言 SDK，其他語言的支持後面會陸續推出。
+LongPort Developers SDK 基於 Rust 底層提供標準實現，目前我們已經發布了 Python, Node.js, Rust, C++/C, Java 等多種編程語言 SDK，其他語言的支持後面會陸續推出。
 
 ## API Host
 
@@ -103,22 +103,22 @@ go get github.com/longportapp/openapi-go
 ## 配置
 
 1. 下載 [LongPort](https://longportapp.com/download) 並完成開戶。
-2. 從 [LongPort OpenAPI](https://open.longportapp.com) 官網獲取 `App Key`, `App Secret`, `Access Token` 等信息。
+2. 從 [LongPort Developers](https://open.longportapp.com) 官網獲取 `App Key`, `App Secret`, `Access Token` 等信息。
 
    **_獲取 App Key, App Secret, Access Token 等信息_**
 
-   訪問 [LongPort OpenAPI](https://open.longportapp.com) 網站，登錄後，進入“個人中心”。
+   訪問 [LongPort Developers](https://open.longportapp.com) 網站，登錄後，進入“個人中心”。
 
    在頁面上會給出“應用憑證”憑證信息，我們拿到以後設置環境變量，便於後面開發使用方便。
 
 ### 開通開發中帳戶
 
 1. 下載 [LongPort](https://longportapp.com/download)，並完成開戶
-2. 從 [LongPort OpenAPI](https://open.longportapp.com) 官網取得 `App Key`, `App Secret`, `Access Token` 等資訊。
+2. 從 [LongPort Developers](https://open.longportapp.com) 官網取得 `App Key`, `App Secret`, `Access Token` 等資訊。
 
    **_取得 App Key, App Secret, Access Token 等資訊_**
 
-   造訪 [LongPort OpenAPI](https://open.longportapp.com) 網站，登入後，進入「個人中心」。
+   造訪 [LongPort Developers](https://open.longportapp.com) 網站，登入後，進入「個人中心」。
 
    在頁面上會給出「應用憑證」憑證訊息，我們拿到以後設定環境變量，方便後面開發使用方便。
 
@@ -142,7 +142,7 @@ go get github.com/longportapp/openapi-go
 
 環境變量**非必要**條件，如設定不方便或遇到問題難以解決，可不用環境變量，而是直接在程式碼裡用參數來初始化。
 
-LongPort OpenAPI SDK 的 `Config` 都可以直接傳入 `app_key`, `app_secret`, `access_token` 等參數來初始化，注意看後面的例子註釋內 `Init config without ENV` 的部分。
+LongPort Developers SDK 的 `Config` 都可以直接傳入 `app_key`, `app_secret`, `access_token` 等參數來初始化，注意看後面的例子註釋內 `Init config without ENV` 的部分。
 
 :::
 
@@ -976,11 +976,11 @@ Order {
 }
 ```
 
-上面例子已經完整演示瞭如何使用 SDK 訪問 OpenAPI 的接口，更多其他接口請詳細閱讀 [LongPort OpenAPI 文檔](https://open.longportapp.com/docs)，根據不同的接口使用。
+上面例子已經完整演示瞭如何使用 SDK 訪問 OpenAPI 的接口，更多其他接口請詳細閱讀 [LongPort Developers 文檔](https://open.longportapp.com/docs)，根據不同的接口使用。
 
 ## 更多例子
 
-我們在 LongPort OpenAPI Python SDK 的 GitHub 倉庫中提供了上面幾個例子的完整代碼，當然後期我們也會持續往裡面補充或更新。
+我們在 LongPort Developers Python SDK 的 GitHub 倉庫中提供了上面幾個例子的完整代碼，當然後期我們也會持續往裡面補充或更新。
 
 https://github.com/longportapp/openapi/tree/master/examples
 

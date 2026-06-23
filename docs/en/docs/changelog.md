@@ -2,7 +2,7 @@
 id: changelog
 title: Changelog
 slug: changelog
-sidebar_position: 7
+sidebar_position: 10
 ---
 ## 2025-06-17
 

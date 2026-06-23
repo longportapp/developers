@@ -6,13 +6,13 @@ export const enConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
   head: [
     ['meta', { property: 'og:url', content: 'https://open.longportapp.com' }],
     ['meta', { property: 'og:type', content: 'website' }],
-    ['meta', { property: 'og:title', content: 'LongPort OpenAPI: Flexible Support for Programmatic Trading' }],
+    ['meta', { property: 'og:title', content: 'LongPort Developers: Flexible Support for Programmatic Trading' }],
     [
       'meta',
       {
         property: 'og:description',
         content:
-          'Access LongPort OpenAPI for diversified and flexible support tailored to your programmatic trading needs. Enhance your trading strategies with ease.',
+          'Access LongPort Developers for diversified and flexible support tailored to your programmatic trading needs. Enhance your trading strategies with ease.',
       },
     ],
     [
@@ -23,9 +23,9 @@ export const enConfig: LocaleSpecificConfig<DefaultTheme.Config> = {
     ['meta', { property: 'og:site_name', content: 'OpenAPI | LongPort' }],
     ['link', { rel: 'canonical', href: 'https://open.longportapp.com/' }],
   ],
-  title: 'LongPort OpenAPI',
+  title: 'LongPort Developers',
   description:
-    'Access LongPort OpenAPI for diversified and flexible support tailored to your programmatic trading needs. Enhance your trading strategies with ease.',
+    'Access LongPort Developers for diversified and flexible support tailored to your programmatic trading needs. Enhance your trading strategies with ease.',
   themeConfig: {
     logoLink: {
       link: '/',

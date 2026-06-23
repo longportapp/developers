@@ -1,5 +1,5 @@
 /**
- * Longbridge OpenAPI 请求库
+ * LongPort Developers 请求库
  * 支持 HTTP API 和 WebSocket 连接
  */
 
@@ -123,7 +123,7 @@ function buildQueryString(params: Record<string, any>): string {
 
 // ==================== HTTP API 客户端 ====================
 
-export class LongbridgeApiClient {
+export class LongPortApiClient {
   private config: Required<ApiConfig>
 
   constructor(config: ApiConfig) {
@@ -235,13 +235,13 @@ export class LongbridgeApiClient {
 /**
  * 创建 API 客户端实例
  */
-export function createApiClient(config: ApiConfig): LongbridgeApiClient {
-  return new LongbridgeApiClient(config)
+export function createApiClient(config: ApiConfig): LongPortApiClient {
+  return new LongPortApiClient(config)
 }
 
 // ==================== 默认导出 ====================
 
 export default {
-  LongbridgeApiClient,
+  LongPortApiClient,
   createApiClient,
 }

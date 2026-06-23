@@ -23,6 +23,12 @@ interface Feature {
 
 const features: Feature[] = [
   {
+    imageUrl: 'https://pub.lbkrs.com/files/202503/1UpQ42uWk3z9S3X9/ai.svg',
+    imageAlt: 'ai',
+    titleKey: 'yGjtJ_hz3SY1',
+    descriptionKeys: ['igUuE7b16XAv4XV1cz2Uo1'],
+  },
+  {
     imageUrl: 'https://pub.lbkrs.com/files/202503/i4VdsR7sYWKj7BGR/quote.svg',
     imageAlt: 'quote',
     titleKey: '_yGjtJ-hz3SY',
@@ -38,12 +44,6 @@ const features: Feature[] = [
     imageAlt: 'trade',
     titleKey: '4asTAcBmpkMshtbQ6MTOq',
     descriptionKeys: ['_mlScbvyg8lDxhHsROlbK', '4iQqxIDsChn9iZmM5571k', 'M8nA_Jg5s7ucI5fLT93x0'],
-  },
-  {
-    imageUrl: 'https://pub.lbkrs.com/files/202503/1UpQ42uWk3z9S3X9/ai.svg',
-    imageAlt: 'ai',
-    titleKey: 'yGjtJ_hz3SY1',
-    descriptionKeys: ['igUuE7b16XAv4XV1cz2Uo1'],
   },
 ]
 </script>
