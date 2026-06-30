@@ -110,10 +110,6 @@ The browser opens the authorization page automatically. The token is saved after
 
 ## Install SDK
 
-:::warning Package Renamed
-The SDK package has been renamed from `longport` to `longport`. The old `longport` package is deprecated. If you were previously using `longport`, please uninstall it before installing the new package.
-:::
-
 <Tabs groupId="programming-language">
   <TabItem value="python" label="Python" default>
 
@@ -488,7 +484,7 @@ Windows is a little more complicated, we provide two methods to set the environm
    After logging out or restarting, open the command line again and enter the following command to verify that the environment variables are set correctly:
 
    ```bash
-   C:\Users\jason> set LONGBRIDGE
+   C:\Users\jason> set LONGPORT
    LONGPORT_APP_KEY=xxxxxxx
    LONGPORT_APP_SECRET=xxxxxx
    LONGPORT_ACCESS_TOKEN=xxxxxxx
@@ -1915,7 +1911,7 @@ https://github.com/longportapp/openapi/tree/master/examples
 
 For detailed SDK API document, please visit:
 
-https://longport.github.io/openapi/
+https://longportapp.github.io/openapi/
 
 ## Contact & Feedback
 

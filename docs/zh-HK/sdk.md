@@ -32,7 +32,7 @@ $ pip install longport -i https://mirrors.aliyun.com/pypi/simple
 
 ### API 文檔
 
-- https://longport.github.io/openapi/python/index.html
+- https://longportapp.github.io/openapi/python/index.html
 
 ### 範例程式碼
 
@@ -57,7 +57,7 @@ $ npm install longport --save
 
 ### API 文檔
 
-- https://longport.github.io/openapi/nodejs/index.html
+- https://longportapp.github.io/openapi/nodejs/index.html
 
 ### 範例程式碼
 
@@ -83,7 +83,7 @@ longport = "4.0.5"
 
 ### API 文檔
 
-- https://longport.github.io/openapi/rust/longport/index.html
+- https://longportapp.github.io/openapi/rust/longport/index.html
 
 ### 範例程式碼
 
@@ -112,7 +112,7 @@ longport = "4.0.5"
 
 ### API 文檔
 
-- https://longport.github.io/openapi/java/index.html
+- https://longportapp.github.io/openapi/java/index.html
 
 ### 範例程式碼
 
@@ -154,7 +154,7 @@ $ go get github.com/longportapp/openapi-go
 
 ### API 文檔
 
-<a href="https://longport.github.io/openapi/cpp/index.html">https://longport.github.io/openapi/cpp/index.html</a>
+<a href="https://longportapp.github.io/openapi/cpp/index.html">https://longportapp.github.io/openapi/cpp/index.html</a>
 
 ### 範例程式碼
 

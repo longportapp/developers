@@ -28,7 +28,7 @@ $ pip install longport
 
 ### API Documents
 
-- https://longport.github.io/openapi/python/index.html
+- https://longportapp.github.io/openapi/python/index.html
 
 ### Examples
 
@@ -53,7 +53,7 @@ $ npm install longport --save
 
 ### API Documents
 
-- https://longport.github.io/openapi/nodejs/index.html
+- https://longportapp.github.io/openapi/nodejs/index.html
 
 ### Examples
 
@@ -79,7 +79,7 @@ longport = "4.0.5"
 
 ### API Documents
 
-- https://longport.github.io/openapi/rust/longport/index.html
+- https://longportapp.github.io/openapi/rust/longport/index.html
 
 ### Examples
 
@@ -108,7 +108,7 @@ Add the following line to your `pom.xml` file
 
 ### API Documents
 
-- https://longport.github.io/openapi/java/index.html
+- https://longportapp.github.io/openapi/java/index.html
 
 ### Examples
 
@@ -150,7 +150,7 @@ $ go get github.com/longportapp/openapi-go
 
 ### API Documents
 
-- https://longport.github.io/openapi/cpp/index.html
+- https://longportapp.github.io/openapi/cpp/index.html
 
 ### Examples
 

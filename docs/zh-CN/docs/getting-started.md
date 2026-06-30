@@ -121,10 +121,6 @@ longport --help                    # 查看全部可用命令
 
 ## 安装 SDK
 
-:::warning 包名变更
-SDK 包名已从 `longport` 更名为 `longport`，旧包名 `longport` 已废弃。如果你之前使用的是 `longport`，请先卸载旧包再安装新包。
-:::
-
 <Tabs groupId="programming-language">
   <TabItem value="python" label="Python" default>
 
@@ -501,7 +497,7 @@ Windows 要稍微复杂一些，有下面两种方式可以设置环境变量：
    注销或重新启动后，再次打开命令行，输入下面的命令验证一下环境变量是否设置正确：
 
    ```bash
-   C:\Users\jason> set LONGBRIDGE
+   C:\Users\jason> set LONGPORT
    LONGPORT_APP_KEY=xxxxxxx
    LONGPORT_APP_SECRET=xxxxxx
    LONGPORT_ACCESS_TOKEN=xxxxxxx
@@ -1904,7 +1900,7 @@ Order {
 }
 ```
 
-上面例子已经完整演示了如何使用 SDK 访问 OpenAPI 的接口，更多其他接口请详细阅读 [LongPort Developers 文档](https://longport.github.io/openapi/)，根据不同的接口使用。
+上面例子已经完整演示了如何使用 SDK 访问 OpenAPI 的接口，更多其他接口请详细阅读 [LongPort Developers 文档](https://longportapp.github.io/openapi/)，根据不同的接口使用。
 
 ## 更多例子
 
@@ -1914,7 +1910,7 @@ https://github.com/longportapp/openapi/tree/master/examples
 
 ## SDK API 文档
 
-SDK 的详细 API 文档请访问：https://longport.github.io/openapi/
+SDK 的详细 API 文档请访问：https://longportapp.github.io/openapi/
 
 ## 反馈及沟通
 

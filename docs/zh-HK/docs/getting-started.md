@@ -111,10 +111,6 @@ longport auth login
 
 ## 安裝 SDK
 
-:::warning 包名變更
-SDK 包名已從 `longport` 更名為 `longport`，舊包名 `longport` 已廢棄。如果你之前使用的是 `longport`，請先卸載舊包再安裝新包。
-:::
-
 <Tabs groupId="programming-language">
   <TabItem value="python" label="Python" default>
 
@@ -491,7 +487,7 @@ Windows 要稍微複雜一些，有以下兩種方式可以設定環境變量：
    登出或重新啟動後，再次開啟命令列，輸入下面的命令以驗證環境變量是否設定正確：
 
    ```bash
-   C:\Users\jason> set LONGBRIDGE
+   C:\Users\jason> set LONGPORT
    LONGPORT_APP_KEY=xxxxxxx
    LONGPORT_APP_SECRET=xxxxxx
    LONGPORT_ACCESS_TOKEN=xxxxxxx
@@ -1831,7 +1827,7 @@ https://github.com/longportapp/openapi/tree/master/examples
 
 SDK 的詳細 API 文檔請訪問：
 
-https://longport.github.io/openapi/
+https://longportapp.github.io/openapi/
 
 ## 回饋及溝通
 
