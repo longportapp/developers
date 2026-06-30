@@ -14,15 +14,6 @@ Get the filings list for a specified security.
 
 <QuotePermission level="basic" />
 
-<CliCommand>
-# regulatory filings for Apple
-longport filing list AAPL.US
-# regulatory filings for Tesla
-longport filing list TSLA.US
-# regulatory filings for NVDA
-longport filing list NVDA.US
-</CliCommand>
-
 <SDKLinks module="quote" klass="QuoteContext" method="filings" />
 
 ## Request

@@ -12,10 +12,6 @@ headingLevel: 2
 
 Set the advance reminder time for DCA plans. Supported values: `1`, `6`, or `12` hours.
 
-<CliCommand>
-longport dca set-reminder 12
-</CliCommand>
-
 <SDKLinks module="dca" klass="DCAContext" method="set_reminder" />
 
 

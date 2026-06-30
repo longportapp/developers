@@ -9,11 +9,6 @@ This API is used to obtain participant IDs data (which can be synchronized once 
 
 <QuotePermission level="basic" />
 
-<CliCommand>
-# list all market maker broker IDs and names (HK market)
-longport participants
-</CliCommand>
-
 <SDKLinks module="quote" klass="QuoteContext" method="participants" />
 
 :::info

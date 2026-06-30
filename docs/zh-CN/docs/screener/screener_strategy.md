@@ -14,10 +14,6 @@ headingLevel: 2
 
 接口：`GET /v1/quote/ai/screener/strategy/{id}`（策略 ID 为路径参数）
 
-<CliCommand>
-longport screener run 42
-</CliCommand>
-
 <SDKLinks module="screener" klass="ScreenerContext" method="screener_strategy" />
 
 

@@ -12,10 +12,6 @@ headingLevel: 2
 
 Get the list of topics I have published. View them on [Topics](https://longport.com/topics).
 
-<CliCommand>
-longport topic mine
-</CliCommand>
-
 <SDKLinks module="content" klass="ContentContext" method="topics_mine" />
 
 ## Request
@@ -38,17 +34,7 @@ longport topic mine
 ### Request Example
 
 <Tabs groupId="request-example">
-  <TabItem value="cli" label="CLI" default>
-
-<CliCommand>
-longport topic mine                           # All types (default: 50 per page)
-longport topic mine --type article            # Articles only
-longport topic mine --type post --size 10     # Short posts, 10 per page
-longport topic mine --page 2                  # Page 2
-longport topic mine --format json             # JSON output for scripting
-</CliCommand>
-
-  </TabItem>
+  
   <TabItem value="python" label="Python">
 
 ```python

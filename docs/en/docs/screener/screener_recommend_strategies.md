@@ -14,11 +14,6 @@ Get the list of platform-preset stock screener strategies, including recent aver
 
 Endpoint: `GET /v1/quote/ai/screener/strategies/recommend`
 
-<CliCommand>
-longport screener strategies
-longport screener strategies --market HK
-</CliCommand>
-
 <SDKLinks module="screener" klass="ScreenerContext" method="screener_recommend_strategies" />
 
 

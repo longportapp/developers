@@ -12,12 +12,6 @@ headingLevel: 2
 
 獲取美股或港股沽空持倉數據。市場根據代碼後綴自動識別：`.HK` → 港交所沽空數據（每日更新）；其他 → 美股 FINRA 沽空數據（雙月更新）。
 
-<CliCommand>
-longport short-positions TSLA.US
-longport short-positions 700.HK
-longport short-positions AAPL.US --count 50
-</CliCommand>
-
 <SDKLinks module="quote" klass="QuoteContext" method="short_positions" />
 
 
@@ -33,15 +27,7 @@ longport short-positions AAPL.US --count 50
 ## Request Example
 
 <Tabs groupId="request-example">
-  <TabItem value="cli" label="CLI" default>
-
-<CliCommand>
-longport short-positions TSLA.US
-longport short-positions 700.HK
-longport short-positions AAPL.US --count 50
-</CliCommand>
-
-  </TabItem>
+  
   <TabItem value="python" label="Python">
 
 ```python

@@ -12,11 +12,6 @@ headingLevel: 2
 
 获取机构共识预测，包括营收、EPS 和净利润预测。
 
-<CliCommand>
-longport consensus TSLA.US
-longport consensus AAPL.US
-</CliCommand>
-
 <SDKLinks module="fundamental" klass="FundamentalContext" method="consensus" />
 
 

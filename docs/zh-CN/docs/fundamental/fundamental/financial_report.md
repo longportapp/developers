@@ -12,11 +12,6 @@ headingLevel: 2
 
 获取任意上市公司的利润表、资产负债表和现金流量表。
 
-<CliCommand>
-longport financial-report TSLA.US --kind IS
-longport financial-report AAPL.US
-</CliCommand>
-
 <SDKLinks module="fundamental" klass="FundamentalContext" method="financial_report" />
 
 

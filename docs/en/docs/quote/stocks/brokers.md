@@ -9,13 +9,6 @@ This API is used to obtain the real-time broker queue data of security.
 
 <QuotePermission command="brokers" />
 
-<CliCommand>
-# broker queue for Tencent (HK market only)
-longport brokers 700.HK
-# broker queue for Alibaba
-longport brokers 9988.HK
-</CliCommand>
-
 <SDKLinks module="quote" klass="QuoteContext" method="brokers" />
 
 :::info

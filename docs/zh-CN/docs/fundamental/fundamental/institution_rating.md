@@ -12,11 +12,6 @@ headingLevel: 2
 
 获取分析师机构评级快照（评级分布及平均目标价）。
 
-<CliCommand>
-longport institution-rating TSLA.US
-longport institution-rating AAPL.US
-</CliCommand>
-
 <SDKLinks module="fundamental" klass="FundamentalContext" method="institution_rating" />
 
 

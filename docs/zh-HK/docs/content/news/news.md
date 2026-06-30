@@ -12,15 +12,6 @@ headingLevel: 2
 
 獲取指定股票的資訊列表。完整資訊流可瀏覽 [資訊](https://longport.com/news)。
 
-<CliCommand>
-# Tesla 最新資訊
-longport news TSLA.US
-# Apple 最新資訊
-longport news AAPL.US
-# NVDA 最新資訊
-longport news NVDA.US
-</CliCommand>
-
 <SDKLinks module="content" klass="ContentContext" method="news" />
 
 ## Request

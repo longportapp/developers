@@ -12,11 +12,6 @@ headingLevel: 2
 
 获取即将发布的宏观经济数据，如 CPI、GDP 和美联储会议等。
 
-<CliCommand>
-longport finance-calendar macrodata
-longport finance-calendar macrodata --market US
-</CliCommand>
-
 <SDKLinks module="calendar" klass="CalendarContext" method="finance_calendar" />
 
 

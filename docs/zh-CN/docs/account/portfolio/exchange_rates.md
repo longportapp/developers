@@ -12,10 +12,6 @@ headingLevel: 2
 
 获取账户中所有货币对的当前外汇汇率。
 
-<CliCommand>
-longport exchange-rate
-</CliCommand>
-
 <SDKLinks module="portfolio" klass="PortfolioContext" method="exchange_rates" />
 
 

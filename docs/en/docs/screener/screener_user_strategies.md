@@ -14,11 +14,6 @@ Get the list of custom stock screener strategies created by the currently logged
 
 Endpoint: `GET /v1/quote/ai/screener/strategies/mine`
 
-<CliCommand>
-longport screener strategies --mine
-longport screener strategies --mine --market HK
-</CliCommand>
-
 <SDKLinks module="screener" klass="ScreenerContext" method="screener_user_strategies" />
 
 

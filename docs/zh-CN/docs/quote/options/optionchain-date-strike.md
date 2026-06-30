@@ -9,13 +9,6 @@ sidebar_position: 12
 
 <QuotePermission level="basic" />
 
-<CliCommand>
-# AAPL 2026-04-17 到期的行权价列表
-longport option chain AAPL.US --date 2026-04-17
-# TSLA 2026-04-17 到期的行权价列表
-longport option chain TSLA.US --date 2026-04-17
-</CliCommand>
-
 <SDKLinks module="quote" klass="QuoteContext" method="option_chain_info_by_date" />
 
 :::info

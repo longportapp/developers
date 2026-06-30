@@ -9,15 +9,6 @@ This API is used to obtain the daily capital distribution of security.
 
 <QuotePermission command="capital" />
 
-<CliCommand>
-# capital distribution snapshot for Tesla (large/medium/small)
-longport capital TSLA.US
-# capital distribution snapshot for Apple
-longport capital AAPL.US
-# capital distribution snapshot for NVDA
-longport capital NVDA.US
-</CliCommand>
-
 <SDKLinks module="quote" klass="QuoteContext" method="capital_distribution" />
 
 :::info

@@ -12,11 +12,6 @@ headingLevel: 2
 
 Get the list of funds that hold a given security, with the number of shares and ownership percentage.
 
-<CliCommand>
-longport fund-holder TSLA.US
-longport fund-holder AAPL.US
-</CliCommand>
-
 <SDKLinks module="fundamental" klass="FundamentalContext" method="fund_holdings" />
 
 

@@ -12,10 +12,6 @@ headingLevel: 2
 
 獲取某一經紀商在港股上市證券中的每日持倉歷史記錄。
 
-<CliCommand>
-longport broker-holding daily 700.HK --broker B01224
-</CliCommand>
-
 <SDKLinks module="market" klass="MarketContext" method="broker_holding_daily" />
 
 

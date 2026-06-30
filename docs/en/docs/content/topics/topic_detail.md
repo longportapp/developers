@@ -12,10 +12,6 @@ headingLevel: 2
 
 Get the full details of a community topic by its ID, including the body (Markdown), author info, associated tickers and hashtags, engagement counts, and the direct URL. View the topic on [Topics](https://longport.com/topics).
 
-<CliCommand>
-longport topic detail 6993508780031016960
-</CliCommand>
-
 <SDKLinks module="content" klass="ContentContext" method="topic_detail" />
 
 ## Request
@@ -36,13 +32,7 @@ longport topic detail 6993508780031016960
 ### Request Example
 
 <Tabs groupId="request-example">
-  <TabItem value="cli" label="CLI" default>
-
-<CliCommand>
-longport topic detail 6993508780031016960
-</CliCommand>
-
-  </TabItem>
+  
   <TabItem value="python" label="Python">
 
 ```python

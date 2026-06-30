@@ -12,11 +12,6 @@ headingLevel: 2
 
 Get all community stock lists (sharelists) created by or subscribed to by the current user.
 
-<CliCommand>
-longport sharelist
-longport sharelist --format json
-</CliCommand>
-
 <SDKLinks module="sharelist" klass="SharelistContext" method="list_sharelist" />
 
 

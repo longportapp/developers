@@ -12,11 +12,6 @@ headingLevel: 2
 
 獲取當前用戶的所有定投（DCA）計劃。
 
-<CliCommand>
-longport dca
-longport dca --status Active
-</CliCommand>
-
 <SDKLinks module="dca" klass="DCAContext" method="list" />
 
 

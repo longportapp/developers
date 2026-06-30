@@ -9,13 +9,6 @@ sidebar_position: 11
 
 <QuotePermission level="basic" />
 
-<CliCommand>
-# AAPL 期權到期日列表
-longport option chain AAPL.US
-# TSLA 期權到期日列表
-longport option chain TSLA.US
-</CliCommand>
-
 <SDKLinks module="quote" klass="QuoteContext" method="option_chain_expiry_date_list" />
 
 :::info

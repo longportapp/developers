@@ -14,11 +14,6 @@ Get a paginated list of replies for a specific topic. Browse the discussion on [
 
 Each reply includes author info, body (plain text), engagement counts, and a `reply_to_id` field: `"0"` indicates a top-level reply; any other value identifies the parent reply for nested replies.
 
-<CliCommand>
-longport topic replies 6993508780031016960
-longport topic replies 6993508780031016960 --page 2 --size 20
-</CliCommand>
-
 <SDKLinks module="content" klass="ContentContext" method="list_topic_replies" />
 
 ## Request
@@ -46,14 +41,7 @@ longport topic replies 6993508780031016960 --page 2 --size 20
 ### Request Example
 
 <Tabs groupId="request-example">
-  <TabItem value="cli" label="CLI" default>
-
-<CliCommand>
-longport topic replies 6993508780031016960
-longport topic replies 6993508780031016960 --page 2 --size 20
-</CliCommand>
-
-  </TabItem>
+  
   <TabItem value="python" label="Python">
 
 ```python

@@ -12,13 +12,6 @@ headingLevel: 2
 
 List macroeconomic indicators available through LongPort, optionally filtered by country.
 
-<CliCommand>
-# List all indicators
-longport macrodata
-# Filter by US indicators
-longport macrodata --country US
-</CliCommand>
-
 <SDKLinks module="fundamental" klass="FundamentalContext" method="macroeconomic_indicators" />
 
 ## Parameters

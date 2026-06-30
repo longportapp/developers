@@ -12,7 +12,7 @@ headingLevel: 2
 
 在指定討論下發布回覆，支持嵌套回覆已有回覆。完整社區討論可瀏覽 [社區](https://longport.com/topics)。
 
-僅限 **[LongPort 開戶](https://longport.com/hk/download)且持有資產** 的用戶才允許通過 LongPort Developers 的 API 或 CLI 發布社區討論和回覆。否則返回 `403`。
+僅限 **[LongPort 開戶](https://longport.com/hk/download)且持有資產** 的用戶才允許通過 LongPort Developers 的 API 發布社區討論和回覆。否則返回 `403`。
 
 **正文格式：** 僅支持純文本，不支持 HTML 或 Markdown。
 
@@ -25,10 +25,6 @@ headingLevel: 2
 **頻率限制：** 同一用戶在同一討論下，前 3 條無間隔限制；此後每條須與上一條保持遞增間隔（3 s → 5 s → 8 s → 13 s → 21 s → 34 s → 55 s 封頂），超出限制返回 `429`。
 
 > ⚠️ 以上頻率限制規則僅供參考，平台可能隨時進行內部調整。
-
-<CliCommand>
-longport topic create-reply 6993508780031016960 --body "分析得好！"
-</CliCommand>
 
 <SDKLinks module="content" klass="ContentContext" method="create_topic_reply" />
 
@@ -57,17 +53,6 @@ longport topic create-reply 6993508780031016960 --body "分析得好！"
 ### Request Example
 
 <Tabs groupId="request-example">
-  <TabItem value="cli" label="CLI" default>
-
-```bash
-# 頂層回覆
-longport topic create-reply 6993508780031016960 --body "分析得很好！"
-
-# 嵌套回覆
-longport topic create-reply 6993508780031016960 --body "同意你的觀點。" --reply-to 7001234567890123456
-```
-
-  </TabItem>
   <TabItem value="python" label="Python">
 
 ```python

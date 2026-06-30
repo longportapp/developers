@@ -12,10 +12,6 @@ headingLevel: 2
 The API is used to obtain stock position information including account, stock code, number of shares held,
 number of available shares, average position price (calculated according to account settings), and currency.
 
-<CliCommand>
-longport positions
-</CliCommand>
-
 <SDKLinks module="trade" klass="TradeContext" method="stock_positions" />
 
 ## Request

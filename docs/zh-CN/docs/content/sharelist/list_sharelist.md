@@ -12,11 +12,6 @@ headingLevel: 2
 
 获取当前用户创建的或订阅的所有社区自选股列表。
 
-<CliCommand>
-longport sharelist
-longport sharelist --format json
-</CliCommand>
-
 <SDKLinks module="sharelist" klass="SharelistContext" method="list_sharelist" />
 
 

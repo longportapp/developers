@@ -12,10 +12,6 @@ headingLevel: 2
 
 Calculate the next projected trade date for given DCA plan parameters.
 
-<CliCommand>
-longport dca calc-date AAPL.US --frequency monthly --day-of-month 15
-</CliCommand>
-
 <SDKLinks module="dca" klass="DCAContext" method="calc_date" />
 
 

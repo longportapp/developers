@@ -12,11 +12,6 @@ headingLevel: 2
 
 Get the monthly institutional rating (buy/hold/sell) distribution timeline, newest first.
 
-<CliCommand>
-longport institution-rating AAPL.US --views
-longport institution-rating TSLA.US --views
-</CliCommand>
-
 <SDKLinks module="fundamental" klass="FundamentalContext" method="institution_rating_views" />
 
 

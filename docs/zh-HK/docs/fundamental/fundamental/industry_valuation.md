@@ -12,11 +12,6 @@ headingLevel: 2
 
 獲取同行業內的同類公司估值對比數據。
 
-<CliCommand>
-longport industry-valuation TSLA.US
-longport industry-valuation AAPL.US
-</CliCommand>
-
 <SDKLinks module="fundamental" klass="FundamentalContext" method="industry_valuation" />
 
 

@@ -12,11 +12,6 @@ headingLevel: 2
 
 Get the stock ranking for a given leaderboard tag key. The key comes from `rank_categories` `second_tags[].key`, e.g. `hot_all-us` (US total hotness).
 
-<CliCommand>
-longport rank --key hot_all-us
-longport rank --key hot_all-hk
-</CliCommand>
-
 <SDKLinks module="market" klass="MarketContext" method="rank_list" />
 
 

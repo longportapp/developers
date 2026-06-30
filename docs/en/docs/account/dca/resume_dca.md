@@ -12,10 +12,6 @@ headingLevel: 2
 
 Resume a previously paused DCA plan.
 
-<CliCommand>
-longport dca resume 12345
-</CliCommand>
-
 <SDKLinks module="dca" klass="DCAContext" method="resume" />
 
 

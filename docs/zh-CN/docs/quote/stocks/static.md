@@ -9,15 +9,6 @@ sidebar_position: 1
 
 <QuotePermission command="static" />
 
-<CliCommand>
-# Tesla 静态信息（名称、手数、股本等）
-longport static TSLA.US
-# 多只美股静态信息
-longport static AAPL.US NVDA.US
-# 美港股混合查询
-longport static TSLA.US 700.HK
-</CliCommand>
-
 <SDKLinks module="quote" klass="QuoteContext" method="static_info" />
 
 :::info

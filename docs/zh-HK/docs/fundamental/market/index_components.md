@@ -11,11 +11,6 @@ headingLevel: 2
 
 獲取指數或 ETF 的成分股列表，支持排序並顯示漲跌統計。
 
-<CliCommand>
-longport constituent HSI.HK
-longport constituent SPY.US
-</CliCommand>
-
 <SDKLinks module="market" klass="MarketContext" method="index_components" />
 
 

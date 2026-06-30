@@ -12,11 +12,6 @@ headingLevel: 2
 
 Get financial consensus estimates including revenue, EPS, and net income forecasts.
 
-<CliCommand>
-longport consensus TSLA.US
-longport consensus AAPL.US
-</CliCommand>
-
 <SDKLinks module="fundamental" klass="FundamentalContext" method="consensus" />
 
 

@@ -124,7 +124,7 @@ slug: overview
 - 港股市场：`region` 为 `HK`，例如：`700.HK`
 - A 股市场：`region` 上交所为 `SH`，深交所为 `SZ`，例如：`399001.SZ`，`600519.SH`
 
-> **新加坡市场（SG）：** 新加坡市场的实时行情暂未通过 LongPort Developers（API / CLI / MCP）开放，如需查询新加坡股票行情，请使用 [LongPort 客户端](https://longport.com/download)查询。
+> **新加坡市场（SG）：** 新加坡市场的实时行情暂未通过 LongPort Developers（API / MCP）开放，如需查询新加坡股票行情，请使用 [LongPort 客户端](https://longport.com/download)查询。
 
 ## 接入方式
 

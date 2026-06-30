@@ -12,10 +12,6 @@ headingLevel: 2
 
 获取各交易所当前的开市/休市状态。
 
-<CliCommand>
-longport market-status
-</CliCommand>
-
 <SDKLinks module="market" klass="MarketContext" method="market_status" />
 
 

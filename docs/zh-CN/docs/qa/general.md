@@ -43,11 +43,7 @@ sidebar_position: 0
 
 ## Q9: 我不会编程，如何才能访问 LongPort Developers 平台的个股数据？
 
-平台提供两种无需编程即可访问个股数据的方式：
-
-**CLI（命令行工具）**
-
-安装 [LongPort CLI](/docs/cli)，通过简单命令即可查询行情数据，无需编写任何代码：
+平台提供以下无需编程即可访问个股数据的方式：
 
 ```bash
 longport quote AAPL.US TSLA.US
@@ -58,4 +54,4 @@ longport static NVDA.US
 
 如果你日常使用 Claude、Cursor、ChatGPT 等 AI 工具，可以接入 [LongPort MCP 服务](/zh-CN/docs/mcp)，配置完成后直接用自然语言向 AI 提问，由 AI 代你调用行情接口获取数据。
 
-两种方式均需拥有 LongPort 账户。
+此方式需拥有 LongPort 账户。

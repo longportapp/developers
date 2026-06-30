@@ -12,11 +12,6 @@ headingLevel: 2
 
 Detect unusual market movements — price spikes, volume surges, and other abnormal trading activity.
 
-<CliCommand>
-longport anomaly --market US
-longport anomaly --market HK
-</CliCommand>
-
 <SDKLinks module="market" klass="MarketContext" method="unusual_items" />
 
 

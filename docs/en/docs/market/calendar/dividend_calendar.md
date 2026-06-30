@@ -12,11 +12,6 @@ headingLevel: 2
 
 Get upcoming and past dividend events including ex-date, pay date, and dividend amount.
 
-<CliCommand>
-longport finance-calendar dividend
-longport finance-calendar dividend --filter positions
-</CliCommand>
-
 <SDKLinks module="calendar" klass="CalendarContext" method="finance_calendar" />
 
 

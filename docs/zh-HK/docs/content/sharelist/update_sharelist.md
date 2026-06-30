@@ -12,11 +12,6 @@ headingLevel: 2
 
 在自選股列表中添加、移除或重排證券，或對列表重命名。
 
-<CliCommand>
-longport sharelist add 15921 TSLA.US NVDA.US AAPL.US
-longport sharelist remove 15921 AAPL.US
-</CliCommand>
-
 <SDKLinks module="sharelist" klass="SharelistContext" method="update_sharelist" />
 
 

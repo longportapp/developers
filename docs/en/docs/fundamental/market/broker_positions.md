@@ -12,11 +12,6 @@ headingLevel: 2
 
 View broker holding positions for HK-listed stocks, including top buyers/sellers and full detail.
 
-<CliCommand>
-longport broker-holding 700.HK
-longport broker-holding 9988.HK
-</CliCommand>
-
 <SDKLinks module="market" klass="MarketContext" method="broker_positions" />
 
 

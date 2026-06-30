@@ -12,11 +12,6 @@ headingLevel: 2
 
 獲取機構共識預測，包括營收、EPS 和淨利潤預測。
 
-<CliCommand>
-longport consensus TSLA.US
-longport consensus AAPL.US
-</CliCommand>
-
 <SDKLinks module="fundamental" klass="FundamentalContext" method="consensus" />
 
 

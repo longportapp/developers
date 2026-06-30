@@ -12,11 +12,6 @@ headingLevel: 2
 
 获取指定证券的成交统计数据，展示成交量的价格分布。
 
-<CliCommand>
-longport trade-stats 700.HK
-longport trade-stats TSLA.US
-</CliCommand>
-
 <SDKLinks module="market" klass="MarketContext" method="trading_stats" />
 
 

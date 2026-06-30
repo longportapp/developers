@@ -12,11 +12,6 @@ headingLevel: 2
 
 获取行业分组的层级子板块树，含各节点股票数量、日涨跌幅和年初至今涨跌幅。Counter ID 可从 `industry_rank` 返回结果中获取。
 
-<CliCommand>
-longport industry-peers BK/US/IN00258
-longport industry-peers BK/HK/IN20337
-</CliCommand>
-
 <SDKLinks module="fundamental" klass="FundamentalContext" method="industry_peers" />
 
 

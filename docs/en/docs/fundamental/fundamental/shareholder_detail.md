@@ -12,11 +12,6 @@ headingLevel: 2
 
 Get holding history and trade details for a specific shareholder. The `object_id` comes from the `shareholder_top` response.
 
-<CliCommand>
-longport shareholder AAPL.US --object-id 19463
-longport shareholder 700.HK --object-id 20181
-</CliCommand>
-
 <SDKLinks module="fundamental" klass="FundamentalContext" method="shareholder_detail" />
 
 

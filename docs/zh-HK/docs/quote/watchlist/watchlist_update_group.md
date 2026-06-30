@@ -14,15 +14,6 @@ headingLevel: 2
 
 <QuotePermission level="basic" />
 
-<CliCommand>
-# 向分組添加標的
-longport watchlist update <id> --add TSLA.US --add AAPL.US
-# 從分組移除標的
-longport watchlist update <id> --remove NVDA.US
-# 同時添加和移除
-longport watchlist update <id> --add TSLA.US --remove AAPL.US
-</CliCommand>
-
 <SDKLinks module="quote" klass="QuoteContext" method="update_watchlist_group" />
 
 ## Request

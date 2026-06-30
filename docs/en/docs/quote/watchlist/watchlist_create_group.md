@@ -14,13 +14,6 @@ Create watched group
 
 <QuotePermission level="basic" />
 
-<CliCommand>
-# create a new watchlist group
-longport watchlist create "My Portfolio"
-# create another watchlist group
-longport watchlist create "Tech Stocks"
-</CliCommand>
-
 <SDKLinks module="quote" klass="QuoteContext" method="create_watchlist_group" />
 
 ## Request

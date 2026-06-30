@@ -12,10 +12,6 @@ headingLevel: 2
 
 向股單中新增一個或多個標的。
 
-<CliCommand>
-longport sharelist add 123 TSLA.US AAPL.US
-</CliCommand>
-
 <SDKLinks module="sharelist" klass="SharelistContext" method="add_securities" />
 
 

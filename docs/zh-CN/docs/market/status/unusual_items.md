@@ -12,11 +12,6 @@ headingLevel: 2
 
 识别市场异动，包括价格异常波动、成交量激增等非正常交易行为。
 
-<CliCommand>
-longport anomaly --market US
-longport anomaly --market HK
-</CliCommand>
-
 <SDKLinks module="market" klass="MarketContext" method="unusual_items" />
 
 

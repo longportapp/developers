@@ -12,11 +12,6 @@ headingLevel: 2
 
 Get EPS forecasts and analyst consensus estimates.
 
-<CliCommand>
-longport forecast-eps TSLA.US
-longport forecast-eps AAPL.US
-</CliCommand>
-
 <SDKLinks module="fundamental" klass="FundamentalContext" method="forecast_eps" />
 
 

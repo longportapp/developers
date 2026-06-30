@@ -14,11 +14,6 @@ Delete watched group
 
 <QuotePermission level="basic" />
 
-<CliCommand>
-# delete a watchlist group by ID (get ID from: longport watchlist)
-longport watchlist delete <id>
-</CliCommand>
-
 <SDKLinks module="quote" klass="QuoteContext" method="delete_watchlist_group" />
 
 ## Request

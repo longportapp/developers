@@ -12,11 +12,6 @@ headingLevel: 2
 
 獲取 A+H 兩地上市股票的 A/H 溢價比率，對比 A 股和 H 股價格。
 
-<CliCommand>
-longport ah-premium 939.HK
-longport ah-premium 0939.HK
-</CliCommand>
-
 <SDKLinks module="market" klass="MarketContext" method="ah_premium" />
 
 

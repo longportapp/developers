@@ -12,10 +12,6 @@ headingLevel: 2
 The API is used to obtain capital inflow/outflow direction, capital type, capital amount, occurrence time,
 associated stock code and capital flow description information.
 
-<CliCommand>
-longport cash-flow
-</CliCommand>
-
 <SDKLinks module="trade" klass="TradeContext" method="cash_flow" />
 
 ## Request

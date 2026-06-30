@@ -9,13 +9,6 @@ sidebar_position: 3
 
 <QuotePermission command="option" />
 
-<CliCommand>
-# AAPL 認購期權 $250 行權價 2026-04-17 到期
-longport option quote AAPL260417C250000.US
-# TSLA 認沽期權 $350 行權價 2026-04-18 到期
-longport option quote TSLA260418P350000.US
-</CliCommand>
-
 <SDKLinks module="quote" klass="QuoteContext" method="option_quote" />
 
 :::info

@@ -12,11 +12,6 @@ headingLevel: 2
 
 Fetch income statement, balance sheet, and cash flow statement for any public company.
 
-<CliCommand>
-longport financial-report TSLA.US --kind IS
-longport financial-report AAPL.US
-</CliCommand>
-
 <SDKLinks module="fundamental" klass="FundamentalContext" method="financial_report" />
 
 

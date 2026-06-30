@@ -12,10 +12,6 @@ headingLevel: 2
 
 Remove one or more securities from a sharelist.
 
-<CliCommand>
-longport sharelist remove 123 TSLA.US
-</CliCommand>
-
 <SDKLinks module="sharelist" klass="SharelistContext" method="remove_securities" />
 
 

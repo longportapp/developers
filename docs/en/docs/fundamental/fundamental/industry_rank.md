@@ -12,11 +12,6 @@ headingLevel: 2
 
 Get the industry ranking list by market and indicator. The returned Counter ID can be passed directly to `industry_peers` to explore the sub-sector hierarchy.
 
-<CliCommand>
-longport industry-rank --market US
-longport industry-rank --market HK --indicator market-cap
-</CliCommand>
-
 <SDKLinks module="fundamental" klass="FundamentalContext" method="industry_rank" />
 
 

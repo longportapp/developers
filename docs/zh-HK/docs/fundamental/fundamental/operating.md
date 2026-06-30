@@ -12,11 +12,6 @@ headingLevel: 2
 
 按財報期獲取經營數據及核心財務指標摘要。
 
-<CliCommand>
-longport operating AAPL.US
-longport operating TSLA.US
-</CliCommand>
-
 <SDKLinks module="fundamental" klass="FundamentalContext" method="operating" />
 
 

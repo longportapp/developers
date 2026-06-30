@@ -12,11 +12,6 @@ headingLevel: 2
 
 Get upcoming macroeconomic data release events such as CPI, GDP, and Fed meetings.
 
-<CliCommand>
-longport finance-calendar macrodata
-longport finance-calendar macrodata --market US
-</CliCommand>
-
 <SDKLinks module="calendar" klass="CalendarContext" method="finance_calendar" />
 
 

@@ -12,10 +12,6 @@ headingLevel: 2
 
 根據討論 ID 獲取完整詳情，包含正文（Markdown）、作者信息、關聯標的與標籤、互動數據及詳情頁鏈接。可在 [社區](https://longport.com/topics)查看。
 
-<CliCommand>
-longport topic detail 6993508780031016960
-</CliCommand>
-
 <SDKLinks module="content" klass="ContentContext" method="topic_detail" />
 
 ## Request
@@ -36,13 +32,6 @@ longport topic detail 6993508780031016960
 ### Request Example
 
 <Tabs groupId="request-example">
-  <TabItem value="cli" label="CLI" default>
-
-```bash
-longport topic detail 6993508780031016960
-```
-
-  </TabItem>
   <TabItem value="python" label="Python">
 
 ```python

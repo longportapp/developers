@@ -12,11 +12,6 @@ headingLevel: 2
 
 按市場和指標獲取行業排行榜。返回的 Counter ID 可直接傳入 `industry_peers` 查詢子行業樹。
 
-<CliCommand>
-longport industry-rank --market US
-longport industry-rank --market HK --indicator market-cap
-</CliCommand>
-
 <SDKLinks module="fundamental" klass="FundamentalContext" method="industry_rank" />
 
 

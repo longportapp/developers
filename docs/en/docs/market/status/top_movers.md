@@ -12,11 +12,6 @@ headingLevel: 2
 
 Get stocks whose price movement exceeds the 20-trading-day standard deviation, with automatically correlated news to explain the move.
 
-<CliCommand>
-longport top-movers
-longport top-movers --market HK --sort time
-</CliCommand>
-
 <SDKLinks module="market" klass="MarketContext" method="top_movers" />
 
 

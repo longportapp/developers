@@ -12,15 +12,6 @@ headingLevel: 2
 
 Get the news list for a specified security. Browse the full feed on [News](https://longport.com/news).
 
-<CliCommand>
-# latest news for Tesla
-longport news TSLA.US
-# latest news for Apple
-longport news AAPL.US
-# latest news for NVDA
-longport news NVDA.US
-</CliCommand>
-
 <SDKLinks module="content" klass="ContentContext" method="news" />
 
 ## Request

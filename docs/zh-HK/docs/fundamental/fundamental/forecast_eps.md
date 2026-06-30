@@ -12,11 +12,6 @@ headingLevel: 2
 
 獲取 EPS 預測及分析師共識估值。
 
-<CliCommand>
-longport forecast-eps TSLA.US
-longport forecast-eps AAPL.US
-</CliCommand>
-
 <SDKLinks module="fundamental" klass="FundamentalContext" method="forecast_eps" />
 
 

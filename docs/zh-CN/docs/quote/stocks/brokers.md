@@ -9,13 +9,6 @@ sidebar_position: 6
 
 <QuotePermission command="brokers" />
 
-<CliCommand>
-# 腾讯经纪商队列（仅港股）
-longport brokers 700.HK
-# 阿里巴巴经纪商队列
-longport brokers 9988.HK
-</CliCommand>
-
 <SDKLinks module="quote" klass="QuoteContext" method="brokers" />
 
 :::info

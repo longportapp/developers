@@ -8,15 +8,6 @@ Get Current Market Temperature
 
 <QuotePermission command="market-temp" />
 
-<CliCommand>
-# HK market sentiment temperature
-longport market-temp HK
-# US market sentiment temperature
-longport market-temp US
-# China A-share market temperature
-longport market-temp CN
-</CliCommand>
-
 <SDKLinks module="quote" klass="QuoteContext" method="market_temperature" />
 
 ## Request

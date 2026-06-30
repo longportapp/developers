@@ -43,11 +43,7 @@ sidebar_position: 0
 
 ## Q9: 我不會寫程式，如何才能存取 LongPort Developers 平台的個股數據？
 
-平台提供兩種無需寫程式即可存取個股數據的方式：
-
-**CLI（命令列工具）**
-
-安裝 [LongPort CLI](/docs/cli)，透過簡單指令即可查詢行情數據，無需撰寫任何程式碼：
+平台提供以下無需寫程式即可存取個股數據的方式：
 
 ```bash
 longport quote AAPL.US TSLA.US
@@ -58,4 +54,4 @@ longport static NVDA.US
 
 如果你日常使用 Claude、Cursor、ChatGPT 等 AI 工具，可以接入 [LongPort MCP 服務](/zh-HK/docs/mcp)，設定完成後直接用自然語言向 AI 提問，由 AI 代你呼叫行情介面取得數據。
 
-兩種方式均需擁有 LongPort 帳戶。
+此方式需擁有 LongPort 帳戶。

@@ -13,11 +13,6 @@ Get the list of US stocks eligible for overnight trading.
 
 <QuotePermission command="security-list" />
 
-<CliCommand>
-# list of US overnight-eligible securities
-longport security-list
-</CliCommand>
-
 <SDKLinks module="quote" klass="QuoteContext" method="security_list" />
 
 ### Request

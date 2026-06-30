@@ -64,50 +64,6 @@ SDK 會自動選擇接入點；若判斷不正確，可設定環境變數 `LONGP
   </TabItem>
 </Tabs>
 
-## CLI 快速入門
-
-如果你不需要寫程式，[LongPort CLI](/docs/cli) 提供更輕量的接入方式——安裝即用，OAuth 一鍵授權，無需配置環境變數。
-
-### 安裝
-
-<Tabs groupId="cli-install">
-  <TabItem value="homebrew" label="macOS (Homebrew)" default>
-
-```bash
-brew install --cask longport/tap/longport-terminal
-```
-
-  </TabItem>
-  <TabItem value="script" label="Linux / macOS (腳本)">
-
-```bash
-curl -sSL https://open.longport.com/longport/longport-terminal/install | sh
-```
-
-  </TabItem>
-  <TabItem value="scoop" label="Windows (Scoop)">
-
-```powershell
-scoop install https://open.longport.com/longport/longport-terminal/longport.json
-```
-
-  </TabItem>
-  <TabItem value="powershell" label="Windows (PowerShell)">
-
-```powershell
-iwr https://open.longport.com/longport/longport-terminal/install.ps1 | iex
-```
-
-  </TabItem>
-</Tabs>
-
-### 登入
-
-```bash
-longport auth login
-```
-
-瀏覽器會自動開啟授權頁面，完成後 Token 自動儲存，後續無需重複操作。
 
 ## 安裝 SDK
 

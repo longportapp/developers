@@ -9,13 +9,6 @@ This API is used to obtain the the list of expiration dates of option chain
 
 <QuotePermission level="basic" />
 
-<CliCommand>
-# list all expiry dates for AAPL options
-longport option chain AAPL.US
-# list all expiry dates for TSLA options
-longport option chain TSLA.US
-</CliCommand>
-
 <SDKLinks module="quote" klass="QuoteContext" method="option_chain_expiry_date_list" />
 
 :::info

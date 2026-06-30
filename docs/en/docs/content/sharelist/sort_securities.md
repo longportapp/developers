@@ -12,10 +12,6 @@ headingLevel: 2
 
 Reorder the securities in a sharelist. The symbols list defines the new order.
 
-<CliCommand>
-longport sharelist sort 123 TSLA.US AAPL.US 700.HK
-</CliCommand>
-
 <SDKLinks module="sharelist" klass="SharelistContext" method="sort_securities" />
 
 

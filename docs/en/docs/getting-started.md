@@ -63,50 +63,6 @@ All API response are used [Unix Timestamp](https://en.wikipedia.org/wiki/Unix_ti
   </TabItem>
 </Tabs>
 
-## CLI Quick Start
-
-If you don't need to write code, the [LongPort CLI](/docs/cli) offers a lightweight alternative — install once, authorize via OAuth, no environment variables needed.
-
-### Installation
-
-<Tabs groupId="cli-install">
-  <TabItem value="homebrew" label="macOS (Homebrew)" default>
-
-```bash
-brew install --cask longport/tap/longport-terminal
-```
-
-  </TabItem>
-  <TabItem value="script" label="Linux / macOS (Script)">
-
-```bash
-curl -sSL https://open.longport.com/longport/longport-terminal/install | sh
-```
-
-  </TabItem>
-  <TabItem value="scoop" label="Windows (Scoop)">
-
-```powershell
-scoop install https://open.longport.com/longport/longport-terminal/longport.json
-```
-
-  </TabItem>
-  <TabItem value="powershell" label="Windows (PowerShell)">
-
-```powershell
-iwr https://open.longport.com/longport/longport-terminal/install.ps1 | iex
-```
-
-  </TabItem>
-</Tabs>
-
-### Login
-
-<CliCommand>
-longport auth login
-</CliCommand>
-
-The browser opens the authorization page automatically. The token is saved after approval — no need to repeat.
 
 ## Install SDK
 

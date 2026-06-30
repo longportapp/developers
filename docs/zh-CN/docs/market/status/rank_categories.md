@@ -12,10 +12,6 @@ headingLevel: 2
 
 获取人气排行榜的标签分类配置，`second_tags[].key` 可传入 `rank_list`。
 
-<CliCommand>
-longport rank
-</CliCommand>
-
 <SDKLinks module="market" klass="MarketContext" method="rank_categories" />
 
 

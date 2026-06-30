@@ -12,10 +12,6 @@ headingLevel: 2
 
 獲取人氣排行榜的標籤分類配置，`second_tags[].key` 可傳入 `rank_list`。
 
-<CliCommand>
-longport rank
-</CliCommand>
-
 <SDKLinks module="market" klass="MarketContext" method="rank_categories" />
 
 

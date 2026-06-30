@@ -14,10 +14,6 @@ Get the full configuration of a single stock screener strategy by strategy ID, i
 
 Endpoint: `GET /v1/quote/ai/screener/strategy/{id}` (strategy ID as path parameter)
 
-<CliCommand>
-longport screener run 42
-</CliCommand>
-
 <SDKLinks module="screener" klass="ScreenerContext" method="screener_strategy" />
 
 

@@ -12,11 +12,6 @@ headingLevel: 2
 
 獲取即將發布的宏觀經濟數據，如 CPI、GDP 和美聯儲會議等。
 
-<CliCommand>
-longport finance-calendar macrodata
-longport finance-calendar macrodata --market US
-</CliCommand>
-
 <SDKLinks module="calendar" klass="CalendarContext" method="finance_calendar" />
 
 

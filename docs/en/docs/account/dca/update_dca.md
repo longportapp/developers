@@ -12,11 +12,6 @@ headingLevel: 2
 
 Pause or resume an existing recurring investment plan.
 
-<CliCommand>
-longport dca pause 1225781523156889600
-longport dca resume 1225781523156889600
-</CliCommand>
-
 <SDKLinks module="dca" klass="DCAContext" method="update" />
 
 

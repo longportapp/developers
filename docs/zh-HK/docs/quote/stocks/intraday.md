@@ -9,15 +9,6 @@ sidebar_position: 9
 
 <QuotePermission command="intraday" />
 
-<CliCommand>
-# Tesla 今日分時數據
-longport intraday TSLA.US
-# Apple 今日分時數據
-longport intraday AAPL.US
-# 騰訊今日分時數據
-longport intraday 700.HK
-</CliCommand>
-
 <SDKLinks module="quote" klass="QuoteContext" method="intraday" />
 
 :::info

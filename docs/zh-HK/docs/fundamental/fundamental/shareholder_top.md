@@ -12,11 +12,6 @@ headingLevel: 2
 
 獲取上市公司前 20 大股東（機構、個人、內部人）的持股數據，支持多報告期對比。`object_id` 可傳入 `shareholder_detail` 查看詳情。
 
-<CliCommand>
-longport shareholder AAPL.US --top
-longport shareholder 700.HK --top
-</CliCommand>
-
 <SDKLinks module="fundamental" klass="FundamentalContext" method="shareholder_top" />
 
 

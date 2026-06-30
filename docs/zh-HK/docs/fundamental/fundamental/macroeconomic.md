@@ -12,13 +12,6 @@ headingLevel: 2
 
 獲取指定宏觀經濟指標的歷史發布數據，包括實際值、預測值、前值和下次發布時間。
 
-<CliCommand>
-# 查詢非農就業人數歷史數據
-longport macrodata 62267
-# 指定日期範圍
-longport macrodata 62267 --start 2024-01-01 --end 2024-12-31
-</CliCommand>
-
 <SDKLinks module="fundamental" klass="FundamentalContext" method="macroeconomic" />
 
 ## 參數

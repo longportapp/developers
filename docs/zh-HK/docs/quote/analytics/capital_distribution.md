@@ -9,15 +9,6 @@ sidebar_position: 18
 
 <QuotePermission command="capital" />
 
-<CliCommand>
-# Tesla 資金分佈快照（大/中/小單）
-longport capital TSLA.US
-# Apple 資金分佈快照
-longport capital AAPL.US
-# NVDA 資金分佈快照
-longport capital NVDA.US
-</CliCommand>
-
 <SDKLinks module="quote" klass="QuoteContext" method="capital_distribution" />
 
 :::info

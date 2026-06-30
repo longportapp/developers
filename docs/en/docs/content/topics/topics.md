@@ -12,15 +12,6 @@ headingLevel: 2
 
 Get the topic/discussion list for a specified security. Browse the full community on [Topics](https://longport.com/topics).
 
-<CliCommand>
-# community discussion topics for Tesla
-longport topic TSLA.US
-# community discussion topics for Apple
-longport topic AAPL.US
-# community discussion topics for NVDA
-longport topic NVDA.US
-</CliCommand>
-
 <SDKLinks module="content" klass="ContentContext" method="topics" />
 
 ## Request

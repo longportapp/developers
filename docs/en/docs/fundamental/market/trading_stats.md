@@ -12,11 +12,6 @@ headingLevel: 2
 
 Get trade statistics showing price distribution by volume for a security.
 
-<CliCommand>
-longport trade-stats 700.HK
-longport trade-stats TSLA.US
-</CliCommand>
-
 <SDKLinks module="market" klass="MarketContext" method="trading_stats" />
 
 

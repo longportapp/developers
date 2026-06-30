@@ -12,11 +12,6 @@ headingLevel: 2
 
 Browse upcoming earnings reports and recent results, with EPS and revenue estimates.
 
-<CliCommand>
-longport finance-calendar report
-longport finance-calendar report --market US
-</CliCommand>
-
 <SDKLinks module="calendar" klass="CalendarContext" method="finance_calendar" />
 
 

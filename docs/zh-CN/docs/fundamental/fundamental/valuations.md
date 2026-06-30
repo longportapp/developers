@@ -12,11 +12,6 @@ headingLevel: 2
 
 获取当前估值指标（市盈率、市净率、市销率、股息率）及 5 年历史区间数据。
 
-<CliCommand>
-longport valuation TSLA.US --indicator pe
-longport valuation AAPL.US
-</CliCommand>
-
 <SDKLinks module="fundamental" klass="FundamentalContext" method="valuations" />
 
 

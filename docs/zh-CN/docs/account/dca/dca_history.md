@@ -12,10 +12,6 @@ headingLevel: 2
 
 获取指定定投的执行历史，包含交易日期、金额和价格。
 
-<CliCommand>
-longport dca history 1225781523156889600
-</CliCommand>
-
 <SDKLinks module="dca" klass="DCAContext" method="history" />
 
 

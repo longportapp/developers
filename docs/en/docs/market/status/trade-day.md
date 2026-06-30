@@ -9,15 +9,6 @@ This API is used to obtain the trading days of the market.
 
 <QuotePermission command="trading" />
 
-<CliCommand>
-# upcoming HK trading days
-longport trading days HK
-# upcoming US trading days
-longport trading days US
-# upcoming A-share trading days
-longport trading days CN
-</CliCommand>
-
 <SDKLinks module="quote" klass="QuoteContext" method="trading_days" />
 
 :::info

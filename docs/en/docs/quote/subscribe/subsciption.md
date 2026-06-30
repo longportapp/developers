@@ -9,11 +9,6 @@ This API is used to obtain the subscription information.
 
 <QuotePermission command="subscriptions" />
 
-<CliCommand>
-# list active real-time WebSocket subscriptions
-longport subscriptions
-</CliCommand>
-
 <SDKLinks module="quote" klass="QuoteContext" method="subscriptions" />
 
 :::info

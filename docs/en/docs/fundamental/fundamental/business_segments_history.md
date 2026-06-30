@@ -12,11 +12,6 @@ headingLevel: 2
 
 Get historical business segment revenue trends across reporting periods.
 
-<CliCommand>
-longport business-segments AAPL.US --history
-longport business-segments AAPL.US --history --report qf
-</CliCommand>
-
 <SDKLinks module="fundamental" klass="FundamentalContext" method="business_segments_history" />
 
 

@@ -12,11 +12,6 @@ headingLevel: 2
 
 Get the list of key executives (CEO, CFO, etc.) for a company.
 
-<CliCommand>
-longport executive TSLA.US
-longport executive AAPL.US
-</CliCommand>
-
 <SDKLinks module="fundamental" klass="FundamentalContext" method="executives" />
 
 

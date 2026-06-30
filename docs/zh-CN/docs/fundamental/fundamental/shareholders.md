@@ -12,11 +12,6 @@ headingLevel: 2
 
 获取公司主要机构股东和个人股东信息。
 
-<CliCommand>
-longport shareholder TSLA.US
-longport shareholder AAPL.US
-</CliCommand>
-
 <SDKLinks module="fundamental" klass="FundamentalContext" method="shareholders" />
 
 

@@ -12,10 +12,6 @@ headingLevel: 2
 
 獲取股單詳情，包括名稱、描述及成分股列表。
 
-<CliCommand>
-longport sharelist detail 123
-</CliCommand>
-
 <SDKLinks module="sharelist" klass="SharelistContext" method="detail" />
 
 

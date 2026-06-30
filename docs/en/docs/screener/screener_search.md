@@ -16,11 +16,6 @@ Endpoint: `POST /v1/quote/ai/screener/search`
 
 > **Note on JSON output format:** The response uses a flat `items[]` array (not `stocks[]`), all numeric fields are JSON numbers (not strings), and indicator keys do not carry the `filter_` prefix.
 
-<CliCommand>
-longport screener search --strategy-id 42
-longport screener search --market HK --filter filter_marketcap:100:1000
-</CliCommand>
-
 <SDKLinks module="screener" klass="ScreenerContext" method="screener_search" />
 
 

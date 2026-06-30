@@ -9,11 +9,6 @@ This API is used to obtain the daily trading hours of each market.
 
 <QuotePermission command="market-status" />
 
-<CliCommand>
-# trading session schedule for all markets (US, HK, CN, SG)
-longport trading session
-</CliCommand>
-
 <SDKLinks module="quote" klass="QuoteContext" method="trading_session" />
 
 :::info

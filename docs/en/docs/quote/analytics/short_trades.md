@@ -12,11 +12,6 @@ headingLevel: 2
 
 Get daily short sale volume data for a security. Supports US stocks (FINRA/NASDAQ) and HK stocks (HKEX). US data is updated bi-weekly; HK data is updated each trading day.
 
-<CliCommand>
-longport short-trades TSLA.US
-longport short-trades 700.HK --count 30
-</CliCommand>
-
 <SDKLinks module="quote" klass="QuoteContext" method="short_trades" />
 
 

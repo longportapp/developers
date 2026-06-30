@@ -14,11 +14,6 @@ headingLevel: 2
 
 <QuotePermission level="basic" />
 
-<CliCommand>
-# 刪除指定分組（ID 通過 longport watchlist 查詢）
-longport watchlist delete <id>
-</CliCommand>
-
 <SDKLinks module="quote" klass="QuoteContext" method="delete_watchlist_group" />
 
 ## Request

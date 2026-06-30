@@ -12,10 +12,6 @@ headingLevel: 2
 
 永久终止一个定投计划。此操作不可撤销。
 
-<CliCommand>
-longport dca stop 12345
-</CliCommand>
-
 <SDKLinks module="dca" klass="DCAContext" method="stop" />
 
 ## Parameters

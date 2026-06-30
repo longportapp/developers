@@ -12,11 +12,6 @@ headingLevel: 2
 
 获取按市场分组的盈亏分析（美股、港股、A 股、新加坡股）。
 
-<CliCommand>
-longport profit-analysis --format json
-longport profit-analysis --start 2026-01-01
-</CliCommand>
-
 <SDKLinks module="portfolio" klass="PortfolioContext" method="profit_analysis_by_market" />
 
 

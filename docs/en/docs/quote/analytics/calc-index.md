@@ -9,15 +9,6 @@ This API is used to obtain the calculate indexes of securities.
 
 <QuotePermission command="calc-index" />
 
-<CliCommand>
-# PE, PB, EPS and other indexes
-longport calc-index TSLA.US NVDA.US
-# select specific indexes
-longport calc-index AAPL.US --index pe,pb,eps,turnover_rate
-# market cap indexes
-longport calc-index TSLA.US --index pe,total_market_value
-</CliCommand>
-
 <SDKLinks module="quote" klass="QuoteContext" method="calc_indexes" go="CalcIndex" />
 
 :::info

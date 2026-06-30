@@ -12,10 +12,6 @@ headingLevel: 2
 
 獲取賬戶中所有貨幣對的當前外匯匯率。
 
-<CliCommand>
-longport exchange-rate
-</CliCommand>
-
 <SDKLinks module="portfolio" klass="PortfolioContext" method="exchange_rates" />
 
 

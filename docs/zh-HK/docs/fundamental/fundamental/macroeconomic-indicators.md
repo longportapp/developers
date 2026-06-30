@@ -12,13 +12,6 @@ headingLevel: 2
 
 列出 LongPort 支持的宏觀經濟指標，可按國家/地區篩選。
 
-<CliCommand>
-# 列出全部指標
-longport macrodata
-# 篩選美國指標
-longport macrodata --country US
-</CliCommand>
-
 <SDKLinks module="fundamental" klass="FundamentalContext" method="macroeconomic_indicators" />
 
 ## 參數

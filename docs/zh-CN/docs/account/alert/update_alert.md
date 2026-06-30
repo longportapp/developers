@@ -12,13 +12,6 @@ headingLevel: 2
 
 启用或禁用已有的股价提醒。先通过 `list` 获取完整的 `AlertItem`，修改 `item.enabled` 后调用 `update(item)`。
 
-<CliCommand>
-# 启用
-longport alert enable 486469
-# 禁用
-longport alert disable 486469
-</CliCommand>
-
 <SDKLinks module="alert" klass="AlertContext" method="enable" />
 
 

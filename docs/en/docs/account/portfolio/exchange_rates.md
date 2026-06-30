@@ -12,10 +12,6 @@ headingLevel: 2
 
 Get current foreign exchange rates for all currency pairs used in your account.
 
-<CliCommand>
-longport exchange-rate
-</CliCommand>
-
 <SDKLinks module="portfolio" klass="PortfolioContext" method="exchange_rates" />
 
 

@@ -12,11 +12,6 @@ headingLevel: 2
 
 Get operating metrics and financial indicator summaries by report period.
 
-<CliCommand>
-longport operating AAPL.US
-longport operating TSLA.US
-</CliCommand>
-
 <SDKLinks module="fundamental" klass="FundamentalContext" method="operating" />
 
 

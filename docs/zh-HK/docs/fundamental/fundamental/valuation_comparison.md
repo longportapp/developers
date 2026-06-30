@@ -12,11 +12,6 @@ headingLevel: 2
 
 對比多隻股票的估值指標（PE/PB/PS/市值/收盤價）。不傳對比股票時，服務端自動選取同行業標的。
 
-<CliCommand>
-longport compare AAPL.US
-longport compare AAPL.US MSFT.US GOOGL.US
-</CliCommand>
-
 <SDKLinks module="fundamental" klass="FundamentalContext" method="valuation_comparison" />
 
 

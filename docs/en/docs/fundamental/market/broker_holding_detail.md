@@ -12,10 +12,6 @@ headingLevel: 2
 
 Get full broker holding detail list for an HK-listed security (all brokers and their positions).
 
-<CliCommand>
-longport broker-holding detail 700.HK
-</CliCommand>
-
 <SDKLinks module="market" klass="MarketContext" method="broker_holding_detail" />
 
 

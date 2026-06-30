@@ -12,10 +12,6 @@ headingLevel: 2
 
 Get the execution history for a specific DCA plan including trade dates, amounts, and prices.
 
-<CliCommand>
-longport dca history 1225781523156889600
-</CliCommand>
-
 <SDKLinks module="dca" klass="DCAContext" method="history" />
 
 

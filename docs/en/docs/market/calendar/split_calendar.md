@@ -12,11 +12,6 @@ headingLevel: 2
 
 Get upcoming and historical stock split and reverse split events.
 
-<CliCommand>
-longport finance-calendar split
-longport finance-calendar split --market HK
-</CliCommand>
-
 <SDKLinks module="calendar" klass="CalendarContext" method="finance_calendar" />
 
 

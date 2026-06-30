@@ -9,15 +9,6 @@ This API is used to obtain the intraday data of security.
 
 <QuotePermission command="intraday" />
 
-<CliCommand>
-# minute-by-minute intraday data for Tesla
-longport intraday TSLA.US
-# minute-by-minute intraday data for Apple
-longport intraday AAPL.US
-# minute-by-minute intraday data for Tencent
-longport intraday 700.HK
-</CliCommand>
-
 <SDKLinks module="quote" klass="QuoteContext" method="intraday" />
 
 :::info

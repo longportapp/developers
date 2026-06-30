@@ -12,10 +12,6 @@ headingLevel: 2
 
 对股单中的标的重新排序。传入的标的代码列表即为新顺序。
 
-<CliCommand>
-longport sharelist sort 123 TSLA.US AAPL.US 700.HK
-</CliCommand>
-
 <SDKLinks module="sharelist" klass="SharelistContext" method="sort_securities" />
 
 

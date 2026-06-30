@@ -12,10 +12,6 @@ headingLevel: 2
 
 Add one or more securities to a sharelist.
 
-<CliCommand>
-longport sharelist add 123 TSLA.US AAPL.US
-</CliCommand>
-
 <SDKLinks module="sharelist" klass="SharelistContext" method="add_securities" />
 
 

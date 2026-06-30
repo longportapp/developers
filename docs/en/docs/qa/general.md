@@ -43,19 +43,10 @@ You can set the environment variable `LONGPORT_PRINT_QUOTE_PACKAGES` to `false` 
 
 ## Q9: I don't know how to code. How can I access stock data from the LongPort Developers platform?
 
-The platform offers two ways to access stock data without writing any code:
-
-**CLI (Command-line Tool)**
-
-Install the [LongPort CLI](/docs/cli) and query market data with simple commands — no programming required:
-
-<CliCommand>
-longport quote AAPL.US TSLA.US
-longport static NVDA.US
-</CliCommand>
+The platform offers one way to access stock data without writing any code:
 
 **MCP (AI Tool Integration)**
 
 If you use AI tools like Claude, Cursor, or ChatGPT, connect the [LongPort MCP service](/docs/mcp). Once configured, simply ask in plain language and the AI will query market data on your behalf.
 
-Both methods require a LongPort account.
+This method requires a LongPort account.

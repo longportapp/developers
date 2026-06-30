@@ -9,13 +9,6 @@ sidebar_position: 4
 
 <QuotePermission command="warrant" />
 
-<CliCommand>
-# 騰訊相關窩輪實時行情
-longport warrant quote 25228.HK
-# 另一隻騰訊相關窩輪實時行情
-longport warrant quote 24687.HK
-</CliCommand>
-
 <SDKLinks module="quote" klass="QuoteContext" method="warrant_quote" />
 
 :::info

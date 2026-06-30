@@ -12,11 +12,6 @@ headingLevel: 2
 
 獲取即將到來和歷史拆股及合股事件。
 
-<CliCommand>
-longport finance-calendar split
-longport finance-calendar split --market HK
-</CliCommand>
-
 <SDKLinks module="calendar" klass="CalendarContext" method="finance_calendar" />
 
 

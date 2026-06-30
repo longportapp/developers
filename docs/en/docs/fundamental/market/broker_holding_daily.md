@@ -12,10 +12,6 @@ headingLevel: 2
 
 Get daily holding history for a specific broker in an HK-listed security.
 
-<CliCommand>
-longport broker-holding daily 700.HK --broker B01224
-</CliCommand>
-
 <SDKLinks module="market" klass="MarketContext" method="broker_holding_daily" />
 
 

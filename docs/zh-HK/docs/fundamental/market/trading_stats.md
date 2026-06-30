@@ -12,11 +12,6 @@ headingLevel: 2
 
 獲取指定證券的成交統計數據，展示成交量的價格分布。
 
-<CliCommand>
-longport trade-stats 700.HK
-longport trade-stats TSLA.US
-</CliCommand>
-
 <SDKLinks module="market" klass="MarketContext" method="trading_stats" />
 
 

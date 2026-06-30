@@ -12,10 +12,6 @@ headingLevel: 2
 
 暫停一個定投計劃。計劃暫停後可隨時恢復。
 
-<CliCommand>
-longport dca pause 12345
-</CliCommand>
-
 <SDKLinks module="dca" klass="DCAContext" method="pause" />
 
 

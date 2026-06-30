@@ -9,11 +9,6 @@ sidebar_position: 4
 
 <QuotePermission command="subscriptions" />
 
-<CliCommand>
-# 查看當前 WebSocket 實時訂閱狀態
-longport subscriptions
-</CliCommand>
-
 <SDKLinks module="quote" klass="QuoteContext" method="subscriptions" />
 
 :::info

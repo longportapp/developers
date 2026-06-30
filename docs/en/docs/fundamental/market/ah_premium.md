@@ -12,11 +12,6 @@ headingLevel: 2
 
 Get the A/H premium ratio for dual-listed stocks comparing A-share and H-share prices.
 
-<CliCommand>
-longport ah-premium 939.HK
-longport ah-premium 0939.HK
-</CliCommand>
-
 <SDKLinks module="market" klass="MarketContext" method="ah_premium" />
 
 

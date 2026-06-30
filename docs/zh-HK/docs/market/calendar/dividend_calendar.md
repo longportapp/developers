@@ -12,11 +12,6 @@ headingLevel: 2
 
 獲取即將到來和歷史股息事件，包含除息日、派息日和股息金額。
 
-<CliCommand>
-longport finance-calendar dividend
-longport finance-calendar dividend --filter positions
-</CliCommand>
-
 <SDKLinks module="calendar" klass="CalendarContext" method="finance_calendar" />
 
 

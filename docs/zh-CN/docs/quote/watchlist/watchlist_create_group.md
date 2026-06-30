@@ -14,13 +14,6 @@ headingLevel: 2
 
 <QuotePermission level="basic" />
 
-<CliCommand>
-# 创建新的自选股分组
-longport watchlist create "My Portfolio"
-# 创建另一个分组
-longport watchlist create "Tech Stocks"
-</CliCommand>
-
 <SDKLinks module="quote" klass="QuoteContext" method="create_watchlist_group" />
 
 

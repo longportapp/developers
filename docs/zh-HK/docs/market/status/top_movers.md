@@ -12,11 +12,6 @@ headingLevel: 2
 
 獲取價格波動超過近 20 個交易日標準差的異動股票，系統自動關聯相關新聞解讀異動原因。
 
-<CliCommand>
-longport top-movers
-longport top-movers --market HK --sort time
-</CliCommand>
-
 <SDKLinks module="market" klass="MarketContext" method="top_movers" />
 
 

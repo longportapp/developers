@@ -12,11 +12,6 @@ headingLevel: 2
 
 獲取今日認購/認沽期權成交量快照，包含總量、未平倉量和認沽/認購比率。
 
-<CliCommand>
-longport option volume AAPL.US
-longport option volume TSLA.US
-</CliCommand>
-
 <SDKLinks module="quote" klass="QuoteContext" method="option_volume" />
 
 
@@ -31,14 +26,7 @@ longport option volume TSLA.US
 ## Request Example
 
 <Tabs groupId="request-example">
-  <TabItem value="cli" label="CLI" default>
-
-<CliCommand>
-longport option volume AAPL.US
-longport option volume TSLA.US
-</CliCommand>
-
-  </TabItem>
+  
   <TabItem value="python" label="Python">
 
 ```python

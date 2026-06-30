@@ -12,10 +12,6 @@ headingLevel: 2
 
 Permanently delete a sharelist you own. This action cannot be undone.
 
-<CliCommand>
-longport sharelist delete 15921
-</CliCommand>
-
 <SDKLinks module="sharelist" klass="SharelistContext" method="delete_sharelist" />
 
 

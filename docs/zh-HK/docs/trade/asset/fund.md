@@ -11,10 +11,6 @@ headingLevel: 2
 
 該接口用於獲取包括賬戶、基金代碼、持有份額、成本淨值、當前淨值、幣種在內的基金持倉信息。
 
-<CliCommand>
-longport fund-positions
-</CliCommand>
-
 <SDKLinks module="trade" klass="TradeContext" method="fund_positions" />
 
 ## Request

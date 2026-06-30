@@ -9,15 +9,6 @@ sidebar_position: 8
 
 <QuotePermission command="trades" />
 
-<CliCommand>
-# Tesla 最新逐筆成交
-longport trades TSLA.US
-# Apple 最新逐筆成交
-longport trades AAPL.US
-# NVDA 最新逐筆成交
-longport trades NVDA.US
-</CliCommand>
-
 <SDKLinks module="quote" klass="QuoteContext" method="trades" />
 
 :::info

@@ -9,15 +9,6 @@ sidebar_position: 17
 
 <QuotePermission command="capital" />
 
-<CliCommand>
-# Tesla 今日資金流向時序
-longport capital TSLA.US --flow
-# Apple 今日資金流向時序
-longport capital AAPL.US --flow
-# NVDA 今日資金流向時序
-longport capital NVDA.US --flow
-</CliCommand>
-
 <SDKLinks module="quote" klass="QuoteContext" method="capital_flow" />
 
 :::info

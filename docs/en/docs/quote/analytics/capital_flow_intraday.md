@@ -9,15 +9,6 @@ This API is used to obtain the daily capital flow intraday of security.
 
 <QuotePermission command="capital" />
 
-<CliCommand>
-# intraday capital flow time series for Tesla
-longport capital TSLA.US --flow
-# intraday capital flow time series for Apple
-longport capital AAPL.US --flow
-# intraday capital flow time series for NVDA
-longport capital NVDA.US --flow
-</CliCommand>
-
 <SDKLinks module="quote" klass="QuoteContext" method="capital_flow" />
 
 :::info

@@ -12,15 +12,6 @@ headingLevel: 2
 
 获取指定股票的讨论列表。完整社区讨论可访问 [社区](https://longport.com/topics)。
 
-<CliCommand>
-# Tesla 社区讨论帖子
-longport topic TSLA.US
-# Apple 社区讨论帖子
-longport topic AAPL.US
-# NVDA 社区讨论帖子
-longport topic NVDA.US
-</CliCommand>
-
 <SDKLinks module="content" klass="ContentContext" method="topics" />
 
 ## Request

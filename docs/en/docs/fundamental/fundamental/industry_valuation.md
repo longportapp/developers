@@ -12,11 +12,6 @@ headingLevel: 2
 
 Get peer valuation comparison within the same industry.
 
-<CliCommand>
-longport industry-valuation TSLA.US
-longport industry-valuation AAPL.US
-</CliCommand>
-
 <SDKLinks module="fundamental" klass="FundamentalContext" method="industry_valuation" />
 
 

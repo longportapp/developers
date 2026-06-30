@@ -12,11 +12,6 @@ headingLevel: 2
 
 Get all recurring investment (DCA) plans for the current user.
 
-<CliCommand>
-longport dca
-longport dca --status Active
-</CliCommand>
-
 <SDKLinks module="dca" klass="DCAContext" method="list" />
 
 

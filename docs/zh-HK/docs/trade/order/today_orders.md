@@ -12,10 +12,6 @@ headingLevel: 2
 
 該接口用於獲取當日訂單和訂單查詢。
 
-<CliCommand>
-longport order
-</CliCommand>
-
 <SDKLinks module="trade" klass="TradeContext" method="today_orders" />
 
 ## Request

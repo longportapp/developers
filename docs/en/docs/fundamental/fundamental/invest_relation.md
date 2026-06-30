@@ -12,11 +12,6 @@ headingLevel: 2
 
 Get investment relations including parent company, subsidiaries, and major holdings.
 
-<CliCommand>
-longport invest-relation 700.HK
-longport invest-relation AAPL.US
-</CliCommand>
-
 <SDKLinks module="fundamental" klass="FundamentalContext" method="invest_relation" />
 
 

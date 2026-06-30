@@ -12,10 +12,6 @@ headingLevel: 2
 
 獲取當前登錄用戶發布的討論列表，支持分頁與類型過濾。可在 [社區](https://longport.com/topics)查看。
 
-<CliCommand>
-longport topic mine
-</CliCommand>
-
 <SDKLinks module="content" klass="ContentContext" method="topics_mine" />
 
 ## Request
@@ -38,17 +34,6 @@ longport topic mine
 ### Request Example
 
 <Tabs groupId="request-example">
-  <TabItem value="cli" label="CLI" default>
-
-```bash
-longport topic mine                           # 全部類型（默認每頁 50 條）
-longport topic mine --type article            # 僅長文
-longport topic mine --type post --size 10     # 短帖，每頁 10 條
-longport topic mine --page 2                  # 第二頁
-longport topic mine --format json             # JSON 格式，適合腳本處理
-```
-
-  </TabItem>
   <TabItem value="python" label="Python">
 
 ```python

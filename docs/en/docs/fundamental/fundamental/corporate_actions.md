@@ -12,11 +12,6 @@ headingLevel: 2
 
 Get corporate action history (splits, mergers, spin-offs, rights issues) for a security.
 
-<CliCommand>
-longport corp-action TSLA.US
-longport corp-action AAPL.US
-</CliCommand>
-
 <SDKLinks module="fundamental" klass="FundamentalContext" method="corporate_actions" />
 
 

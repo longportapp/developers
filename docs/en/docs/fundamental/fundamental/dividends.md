@@ -12,11 +12,6 @@ headingLevel: 2
 
 Get dividend history and upcoming dividend announcements for a security.
 
-<CliCommand>
-longport dividend TSLA.US
-longport dividend AAPL.US
-</CliCommand>
-
 <SDKLinks module="fundamental" klass="FundamentalContext" method="dividends" />
 
 

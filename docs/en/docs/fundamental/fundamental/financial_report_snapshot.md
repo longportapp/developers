@@ -12,11 +12,6 @@ headingLevel: 2
 
 Get an AI-generated earnings summary, revenue/EBIT/EPS forecast vs actual (beat/miss analysis), and key financial ratios.
 
-<CliCommand>
-longport financial-report snapshot AAPL.US
-longport financial-report snapshot AAPL.US --report qf --year 2024 --period 4
-</CliCommand>
-
 <SDKLinks module="fundamental" klass="FundamentalContext" method="financial_report_snapshot" />
 
 

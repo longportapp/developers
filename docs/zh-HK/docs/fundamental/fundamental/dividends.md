@@ -12,11 +12,6 @@ headingLevel: 2
 
 獲取指定證券的股息歷史及即將公布的股息信息。
 
-<CliCommand>
-longport dividend TSLA.US
-longport dividend AAPL.US
-</CliCommand>
-
 <SDKLinks module="fundamental" klass="FundamentalContext" method="dividends" />
 
 

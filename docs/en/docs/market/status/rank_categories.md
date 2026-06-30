@@ -12,10 +12,6 @@ headingLevel: 2
 
 Get the tag category configuration for the popularity leaderboard. `second_tags[].key` can be passed to `rank_list`.
 
-<CliCommand>
-longport rank
-</CliCommand>
-
 <SDKLinks module="market" klass="MarketContext" method="rank_categories" />
 
 

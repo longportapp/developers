@@ -12,11 +12,6 @@ headingLevel: 2
 
 查看港股券商持仓情况，包含主要买卖方和详细持仓列表。
 
-<CliCommand>
-longport broker-holding 700.HK
-longport broker-holding 9988.HK
-</CliCommand>
-
 <SDKLinks module="market" klass="MarketContext" method="broker_positions" />
 
 

@@ -12,11 +12,6 @@ headingLevel: 2
 
 获取即将到来和历史分红事件，包含除息日、派息日和分红金额。
 
-<CliCommand>
-longport finance-calendar dividend
-longport finance-calendar dividend --filter positions
-</CliCommand>
-
 <SDKLinks module="calendar" klass="CalendarContext" method="finance_calendar" />
 
 

@@ -12,10 +12,6 @@ headingLevel: 2
 
 獲取港股上市證券的完整經紀商持倉詳情列表（所有經紀商及其持倉數量）。
 
-<CliCommand>
-longport broker-holding detail 700.HK
-</CliCommand>
-
 <SDKLinks module="market" klass="MarketContext" method="broker_holding_detail" />
 
 

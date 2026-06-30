@@ -12,11 +12,6 @@ headingLevel: 2
 
 Add, remove, or reorder securities in a sharelist, or rename it.
 
-<CliCommand>
-longport sharelist add 15921 TSLA.US NVDA.US AAPL.US
-longport sharelist remove 15921 AAPL.US
-</CliCommand>
-
 <SDKLinks module="sharelist" klass="SharelistContext" method="update_sharelist" />
 
 

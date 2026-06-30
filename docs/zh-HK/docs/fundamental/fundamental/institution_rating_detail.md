@@ -12,11 +12,6 @@ headingLevel: 2
 
 獲取歷史分析師評級及目標價詳情。
 
-<CliCommand>
-longport institution-rating detail TSLA.US
-longport institution-rating detail AAPL.US
-</CliCommand>
-
 <SDKLinks module="fundamental" klass="FundamentalContext" method="institution_rating_detail" />
 
 

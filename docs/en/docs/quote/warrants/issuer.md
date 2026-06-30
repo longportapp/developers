@@ -9,11 +9,6 @@ This API is used to obtain the warrant issuer IDs data (which can be synchronize
 
 <QuotePermission command="warrant" />
 
-<CliCommand>
-# list all warrant issuers in the HK market
-longport warrant issuers
-</CliCommand>
-
 <SDKLinks module="quote" klass="QuoteContext" method="warrant_issuers" />
 
 :::info

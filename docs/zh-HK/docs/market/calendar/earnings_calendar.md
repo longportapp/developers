@@ -12,11 +12,6 @@ headingLevel: 2
 
 瀏覽即將發布的財報及近期業績，包含 EPS 和營收預期。
 
-<CliCommand>
-longport finance-calendar report
-longport finance-calendar report --market US
-</CliCommand>
-
 <SDKLinks module="calendar" klass="CalendarContext" method="finance_calendar" />
 
 

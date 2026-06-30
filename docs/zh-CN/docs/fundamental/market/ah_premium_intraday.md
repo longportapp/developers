@@ -12,10 +12,6 @@ headingLevel: 2
 
 获取两地上市证券的盘中 A/H 溢价时间序列数据。
 
-<CliCommand>
-longport ah-premium intraday 939.HK
-</CliCommand>
-
 <SDKLinks module="market" klass="MarketContext" method="ah_premium_intraday" />
 
 

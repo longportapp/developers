@@ -12,10 +12,6 @@ headingLevel: 2
 
 Get sharelist detail including name, description, and constituent stocks.
 
-<CliCommand>
-longport sharelist detail 123
-</CliCommand>
-
 <SDKLinks module="sharelist" klass="SharelistContext" method="detail" />
 
 

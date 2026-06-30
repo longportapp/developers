@@ -12,11 +12,6 @@ headingLevel: 2
 
 Get the current-period revenue segment breakdown for a listed company.
 
-<CliCommand>
-longport business-segments AAPL.US
-longport business-segments 700.HK
-</CliCommand>
-
 <SDKLinks module="fundamental" klass="FundamentalContext" method="business_segments" />
 
 

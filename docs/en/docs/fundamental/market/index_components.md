@@ -11,11 +11,6 @@ headingLevel: 2
 
 Get the constituent stocks of an index or ETF with sorting options and rise/fall statistics.
 
-<CliCommand>
-longport constituent HSI.HK
-longport constituent SPY.US
-</CliCommand>
-
 <SDKLinks module="market" klass="MarketContext" method="index_components" />
 
 

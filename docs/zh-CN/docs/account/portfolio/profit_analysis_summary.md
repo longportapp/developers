@@ -12,11 +12,6 @@ headingLevel: 2
 
 获取账户盈亏汇总，包含总资产、总盈亏和收益率指标。
 
-<CliCommand>
-longport profit-analysis
-longport profit-analysis --start 2026-01-01
-</CliCommand>
-
 <SDKLinks module="portfolio" klass="PortfolioContext" method="profit_analysis_summary" />
 
 

@@ -12,11 +12,6 @@ headingLevel: 2
 
 Delete a price alert by its ID.
 
-<CliCommand>
-longport alert delete 486469
-longport alert delete 112326
-</CliCommand>
-
 <SDKLinks module="alert" klass="AlertContext" method="delete_alert" />
 
 

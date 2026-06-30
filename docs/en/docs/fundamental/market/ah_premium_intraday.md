@@ -12,10 +12,6 @@ headingLevel: 2
 
 Get intraday A/H premium timeseries data for a dual-listed security.
 
-<CliCommand>
-longport ah-premium intraday 939.HK
-</CliCommand>
-
 <SDKLinks module="market" klass="MarketContext" method="ah_premium_intraday" />
 
 

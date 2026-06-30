@@ -12,13 +12,6 @@ headingLevel: 2
 
 列出 LongPort 支持的宏观经济指标，可按国家/地区筛选。
 
-<CliCommand>
-# 列出全部指标
-longport macrodata
-# 筛选美国指标
-longport macrodata --country US
-</CliCommand>
-
 <SDKLinks module="fundamental" klass="FundamentalContext" method="macroeconomic_indicators" />
 
 ## 参数

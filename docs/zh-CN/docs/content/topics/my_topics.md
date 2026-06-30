@@ -12,10 +12,6 @@ headingLevel: 2
 
 获取当前登录用户发布的讨论列表，支持分页与类型过滤。可在 [社区](https://longport.com/topics)查看。
 
-<CliCommand>
-longport topic mine
-</CliCommand>
-
 <SDKLinks module="content" klass="ContentContext" method="topics_mine" />
 
 ## Request
@@ -38,17 +34,6 @@ longport topic mine
 ### Request Example
 
 <Tabs groupId="request-example">
-  <TabItem value="cli" label="CLI" default>
-
-```bash
-longport topic mine                           # 全部类型（默认每页 50 条）
-longport topic mine --type article            # 仅长文
-longport topic mine --type post --size 10     # 短帖，每页 10 条
-longport topic mine --page 2                  # 第二页
-longport topic mine --format json             # JSON 格式，适合脚本处理
-```
-
-  </TabItem>
   <TabItem value="python" label="Python">
 
 ```python

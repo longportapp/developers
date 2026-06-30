@@ -9,15 +9,6 @@ This API is used to obtain the quotes of HK warrants, and supports sorting and f
 
 <QuotePermission command="warrant" />
 
-<CliCommand>
-# list warrants linked to Tencent
-longport warrant list 700.HK
-# list warrants linked to Alibaba
-longport warrant list 9988.HK
-# list warrants linked to JD.com
-longport warrant list 9618.HK
-</CliCommand>
-
 <SDKLinks module="quote" klass="QuoteContext" method="warrant_list" />
 
 :::info

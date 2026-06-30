@@ -12,11 +12,6 @@ headingLevel: 2
 
 Get all price alerts for the current user, with optional filtering by symbol.
 
-<CliCommand>
-longport alert
-longport alert TSLA.US
-</CliCommand>
-
 <SDKLinks module="alert" klass="AlertContext" method="list_alerts" />
 
 

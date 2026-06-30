@@ -12,11 +12,6 @@ headingLevel: 2
 
 獲取指定證券的詳細盈虧分析，包含交易流水和成本分解。
 
-<CliCommand>
-longport profit-analysis detail TSLA.US
-longport profit-analysis detail AAPL.US
-</CliCommand>
-
 <SDKLinks module="portfolio" klass="PortfolioContext" method="profit_analysis_detail" />
 
 

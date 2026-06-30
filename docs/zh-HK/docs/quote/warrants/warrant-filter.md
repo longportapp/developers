@@ -9,15 +9,6 @@ sidebar_position: 14
 
 <QuotePermission command="warrant" />
 
-<CliCommand>
-# 騰訊相關窩輪列表
-longport warrant list 700.HK
-# 阿里巴巴相關窩輪列表
-longport warrant list 9988.HK
-# 京東相關窩輪列表
-longport warrant list 9618.HK
-</CliCommand>
-
 <SDKLinks module="quote" klass="QuoteContext" method="warrant_list" />
 
 :::info

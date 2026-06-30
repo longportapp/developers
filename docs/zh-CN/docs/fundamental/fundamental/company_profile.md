@@ -12,11 +12,6 @@ headingLevel: 2
 
 获取公司基本资料，包括成立年份、员工人数、总部地址和业务描述。
 
-<CliCommand>
-longport company TSLA.US
-longport company AAPL.US
-</CliCommand>
-
 <SDKLinks module="fundamental" klass="FundamentalContext" method="company_profile" />
 
 

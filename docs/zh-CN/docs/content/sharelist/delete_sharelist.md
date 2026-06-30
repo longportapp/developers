@@ -12,10 +12,6 @@ headingLevel: 2
 
 永久删除您创建的自选股列表，此操作不可撤销。
 
-<CliCommand>
-longport sharelist delete 15921
-</CliCommand>
-
 <SDKLinks module="sharelist" klass="SharelistContext" method="delete_sharelist" />
 
 

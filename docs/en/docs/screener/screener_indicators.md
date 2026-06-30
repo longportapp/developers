@@ -14,11 +14,6 @@ Get all indicator definitions supported by the stock screener, including keys, n
 
 Endpoint: `GET /v1/quote/ai/screener/indicators`
 
-> **SDK response:** The `data` field contains a grouped structure `{"groups": [{...}]}`. The CLI `screener indicators --format json` flattens this to a flat array for convenience.
-
-<CliCommand>
-longport screener indicators
-</CliCommand>
 
 <SDKLinks module="screener" klass="ScreenerContext" method="screener_indicators" />
 
@@ -223,7 +218,6 @@ func main() {
 
 <a id="ScreenerIndicatorsResponse"></a>
 
-The SDK response `data` is a grouped structure. The CLI `--format json` output flattens it to a flat array. The `filter_` prefix is stripped from all `key` values.
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |

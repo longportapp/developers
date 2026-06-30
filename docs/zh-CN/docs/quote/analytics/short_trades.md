@@ -12,11 +12,6 @@ headingLevel: 2
 
 获取个股每日沽空成交量数据，支持美股（FINRA）和港股（HKEX）。美股数据每两周更新一次，港股数据每个交易日更新。
 
-<CliCommand>
-longport short-trades TSLA.US
-longport short-trades 700.HK --count 30
-</CliCommand>
-
 <SDKLinks module="quote" klass="QuoteContext" method="short_trades" />
 
 

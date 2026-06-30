@@ -12,10 +12,6 @@ headingLevel: 2
 
 設置定投計劃的提前提醒時間。支持的值：`1`、`6` 或 `12` 小時。
 
-<CliCommand>
-longport dca set-reminder 12
-</CliCommand>
-
 <SDKLinks module="dca" klass="DCAContext" method="set_reminder" />
 
 

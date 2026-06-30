@@ -14,12 +14,6 @@ headingLevel: 2
 
 Get short interest data for US or HK securities. Market is auto-detected from the symbol suffix: `.HK` → HKEX short position data (daily); others → US FINRA short interest data (bi-monthly).
 
-<CliCommand>
-longport short-positions TSLA.US
-longport short-positions 700.HK
-longport short-positions AAPL.US --count 50
-</CliCommand>
-
 <SDKLinks module="quote" klass="QuoteContext" method="short_positions" />
 
 ## Parameters
@@ -34,15 +28,7 @@ longport short-positions AAPL.US --count 50
 ## Request Example
 
 <Tabs groupId="request-example">
-  <TabItem value="cli" label="CLI" default>
-
-<CliCommand>
-longport short-positions TSLA.US
-longport short-positions 700.HK
-longport short-positions AAPL.US --count 50
-</CliCommand>
-
-  </TabItem>
+  
   <TabItem value="python" label="Python">
 
 ```python

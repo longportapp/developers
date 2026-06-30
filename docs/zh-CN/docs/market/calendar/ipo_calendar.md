@@ -12,11 +12,6 @@ headingLevel: 2
 
 获取即将上市和近期 IPO 信息，包含预计发行价和上市日期。
 
-<CliCommand>
-longport finance-calendar ipo
-longport finance-calendar ipo --market US
-</CliCommand>
-
 <SDKLinks module="calendar" klass="CalendarContext" method="finance_calendar" />
 
 

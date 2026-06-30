@@ -11,10 +11,6 @@ headingLevel: 2
 
 該接口用於獲取資金流入/流出方向、資金類別、資金金額、發生時間、關聯股票代碼和資金流水說明信息。
 
-<CliCommand>
-longport cash-flow
-</CliCommand>
-
 <SDKLinks module="trade" klass="TradeContext" method="cash_flow" />
 
 ## Request

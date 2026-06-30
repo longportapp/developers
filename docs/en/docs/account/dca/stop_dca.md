@@ -12,10 +12,6 @@ headingLevel: 2
 
 Permanently stop a DCA plan. This action cannot be undone.
 
-<CliCommand>
-longport dca stop 12345
-</CliCommand>
-
 <SDKLinks module="dca" klass="DCAContext" method="stop" />
 
 

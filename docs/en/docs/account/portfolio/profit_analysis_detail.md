@@ -12,11 +12,6 @@ headingLevel: 2
 
 Get detailed P&L for a specific security including transaction flow and cost breakdown.
 
-<CliCommand>
-longport profit-analysis detail TSLA.US
-longport profit-analysis detail AAPL.US
-</CliCommand>
-
 <SDKLinks module="portfolio" klass="PortfolioContext" method="profit_analysis_detail" />
 
 

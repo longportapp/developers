@@ -12,11 +12,6 @@ headingLevel: 2
 
 获取指定证券的公司行动历史，包括拆股、合并、分拆和配股等。
 
-<CliCommand>
-longport corp-action TSLA.US
-longport corp-action AAPL.US
-</CliCommand>
-
 <SDKLinks module="fundamental" klass="FundamentalContext" method="corporate_actions" />
 
 

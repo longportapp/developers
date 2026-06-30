@@ -9,15 +9,6 @@ sidebar_position: 2
 
 <QuotePermission command="quote" />
 
-<CliCommand>
-# Tesla 实时行情
-longport quote TSLA.US
-# 同时查询多只美股
-longport quote AAPL.US NVDA.US
-# 混合查询美港股
-longport quote TSLA.US 700.HK AAPL.US
-</CliCommand>
-
 <SDKLinks module="quote" klass="QuoteContext" method="quote" />
 
 :::info

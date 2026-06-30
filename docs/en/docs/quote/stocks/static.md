@@ -9,15 +9,6 @@ This API is used to obtain the basic information of securities.
 
 <QuotePermission command="static" />
 
-<CliCommand>
-# static info for Tesla (name, lot size, shares, etc.)
-longport static TSLA.US
-# static info for multiple US stocks
-longport static AAPL.US NVDA.US
-# static info for US and HK stocks
-longport static TSLA.US 700.HK
-</CliCommand>
-
 <SDKLinks module="quote" klass="QuoteContext" method="static_info" />
 
 :::info

@@ -12,11 +12,6 @@ headingLevel: 2
 
 获取指定证券的分红历史及即将公布的分红信息。
 
-<CliCommand>
-longport dividend TSLA.US
-longport dividend AAPL.US
-</CliCommand>
-
 <SDKLinks module="fundamental" klass="FundamentalContext" method="dividends" />
 
 

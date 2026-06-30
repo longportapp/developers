@@ -12,11 +12,6 @@ headingLevel: 2
 
 Get a P&L summary for the account including total asset, total P&L, and yield metrics.
 
-<CliCommand>
-longport profit-analysis
-longport profit-analysis --start 2026-01-01
-</CliCommand>
-
 <SDKLinks module="portfolio" klass="PortfolioContext" method="profit_analysis_summary" />
 
 

@@ -12,10 +12,6 @@ headingLevel: 2
 
 Get DCA statistics summary including total invested amount and profit/loss.
 
-<CliCommand>
-longport dca stats
-</CliCommand>
-
 <SDKLinks module="dca" klass="DCAContext" method="stats" />
 
 

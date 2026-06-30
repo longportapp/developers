@@ -12,10 +12,6 @@ headingLevel: 2
 
 Create a new community stock list with an optional initial set of securities.
 
-<CliCommand>
-longport sharelist create --name "AI Picks" --description "Top AI infrastructure stocks"
-</CliCommand>
-
 <SDKLinks module="sharelist" klass="SharelistContext" method="create_sharelist" />
 
 

@@ -12,11 +12,6 @@ headingLevel: 2
 
 Create a new price alert for a security when it rises above or falls below a target price.
 
-<CliCommand>
-longport alert add TSLA.US --price 300 --direction rise
-longport alert add AAPL.US --price 150 --direction fall
-</CliCommand>
-
 <SDKLinks module="alert" klass="AlertContext" method="create_alert" />
 
 

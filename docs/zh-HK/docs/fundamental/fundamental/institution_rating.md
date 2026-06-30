@@ -12,11 +12,6 @@ headingLevel: 2
 
 獲取分析師機構評級快照（評級分佈及平均目標價）。
 
-<CliCommand>
-longport institution-rating TSLA.US
-longport institution-rating AAPL.US
-</CliCommand>
-
 <SDKLinks module="fundamental" klass="FundamentalContext" method="institution_rating" />
 
 

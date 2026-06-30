@@ -11,10 +11,6 @@ headingLevel: 2
 
 该接口用于获取股票初始保证金比例、维持保证金比例、强平保证金比例。
 
-<CliCommand>
-longport margin-ratio TSLA.US
-</CliCommand>
-
 <SDKLinks module="trade" klass="TradeContext" method="margin_ratio" />
 
 ## Request

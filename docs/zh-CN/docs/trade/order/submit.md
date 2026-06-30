@@ -8,11 +8,6 @@ headingLevel: 3
 
 该接口用于港美股，窝轮，期权的委托下单。
 
-<CliCommand>
-longport order buy TSLA.US 100 --price 250.00
-longport order sell TSLA.US 100 --price 260.00
-</CliCommand>
-
 <SDKLinks module="trade" klass="TradeContext" method="submit_order" />
 
 ## Request

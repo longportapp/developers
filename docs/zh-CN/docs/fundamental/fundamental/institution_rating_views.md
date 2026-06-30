@@ -12,11 +12,6 @@ headingLevel: 2
 
 获取按月统计的机构评级（买入/持有/卖出）分布时间线，最新月份在前。
 
-<CliCommand>
-longport institution-rating AAPL.US --views
-longport institution-rating TSLA.US --views
-</CliCommand>
-
 <SDKLinks module="fundamental" klass="FundamentalContext" method="institution_rating_views" />
 
 

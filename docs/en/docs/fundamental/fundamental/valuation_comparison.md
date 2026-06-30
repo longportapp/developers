@@ -12,11 +12,6 @@ headingLevel: 2
 
 Compare valuation metrics (PE/PB/PS/market cap/close price) across multiple stocks. When no comparison symbols are provided, the server automatically selects peers from the same industry.
 
-<CliCommand>
-longport compare AAPL.US
-longport compare AAPL.US MSFT.US GOOGL.US
-</CliCommand>
-
 <SDKLinks module="fundamental" klass="FundamentalContext" method="valuation_comparison" />
 
 

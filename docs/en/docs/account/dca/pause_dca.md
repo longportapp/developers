@@ -12,10 +12,6 @@ headingLevel: 2
 
 Temporarily pause a DCA plan. The plan can be resumed later.
 
-<CliCommand>
-longport dca pause 12345
-</CliCommand>
-
 <SDKLinks module="dca" klass="DCAContext" method="pause" />
 
 

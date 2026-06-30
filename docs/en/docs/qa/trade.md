@@ -31,7 +31,6 @@ After placing orders via the OpenAPI, you can view them through any of the follo
 
 - **Order inquiry API**: Call the API to query real-time order status
 - **WebSocket push**: Subscribe to trade push events to receive order updates in real time
-- **CLI**: Use the [LongPort CLI](/docs/cli) to query from the command line, e.g. `longport orders`
 - **App / PC**: View orders and their statuses directly in the terminal products
 
 ## Q7: How can I know if my account has sufficient funds for trading?

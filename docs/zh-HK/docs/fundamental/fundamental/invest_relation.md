@@ -12,11 +12,6 @@ headingLevel: 2
 
 獲取投資關係數據，包括母公司、子公司及主要持股。
 
-<CliCommand>
-longport invest-relation 700.HK
-longport invest-relation AAPL.US
-</CliCommand>
-
 <SDKLinks module="fundamental" klass="FundamentalContext" method="invest_relation" />
 
 

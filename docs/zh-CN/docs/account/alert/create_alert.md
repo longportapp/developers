@@ -12,11 +12,6 @@ headingLevel: 2
 
 为指定证券创建股价提醒，当价格高于或低于目标价时触发通知。
 
-<CliCommand>
-longport alert add TSLA.US --price 300 --direction rise
-longport alert add AAPL.US --price 150 --direction fall
-</CliCommand>
-
 <SDKLinks module="alert" klass="AlertContext" method="create_alert" />
 
 

@@ -12,13 +12,6 @@ headingLevel: 2
 
 啟用或禁用已有的股價提醒。
 
-<CliCommand>
-# 啟用
-longport alert enable 486469
-# 停用
-longport alert disable 486469
-</CliCommand>
-
 <SDKLinks module="alert" klass="AlertContext" method="enable" />
 
 

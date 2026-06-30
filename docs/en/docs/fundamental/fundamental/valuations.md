@@ -12,11 +12,6 @@ headingLevel: 2
 
 Get current valuation metrics (P/E, P/B, P/S, dividend yield) with 5-year historical context.
 
-<CliCommand>
-longport valuation TSLA.US --indicator pe
-longport valuation AAPL.US
-</CliCommand>
-
 <SDKLinks module="fundamental" klass="FundamentalContext" method="valuations" />
 
 

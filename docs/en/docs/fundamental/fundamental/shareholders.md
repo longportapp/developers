@@ -12,11 +12,6 @@ headingLevel: 2
 
 Get the top institutional and individual shareholders of a company.
 
-<CliCommand>
-longport shareholder TSLA.US
-longport shareholder AAPL.US
-</CliCommand>
-
 <SDKLinks module="fundamental" klass="FundamentalContext" method="shareholders" />
 
 

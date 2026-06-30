@@ -12,11 +12,6 @@ headingLevel: 2
 
 获取当前用户的所有股价提醒，支持按标的筛选。
 
-<CliCommand>
-longport alert
-longport alert TSLA.US
-</CliCommand>
-
 <SDKLinks module="alert" klass="AlertContext" method="list_alerts" />
 
 

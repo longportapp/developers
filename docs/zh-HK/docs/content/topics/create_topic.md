@@ -17,7 +17,7 @@ headingLevel: 2
 | `post`（默認） | 可選 | 純文本 | Markdown 語法（如 `**加粗**`、`# 標題`）**不會渲染**，將作為字面字符顯示，類似發推文。 |
 | `article` | **必填** | Markdown | 服務端將 Markdown 轉為 HTML 展示，支持標題、表格、加粗、代碼塊等。 |
 
-僅限 **LongPort 開戶且持有資產** 的用戶才允許通過 LongPort Developers 的 API 或 CLI 發布社區討論和回覆。否則返回 `403`。
+僅限 **LongPort 開戶且持有資產** 的用戶才允許通過 LongPort Developers 的 API 發布社區討論和回覆。否則返回 `403`。
 
 <TipContainer type="tip">
 正文中提到的標的代碼（如 `700.HK`、`TSLA.US`）會被平台自動識別並關聯為相關標的。`tickers` 字段用於補充正文中未顯式提及的標的。
@@ -28,13 +28,6 @@ headingLevel: 2
 **頻率限制：** 同一用戶每分鐘最多創建 3 篇，24 小時內最多 10 篇，超出返回 `429`。
 
 > ⚠️ 以上頻率限制規則僅供參考，平台可能隨時進行內部調整。
-
-<CliCommand>
-# 發佈 Tesla 相關話題
-longport topic create --body "Tesla Q1 財報分析" --tickers TSLA.US
-# 發佈 Apple 相關話題
-longport topic create --body "Apple WWDC 前瞻" --tickers AAPL.US
-</CliCommand>
 
 <SDKLinks module="content" klass="ContentContext" method="create_topic" />
 
@@ -60,26 +53,6 @@ longport topic create --body "Apple WWDC 前瞻" --tickers AAPL.US
 ### Request Example
 
 <Tabs groupId="request-example">
-  <TabItem value="cli" label="CLI" default>
-
-```bash
-# 短帖 — 純文本（默認），Markdown 不渲染
-longport topic create --body "今天看好 700.HK"
-
-# 短帖 + 關聯標的
-longport topic create --body "NVDA GTC 看點" --tickers NVDA.US,700.HK
-
-# 長文 — 支持 Markdown，必須填寫標題
-longport topic create --title "我的分析" --body "**看好** 700.HK，因為..." --type article
-
-# 長文 — 從 Markdown 文件讀取正文
-longport topic create --title "Q4 財報前瞻" --body "$(cat analysis.md)" --type article
-
-# JSON 輸出
-longport topic create --body "測試帖" --format json
-```
-
-  </TabItem>
   <TabItem value="python" label="Python">
 
 ```python

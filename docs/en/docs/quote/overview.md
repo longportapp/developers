@@ -123,7 +123,7 @@ The security code uses the `ticker.region` format, `ticker` represents the code,
 - HK Market: `region` is `HK`, for example: `700.HK`.
 - CN Market: `region` is `SH` for Shanghai Stock Exchange and `SZ` for Shenzhen Stock Exchange, for example: `399001.SZ`, `600519.SH`.
 
-> **Singapore Market (SG):** Real-time quotes for Singapore securities are not currently available via LongPort Developers (API / CLI / MCP). Please use the [LongPort App or desktop client](https://longport.com/download) to check SG market quotes.
+> **Singapore Market (SG):** Real-time quotes for Singapore securities are not currently available via LongPort Developers (API / MCP). Please use the [LongPort App or desktop client](https://longport.com/download) to check SG market quotes.
 
 ## Access Method
 

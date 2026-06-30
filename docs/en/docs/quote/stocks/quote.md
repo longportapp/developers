@@ -9,15 +9,6 @@ This API is used to obtain the real-time quotes of securities, and supports all 
 
 <QuotePermission command="quote" />
 
-<CliCommand>
-# real-time quote for Tesla
-longport quote TSLA.US
-# query multiple US stocks at once
-longport quote AAPL.US NVDA.US
-# mix US and HK stocks
-longport quote TSLA.US 700.HK AAPL.US
-</CliCommand>
-
 <SDKLinks module="quote" klass="QuoteContext" method="quote" />
 
 :::info

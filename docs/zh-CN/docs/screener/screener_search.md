@@ -16,11 +16,6 @@ headingLevel: 2
 
 > **JSON 输出格式说明：** 响应使用扁平的 `items[]` 数组（非 `stocks[]`），所有数值字段为 JSON 数字类型（非字符串），指标键名不含 `filter_` 前缀。
 
-<CliCommand>
-longport screener search --strategy-id 42
-longport screener search --market HK --filter filter_marketcap:100:1000
-</CliCommand>
-
 <SDKLinks module="screener" klass="ScreenerContext" method="screener_search" />
 
 

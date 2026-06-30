@@ -9,15 +9,6 @@ sidebar_position: 19
 
 <QuotePermission command="calc-index" />
 
-<CliCommand>
-# PE、PB、EPS 等核心指標
-longport calc-index TSLA.US NVDA.US
-# 指定查詢的指標
-longport calc-index AAPL.US --index pe,pb,eps,turnover_rate
-# 市值相關指標
-longport calc-index TSLA.US --index pe,total_market_value
-</CliCommand>
-
 <SDKLinks module="quote" klass="QuoteContext" method="calc_indexes" go="CalcIndex" />
 
 :::info

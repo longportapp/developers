@@ -17,7 +17,7 @@ Create a new community topic on [Topics](https://longport.com/topics). Two conte
 | `post` (default) | Optional     | Plain text only | Markdown syntax (e.g. `**bold**`, `# heading`) is NOT rendered — it appears as literal characters, similar to a tweet. |
 | `article`        | **Required** | Markdown        | The server converts Markdown to HTML for display. Supports headers, tables, bold, code blocks, etc.                    |
 
-Only users who have opened a **LongPort account and hold assets** are allowed to publish community topics and replies via LongPort Developers API or CLI. Returns `403` otherwise.
+Only users who have opened a **LongPort account and hold assets** are allowed to publish community topics and replies via LongPort Developers API. Returns `403` otherwise.
 
 <TipContainer type="tip">
 Stock symbols mentioned in the body (e.g. `700.HK`, `TSLA.US`) are automatically recognized and linked as related stocks by the platform. Use `tickers` to associate additional symbols not explicitly mentioned in the body.
@@ -28,13 +28,6 @@ Stock symbols mentioned in the body (e.g. `700.HK`, `TSLA.US`) are automatically
 **Rate limit:** Max 3 topics per user per minute and 10 per 24 hours. Exceeding the limit returns `429`.
 
 > ⚠️ Rate limit thresholds are for reference only and may be adjusted by the platform at any time.
-
-<CliCommand>
-# publish a topic for Tesla
-longport topic create --body "Tesla Q1 earnings analysis" --tickers TSLA.US
-# publish a topic for Apple
-longport topic create --body "Apple WWDC preview" --tickers AAPL.US
-</CliCommand>
 
 <SDKLinks module="content" klass="ContentContext" method="create_topic" />
 
@@ -60,22 +53,7 @@ longport topic create --body "Apple WWDC preview" --tickers AAPL.US
 ### Request Example
 
 <Tabs groupId="request-example">
-  <TabItem value="cli" label="CLI" default>
-
-<CliCommand>
-# Short post — plain text (default). Markdown is NOT rendered.
-longport topic create --body "Bullish on 700.HK today"
-# Short post with related tickers
-longport topic create --body "NVDA GTC highlights" --tickers NVDA.US,700.HK
-# Article — Markdown body, title is required
-longport topic create --title "My Analysis" --body "**Bullish** on 700.HK because..." --type article
-# Article from a Markdown file
-longport topic create --title "Q4 Earnings Preview" --body "$(cat analysis.md)" --type article
-# JSON output
-longport topic create --body "Test post" --format json
-</CliCommand>
-
-  </TabItem>
+  
   <TabItem value="python" label="Python">
 
 ```python

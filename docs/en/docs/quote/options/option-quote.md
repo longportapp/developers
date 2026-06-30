@@ -9,13 +9,6 @@ This API is used to obtain the real-time quotes of US stock options, including t
 
 <QuotePermission command="option" />
 
-<CliCommand>
-# AAPL call option $250 strike expiry 2026-04-17
-longport option quote AAPL260417C250000.US
-# TSLA put option $350 strike expiry 2026-04-18
-longport option quote TSLA260418P350000.US
-</CliCommand>
-
 <SDKLinks module="quote" klass="QuoteContext" method="option_quote" />
 
 :::info

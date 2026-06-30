@@ -12,10 +12,6 @@ headingLevel: 2
 
 獲取社區熱門股單列表。
 
-<CliCommand>
-longport sharelist popular --count 10
-</CliCommand>
-
 <SDKLinks module="sharelist" klass="SharelistContext" method="popular" />
 
 

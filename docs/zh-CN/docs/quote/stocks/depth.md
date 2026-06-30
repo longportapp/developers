@@ -9,15 +9,6 @@ sidebar_position: 5
 
 <QuotePermission command="depth" />
 
-<CliCommand>
-# Tesla Level 2 盘口
-longport depth TSLA.US
-# Apple Level 2 盘口
-longport depth AAPL.US
-# 腾讯 Level 2 盘口（港股）
-longport depth 700.HK
-</CliCommand>
-
 <SDKLinks module="quote" klass="QuoteContext" method="depth" />
 
 :::info

@@ -9,15 +9,6 @@ sidebar_position: 6
 
 <QuotePermission command="trading" />
 
-<CliCommand>
-# 港股未來交易日
-longport trading days HK
-# 美股未來交易日
-longport trading days US
-# A 股未來交易日
-longport trading days CN
-</CliCommand>
-
 <SDKLinks module="quote" klass="QuoteContext" method="trading_days" />
 
 :::info

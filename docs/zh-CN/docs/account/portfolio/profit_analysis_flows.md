@@ -12,11 +12,6 @@ headingLevel: 2
 
 查询账户资金流水历史，包含入金、出金、分红和结算等。
 
-<CliCommand>
-longport cash-flow
-longport cash-flow --format json
-</CliCommand>
-
 <SDKLinks module="portfolio" klass="PortfolioContext" method="profit_analysis_flows" />
 
 

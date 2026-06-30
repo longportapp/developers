@@ -12,11 +12,6 @@ headingLevel: 2
 
 Get historical analyst rating and target price details.
 
-<CliCommand>
-longport institution-rating detail TSLA.US
-longport institution-rating detail AAPL.US
-</CliCommand>
-
 <SDKLinks module="fundamental" klass="FundamentalContext" method="institution_rating_detail" />
 
 

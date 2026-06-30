@@ -14,15 +14,6 @@ Update watched group
 
 <QuotePermission level="basic" />
 
-<CliCommand>
-# add symbols to a group
-longport watchlist update <id> --add TSLA.US --add AAPL.US
-# remove a symbol from a group
-longport watchlist update <id> --remove NVDA.US
-# add and remove at the same time
-longport watchlist update <id> --add TSLA.US --remove AAPL.US
-</CliCommand>
-
 <SDKLinks module="quote" klass="QuoteContext" method="update_watchlist_group" />
 
 ## Request

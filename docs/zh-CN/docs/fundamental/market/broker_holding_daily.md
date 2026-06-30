@@ -12,10 +12,6 @@ headingLevel: 2
 
 获取某一经纪商在港股上市证券中的每日持仓历史记录。
 
-<CliCommand>
-longport broker-holding daily 700.HK --broker B01224
-</CliCommand>
-
 <SDKLinks module="market" klass="MarketContext" method="broker_holding_daily" />
 
 

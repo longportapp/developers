@@ -12,10 +12,6 @@ headingLevel: 2
 
 根据给定的定投计划参数，计算下一次预计交易日期。
 
-<CliCommand>
-longport dca calc-date AAPL.US --frequency monthly --day-of-month 15
-</CliCommand>
-
 <SDKLinks module="dca" klass="DCAContext" method="calc_date" />
 
 

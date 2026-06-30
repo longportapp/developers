@@ -12,11 +12,6 @@ headingLevel: 2
 
 獲取 AI 生成的財報摘要、營收/EBIT/EPS 預測對比（超預期/低於預期），以及關鍵財務指標。
 
-<CliCommand>
-longport financial-report snapshot AAPL.US
-longport financial-report snapshot AAPL.US --report qf --year 2024 --period 4
-</CliCommand>
-
 <SDKLinks module="fundamental" klass="FundamentalContext" method="financial_report_snapshot" />
 
 

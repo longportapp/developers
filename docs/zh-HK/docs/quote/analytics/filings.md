@@ -14,15 +14,6 @@ headingLevel: 2
 
 <QuotePermission level="basic" />
 
-<CliCommand>
-# Apple 監管文件和公告
-longport filing list AAPL.US
-# Tesla 監管文件和公告
-longport filing list TSLA.US
-# NVDA 監管文件和公告
-longport filing list NVDA.US
-</CliCommand>
-
 <SDKLinks module="quote" klass="QuoteContext" method="filings" />
 
 ## Request

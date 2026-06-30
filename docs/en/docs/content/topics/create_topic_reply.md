@@ -12,7 +12,7 @@ headingLevel: 2
 
 Post a reply to a community topic. Supports nesting under an existing reply. Browse the community on [Topics](https://longport.com/topics).
 
-Only users who have opened a **[LongPort account](https://longport.com/hk/download) and hold assets** are allowed to publish community topics and replies via LongPort Developers API or CLI. Returns `403` otherwise.
+Only users who have opened a **[LongPort account](https://longport.com/hk/download) and hold assets** are allowed to publish community topics and replies via LongPort Developers API. Returns `403` otherwise.
 
 **Body format:** Plain text only — HTML and Markdown are **not** rendered.
 
@@ -37,10 +37,6 @@ Stock symbols mentioned in the body (e.g. `700.HK`, `TSLA.US`) are automatically
 Exceeding the limit returns `429`.
 
 > ⚠️ Rate limit thresholds are for reference only and may be adjusted by the platform at any time.
-
-<CliCommand>
-longport topic create-reply 6993508780031016960 --body "Great analysis!"
-</CliCommand>
 
 <SDKLinks module="content" klass="ContentContext" method="create_topic_reply" />
 
@@ -69,16 +65,7 @@ longport topic create-reply 6993508780031016960 --body "Great analysis!"
 ### Request Example
 
 <Tabs groupId="request-example">
-  <TabItem value="cli" label="CLI" default>
-
-<CliCommand>
-# Top-level reply
-longport topic create-reply 6993508780031016960 --body "Great analysis!"
-# Nested reply
-longport topic create-reply 6993508780031016960 --body "I agree." --reply-to 7001234567890123456
-</CliCommand>
-
-  </TabItem>
+  
   <TabItem value="python" label="Python">
 
 ```python

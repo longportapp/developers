@@ -8,15 +8,6 @@ sidebar_position: 3
 
 <QuotePermission command="market-temp" />
 
-<CliCommand>
-# 港股 2025 年 Q1 历史温度
-longport market-temp HK --history --start 2025-01-01 --end 2025-03-31
-# 美股 2025 年 1 月历史温度
-longport market-temp US --history --start 2025-01-01 --end 2025-01-31
-# A 股 2025 年上半年历史温度
-longport market-temp CN --history --start 2025-01-01 --end 2025-06-30
-</CliCommand>
-
 <SDKLinks module="quote" klass="QuoteContext" method="history_market_temperature" />
 
 ## Request

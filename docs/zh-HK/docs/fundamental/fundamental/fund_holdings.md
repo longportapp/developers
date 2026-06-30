@@ -12,11 +12,6 @@ headingLevel: 2
 
 獲取持有指定證券的基金列表，含持股數量和持股比例。
 
-<CliCommand>
-longport fund-holder TSLA.US
-longport fund-holder AAPL.US
-</CliCommand>
-
 <SDKLinks module="fundamental" klass="FundamentalContext" method="fund_holdings" />
 
 

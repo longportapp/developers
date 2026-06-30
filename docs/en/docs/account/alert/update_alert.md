@@ -12,13 +12,6 @@ headingLevel: 2
 
 Enable or disable an existing price alert. First call `list` to obtain the full `AlertItem`, set `item.enabled` to `True` or `False`, then call `update(item)`.
 
-<CliCommand>
-# Enable an alert
-longport alert enable 486469
-# Disable an alert
-longport alert disable 486469
-</CliCommand>
-
 <SDKLinks module="alert" klass="AlertContext" method="enable" />
 
 

@@ -10,7 +10,7 @@ sidebar_position: 1
 
 **1. 背景**
 
-LongPort AI Technology Pte. Ltd. 及其关联公司（统称"**LongPort**"）通过封装行情数据、账户功能及相关服务，并以 CLI 工具、MCP 集成以及其他开发者工具和服务的形式提供给用户（统称"**LongPort Developers**"）。
+LongPort AI Technology Pte. Ltd. 及其关联公司（统称"**LongPort**"）通过封装行情数据、账户功能及相关服务，并以 MCP 集成以及其他开发者工具和服务的形式提供给用户（统称"**LongPort Developers**"）。
 
 您可根据自身需要访问和调用相关接口，并将其与所选第三方 AI 终端或应用程序（包括但不限于 OpenClaw、Claude Code、Cursor 及类似工具）集成（"**Third-Party AI Terminals**"）。安装并成功连接后，用户可通过此类第三方终端或应用程序与 LongPort Platform 和/或其平台账户或证券账户（如适用）进行交互。
 

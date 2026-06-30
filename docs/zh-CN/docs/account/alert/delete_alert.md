@@ -12,11 +12,6 @@ headingLevel: 2
 
 根据 ID 删除指定的股价提醒。
 
-<CliCommand>
-longport alert delete 486469
-longport alert delete 112326
-</CliCommand>
-
 <SDKLinks module="alert" klass="AlertContext" method="delete_alert" />
 
 

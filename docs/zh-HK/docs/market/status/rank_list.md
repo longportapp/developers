@@ -13,11 +13,6 @@ headingLevel: 2
 根據排行榜標籤 key 獲取股票排行。key 來自 `rank_categories` 的 `second_tags[].key`，例如 `hot_all-us`（美股總熱度）。
 
 
-<CliCommand>
-longport rank --key hot_all-us
-longport rank --key hot_all-hk
-</CliCommand>
-
 <SDKLinks module="market" klass="MarketContext" method="rank_list" />
 
 

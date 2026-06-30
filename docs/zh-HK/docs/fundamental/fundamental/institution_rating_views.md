@@ -12,11 +12,6 @@ headingLevel: 2
 
 獲取按月統計的機構評級（買入/持有/賣出）分佈時間線，最新月份在前。
 
-<CliCommand>
-longport institution-rating AAPL.US --views
-longport institution-rating TSLA.US --views
-</CliCommand>
-
 <SDKLinks module="fundamental" klass="FundamentalContext" method="institution_rating_views" />
 
 

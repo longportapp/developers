@@ -9,15 +9,6 @@ This API is used to obtain the depth data of security.
 
 <QuotePermission command="depth" />
 
-<CliCommand>
-# Level 2 order book for Tesla
-longport depth TSLA.US
-# Level 2 order book for Apple
-longport depth AAPL.US
-# Level 2 order book for Tencent (HK)
-longport depth 700.HK
-</CliCommand>
-
 <SDKLinks module="quote" klass="QuoteContext" method="depth" />
 
 :::info

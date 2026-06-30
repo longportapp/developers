@@ -12,10 +12,6 @@ headingLevel: 2
 
 获取定投统计汇总信息，包括总投入金额和盈亏情况。
 
-<CliCommand>
-longport dca stats
-</CliCommand>
-
 <SDKLinks module="dca" klass="DCAContext" method="stats" />
 
 

@@ -12,11 +12,6 @@ headingLevel: 2
 
 獲取上市公司當前報告期的業務分部收入佔比。
 
-<CliCommand>
-longport business-segments AAPL.US
-longport business-segments 700.HK
-</CliCommand>
-
 <SDKLinks module="fundamental" klass="FundamentalContext" method="business_segments" />
 
 

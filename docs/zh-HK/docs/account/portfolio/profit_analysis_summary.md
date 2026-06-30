@@ -12,11 +12,6 @@ headingLevel: 2
 
 獲取賬戶盈虧匯總，包含總資產、總盈虧和收益率指標。
 
-<CliCommand>
-longport profit-analysis
-longport profit-analysis --start 2026-01-01
-</CliCommand>
-
 <SDKLinks module="portfolio" klass="PortfolioContext" method="profit_analysis_summary" />
 
 

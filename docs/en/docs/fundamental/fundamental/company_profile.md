@@ -12,11 +12,6 @@ headingLevel: 2
 
 Get a company's profile information including founding year, employee count, headquarters, and description.
 
-<CliCommand>
-longport company TSLA.US
-longport company AAPL.US
-</CliCommand>
-
 <SDKLinks module="fundamental" klass="FundamentalContext" method="company_profile" />
 
 

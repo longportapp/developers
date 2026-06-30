@@ -12,13 +12,6 @@ headingLevel: 2
 
 Get historical releases for a specific macroeconomic indicator — actual values, forecasts, previous values, and next release dates.
 
-<CliCommand>
-# Historical data for Non-Farm Payroll
-longport macrodata 62267
-# Date range filter
-longport macrodata 62267 --start 2024-01-01 --end 2024-12-31
-</CliCommand>
-
 <SDKLinks module="fundamental" klass="FundamentalContext" method="macroeconomic" />
 
 ## Parameters

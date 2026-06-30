@@ -9,13 +9,6 @@ This API is used to obtain a list of option securities by the option chain expir
 
 <QuotePermission level="basic" />
 
-<CliCommand>
-# AAPL strike prices for 2026-04-17 expiry
-longport option chain AAPL.US --date 2026-04-17
-# TSLA strike prices for 2026-04-17 expiry
-longport option chain TSLA.US --date 2026-04-17
-</CliCommand>
-
 <SDKLinks module="quote" klass="QuoteContext" method="option_chain_info_by_date" />
 
 :::info

@@ -12,11 +12,6 @@ headingLevel: 2
 
 Create a new recurring investment plan for a security.
 
-<CliCommand>
-longport dca create AAPL.US --amount 500 --frequency monthly --day-of-month 15
-longport dca create TSLA.US --amount 200 --frequency weekly --day-of-week mon
-</CliCommand>
-
 <SDKLinks module="dca" klass="DCAContext" method="create" />
 
 

@@ -12,10 +12,6 @@ headingLevel: 2
 
 Get the current open/close status for each exchange.
 
-<CliCommand>
-longport market-status
-</CliCommand>
-
 <SDKLinks module="market" klass="MarketContext" method="market_status" />
 
 

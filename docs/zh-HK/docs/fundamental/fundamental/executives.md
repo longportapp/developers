@@ -12,11 +12,6 @@ headingLevel: 2
 
 獲取公司關鍵高管列表（CEO、CFO 等）。
 
-<CliCommand>
-longport executive TSLA.US
-longport executive AAPL.US
-</CliCommand>
-
 <SDKLinks module="fundamental" klass="FundamentalContext" method="executives" />
 
 

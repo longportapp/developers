@@ -12,11 +12,6 @@ headingLevel: 2
 
 獲取單個股東的持倉歷史及交易明細。`object_id` 來自 `shareholder_top` 返回結果。
 
-<CliCommand>
-longport shareholder AAPL.US --object-id 19463
-longport shareholder 700.HK --object-id 20181
-</CliCommand>
-
 <SDKLinks module="fundamental" klass="FundamentalContext" method="shareholder_detail" />
 
 

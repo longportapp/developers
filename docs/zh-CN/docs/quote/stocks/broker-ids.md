@@ -9,11 +9,6 @@ sidebar_position: 7
 
 <QuotePermission level="basic" />
 
-<CliCommand>
-# 港股所有做市商券商 ID 和名称
-longport participants
-</CliCommand>
-
 <SDKLinks module="quote" klass="QuoteContext" method="participants" />
 
 :::info

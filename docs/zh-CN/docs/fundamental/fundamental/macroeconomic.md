@@ -12,13 +12,6 @@ headingLevel: 2
 
 获取指定宏观经济指标的历史发布数据，包括实际值、预测值、前值和下次发布时间。
 
-<CliCommand>
-# 查询非农就业人数历史数据
-longport macrodata 62267
-# 指定日期范围
-longport macrodata 62267 --start 2024-01-01 --end 2024-12-31
-</CliCommand>
-
 <SDKLinks module="fundamental" klass="FundamentalContext" method="macroeconomic" />
 
 ## 参数

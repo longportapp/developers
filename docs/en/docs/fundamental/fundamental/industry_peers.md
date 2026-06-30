@@ -12,11 +12,6 @@ headingLevel: 2
 
 Get the hierarchical sub-sector tree for an industry group, including stock count, daily change, and YTD change at each node. Counter IDs come from `industry_rank`.
 
-<CliCommand>
-longport industry-peers BK/US/IN00258
-longport industry-peers BK/HK/IN20337
-</CliCommand>
-
 <SDKLinks module="fundamental" klass="FundamentalContext" method="industry_peers" />
 
 

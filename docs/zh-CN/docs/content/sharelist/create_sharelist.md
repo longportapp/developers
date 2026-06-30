@@ -12,10 +12,6 @@ headingLevel: 2
 
 创建新的社区自选股列表，可选择预设初始证券。
 
-<CliCommand>
-longport sharelist create --name "AI Picks" --description "Top AI infrastructure stocks"
-</CliCommand>
-
 <SDKLinks module="sharelist" klass="SharelistContext" method="create_sharelist" />
 
 

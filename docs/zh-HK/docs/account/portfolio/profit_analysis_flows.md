@@ -12,11 +12,6 @@ headingLevel: 2
 
 查詢賬戶資金流水歷史，包含入金、出金、股息和結算等。
 
-<CliCommand>
-longport cash-flow
-longport cash-flow --format json
-</CliCommand>
-
 <SDKLinks module="portfolio" klass="PortfolioContext" method="profit_analysis_flows" />
 
 

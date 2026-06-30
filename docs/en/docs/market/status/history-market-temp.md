@@ -8,15 +8,6 @@ This interface is used to get historical market temperature.
 
 <QuotePermission command="market-temp" />
 
-<CliCommand>
-# HK temperature Q1 2025
-longport market-temp HK --history --start 2025-01-01 --end 2025-03-31
-# US temperature Jan 2025
-longport market-temp US --history --start 2025-01-01 --end 2025-01-31
-# CN A-share temperature H1 2025
-longport market-temp CN --history --start 2025-01-01 --end 2025-06-30
-</CliCommand>
-
 <SDKLinks module="quote" klass="QuoteContext" method="history_market_temperature" />
 
 ## Request

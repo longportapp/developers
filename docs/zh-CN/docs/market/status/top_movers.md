@@ -12,11 +12,6 @@ headingLevel: 2
 
 获取价格波动超过近 20 个交易日标准差的异动股票，系统自动关联相关新闻解读异动原因。
 
-<CliCommand>
-longport top-movers
-longport top-movers --market HK --sort time
-</CliCommand>
-
 <SDKLinks module="market" klass="MarketContext" method="top_movers" />
 
 

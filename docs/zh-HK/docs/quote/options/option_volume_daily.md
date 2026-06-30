@@ -12,11 +12,6 @@ headingLevel: 2
 
 獲取美股期權的歷史每日認購/認沽成交量和未平倉量數據。
 
-<CliCommand>
-longport option volume daily AAPL.US
-longport option volume daily TSLA.US --count 60
-</CliCommand>
-
 <SDKLinks module="quote" klass="QuoteContext" method="option_volume_daily" />
 
 
@@ -32,14 +27,7 @@ longport option volume daily TSLA.US --count 60
 ## Request Example
 
 <Tabs groupId="request-example">
-  <TabItem value="cli" label="CLI" default>
-
-<CliCommand>
-longport option volume daily AAPL.US
-longport option volume daily TSLA.US --count 60
-</CliCommand>
-
-  </TabItem>
+  
   <TabItem value="python" label="Python">
 
 ```python

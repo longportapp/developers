@@ -14,11 +14,6 @@ headingLevel: 2
 
 <QuotePermission level="basic" />
 
-<CliCommand>
-# 查看所有自選股分組及標的
-longport watchlist
-</CliCommand>
-
 <SDKLinks module="quote" klass="QuoteContext" method="watchlist" />
 
 ## Request

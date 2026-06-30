@@ -12,10 +12,6 @@ headingLevel: 2
 
 检查指定标的是否支持定投。
 
-<CliCommand>
-longport dca check AAPL.US 700.HK
-</CliCommand>
-
 <SDKLinks module="dca" klass="DCAContext" method="check_support" />
 
 

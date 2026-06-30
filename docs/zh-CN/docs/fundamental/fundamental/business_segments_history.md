@@ -12,11 +12,6 @@ headingLevel: 2
 
 获取上市公司按报告期的历史业务分部收入趋势。
 
-<CliCommand>
-longport business-segments AAPL.US --history
-longport business-segments AAPL.US --history --report qf
-</CliCommand>
-
 <SDKLinks module="fundamental" klass="FundamentalContext" method="business_segments_history" />
 
 

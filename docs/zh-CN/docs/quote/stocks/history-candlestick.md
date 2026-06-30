@@ -9,15 +9,6 @@ sidebar_position: 10
 
 <QuotePermission command="kline" />
 
-<CliCommand>
-# 2025 年 Q1 日 K
-longport kline history TSLA.US --start 2025-01-01 --end 2025-03-31
-# 2024 全年周 K
-longport kline history AAPL.US --start 2024-01-01 --end 2024-12-31 --period week
-# 2025 全年日 K
-longport kline history NVDA.US --start 2025-01-01 --end 2025-12-31
-</CliCommand>
-
 <SDKLinks module="quote" klass="QuoteContext" method="history_candlesticks_by_offset" />
 
 :::info

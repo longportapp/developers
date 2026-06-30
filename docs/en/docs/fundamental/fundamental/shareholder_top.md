@@ -12,11 +12,6 @@ headingLevel: 2
 
 Get the top 20 major shareholders (institutional, individual, and insider) for a listed company, with support for multi-period comparison. `object_id` can be passed to `shareholder_detail` to retrieve full holding history.
 
-<CliCommand>
-longport shareholder AAPL.US --top
-longport shareholder 700.HK --top
-</CliCommand>
-
 <SDKLinks module="fundamental" klass="FundamentalContext" method="shareholder_top" />
 
 

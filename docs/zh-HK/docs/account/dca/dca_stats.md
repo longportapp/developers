@@ -12,10 +12,6 @@ headingLevel: 2
 
 獲取定投統計匯總信息，包括總投入金額和盈虧情況。
 
-<CliCommand>
-longport dca stats
-</CliCommand>
-
 <SDKLinks module="dca" klass="DCAContext" method="stats" />
 
 

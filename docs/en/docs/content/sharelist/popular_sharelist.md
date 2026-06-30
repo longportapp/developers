@@ -12,10 +12,6 @@ headingLevel: 2
 
 Get popular/trending sharelists from the community.
 
-<CliCommand>
-longport sharelist popular --count 10
-</CliCommand>
-
 <SDKLinks module="sharelist" klass="SharelistContext" method="popular" />
 
 

@@ -11,10 +11,6 @@ headingLevel: 2
 
 该接口用于获取包括账户、股票代码、持仓股数、可用股数、持仓均价（按账户设置计算均价方式）、币种在内的股票持仓信息。
 
-<CliCommand>
-longport positions
-</CliCommand>
-
 <SDKLinks module="trade" klass="TradeContext" method="stock_positions" />
 
 ## Request

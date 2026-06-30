@@ -12,11 +12,6 @@ headingLevel: 2
 
 暫停或恢復已有的定投。
 
-<CliCommand>
-longport dca pause 1225781523156889600
-longport dca resume 1225781523156889600
-</CliCommand>
-
 <SDKLinks module="dca" klass="DCAContext" method="update" />
 
 

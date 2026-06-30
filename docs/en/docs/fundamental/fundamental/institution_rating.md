@@ -12,11 +12,6 @@ headingLevel: 2
 
 Get analyst institution rating snapshot (rating distribution and average target price).
 
-<CliCommand>
-longport institution-rating TSLA.US
-longport institution-rating AAPL.US
-</CliCommand>
-
 <SDKLinks module="fundamental" klass="FundamentalContext" method="institution_rating" />
 
 

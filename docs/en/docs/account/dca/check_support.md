@@ -12,10 +12,6 @@ headingLevel: 2
 
 Check whether the given securities support DCA recurring investment.
 
-<CliCommand>
-longport dca check AAPL.US 700.HK
-</CliCommand>
-
 <SDKLinks module="dca" klass="DCAContext" method="check_support" />
 
 

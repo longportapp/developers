@@ -14,11 +14,6 @@ headingLevel: 2
 
 接口：`GET /v1/quote/ai/screener/indicators`
 
-> **SDK 響應：** `data` 字段為分組結構 `{"groups": [{...}]}`。CLI `screener indicators --format json` 會將其展平為扁平數組以方便使用。
-
-<CliCommand>
-longport screener indicators
-</CliCommand>
 
 <SDKLinks module="screener" klass="ScreenerContext" method="screener_indicators" />
 
@@ -223,7 +218,6 @@ func main() {
 
 <a id="ScreenerIndicatorsResponse"></a>
 
-SDK 響應 `data` 為分組結構，CLI `--format json` 輸出會將其展平為扁平數組。所有 `key` 值已去除 `filter_` 前綴。
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |

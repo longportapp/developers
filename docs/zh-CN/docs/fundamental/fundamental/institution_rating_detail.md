@@ -12,11 +12,6 @@ headingLevel: 2
 
 获取历史分析师评级及目标价详情。
 
-<CliCommand>
-longport institution-rating detail TSLA.US
-longport institution-rating detail AAPL.US
-</CliCommand>
-
 <SDKLinks module="fundamental" klass="FundamentalContext" method="institution_rating_detail" />
 
 

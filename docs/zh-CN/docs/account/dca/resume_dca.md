@@ -12,10 +12,6 @@ headingLevel: 2
 
 恢复一个已暂停的定投计划。
 
-<CliCommand>
-longport dca resume 12345
-</CliCommand>
-
 <SDKLinks module="dca" klass="DCAContext" method="resume" />
 
 ## Parameters

@@ -9,11 +9,6 @@ sidebar_position: 13
 
 <QuotePermission command="warrant" />
 
-<CliCommand>
-# 港股窩輪發行商完整列表
-longport warrant issuers
-</CliCommand>
-
 <SDKLinks module="quote" klass="QuoteContext" method="warrant_issuers" />
 
 :::info

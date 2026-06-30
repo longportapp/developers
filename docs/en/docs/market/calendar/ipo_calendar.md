@@ -12,11 +12,6 @@ headingLevel: 2
 
 Get upcoming and recent IPO listings with expected offer price and listing date.
 
-<CliCommand>
-longport finance-calendar ipo
-longport finance-calendar ipo --market US
-</CliCommand>
-
 <SDKLinks module="calendar" klass="CalendarContext" method="finance_calendar" />
 
 

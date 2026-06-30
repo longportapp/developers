@@ -8,15 +8,6 @@ sidebar_position: 2
 
 <QuotePermission command="market-temp" />
 
-<CliCommand>
-# 港股市场温度
-longport market-temp HK
-# 美股市场温度
-longport market-temp US
-# A 股市场温度
-longport market-temp CN
-</CliCommand>
-
 <SDKLinks module="quote" klass="QuoteContext" method="market_temperature" />
 
 ## Request

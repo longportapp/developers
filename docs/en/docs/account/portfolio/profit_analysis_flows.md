@@ -12,11 +12,6 @@ headingLevel: 2
 
 Query account cash flow history including deposits, withdrawals, dividends, and settlements.
 
-<CliCommand>
-longport cash-flow
-longport cash-flow --format json
-</CliCommand>
-
 <SDKLinks module="portfolio" klass="PortfolioContext" method="profit_analysis_flows" />
 
 

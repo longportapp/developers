@@ -12,10 +12,6 @@ headingLevel: 2
 
 從股單中移除一個或多個標的。
 
-<CliCommand>
-longport sharelist remove 123 TSLA.US
-</CliCommand>
-
 <SDKLinks module="sharelist" klass="SharelistContext" method="remove_securities" />
 
 

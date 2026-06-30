@@ -13,11 +13,6 @@ headingLevel: 2
 
 <QuotePermission command="security-list" />
 
-<CliCommand>
-# 美股夜盤可交易標的列表
-longport security-list
-</CliCommand>
-
 <SDKLinks module="quote" klass="QuoteContext" method="security_list" />
 
 ### Request
