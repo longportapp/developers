@@ -62,10 +62,10 @@ slug: overview
         <td><a href="./pull/trade-day">Get Market Trading Days</a></td>
     </tr>
     <tr>
-        <td><a href="./pull/capital-flow-intraday">Get Security Capital Flow Intraday</a></td>
+        <td><a href="./pull/capital_flow_intraday">Get Security Capital Flow Intraday</a></td>
     </tr>
     <tr>
-        <td><a href="./pull/capital-distribution">Get Security Capital Distribution</a></td>
+        <td><a href="./pull/capital_distribution">Get Security Capital Distribution</a></td>
     </tr>
     <tr>
         <td><a href="./pull/calc-index">Get Calculate Indexes Of Securities</a></td>
@@ -122,12 +122,13 @@ The security code uses the `ticker.region` format, `ticker` represents the code,
 - US Market: `region` is `US`, for example: `AAPL.US`.
 - HK Market: `region` is `HK`, for example: `700.HK`.
 - CN Market: `region` is `SH` for Shanghai Stock Exchange and `SZ` for Shenzhen Stock Exchange, for example: `399001.SZ`, `600519.SH`.
-- SG Market: `region` is `SG`, for example: `D05.SG`.
+
+> **Singapore Market (SG):** Real-time quotes for Singapore securities are not currently available via LongPort Developers (API / CLI / MCP). Please use the [LongPort App or desktop client](https://longport.com/download) to check SG market quotes.
 
 ## Access Method
 
 1. Use private protocol and long connection mode to access, please refer to <a href="../socket/protocol/overview" target="_blank">Binary Communication Protocol</a> for access method.
-2. Use SDK for access, [SDK introduction and download address](https://open.longportapp.com/sdk).
+2. Use SDK for access, [SDK introduction and download address](https://open.longport.com/sdk).
 
 ## Business Data Serialization
 
@@ -139,3 +140,16 @@ We use the [Protobuf](https://developers.google.cn/protocol-buffers) protocol to
 - Strongger version forward and backward compatibility.
 
 Quote Protobuf protocol document [download link](https://github.com/longportapp/openapi-protobufs/blob/main/quote/api.proto).
+
+## Quote Permission Levels
+
+All Quote APIs require OpenAPI quote permissions. These are **separate from App/PC/Web permissions** and must be activated independently.
+
+| Level                  | What's Included                                      | How to Get                                                 |
+| ---------------------- | ---------------------------------------------------- | ---------------------------------------------------------- |
+| **Basic**              | LV1 US/CN real-time; HK BMP (~15 min delay, no push) | Included with OpenAPI activation                           |
+| **LV1 Real-time** (HK) | HK real-time quotes + WebSocket push support         | Purchase "LV1 Real-time Quotes (OpenAPI)" via Quote Store  |
+| **LV2 Subscription**   | Level 2 order book (depth), HK broker queue          | Purchase LV2 subscription via Quote Store                  |
+| **Overnight** (US)     | US pre/post-market extended-hours data               | Included free in US LV1; set `LONGPORT_ENABLE_OVERNIGHT=true` |
+
+Check your current permissions at [Developer Center](https://open.longport.com/dashboard). Purchase quote cards via **LongPort App → My → My Quotes → Quote Store**.

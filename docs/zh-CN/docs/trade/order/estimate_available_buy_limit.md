@@ -1,5 +1,6 @@
----
+﻿---
 slug: estimate_available_buy_limit
+sidebar_position: 7
 title: 预估最大购买数量
 language_tabs: false
 toc_footers: []
@@ -10,6 +11,10 @@ headingLevel: 2
 ---
 
 该接口用于港美股，窝轮，期权的预估最大购买数量。
+
+<CliCommand>
+longport max-qty TSLA.US
+</CliCommand>
 
 <SDKLinks module="trade" klass="TradeContext" method="estimate_max_purchase_quantity" />
 
@@ -37,10 +42,14 @@ headingLevel: 2
 
 ### Request Example
 
-```python
-from longport.openapi import TradeContext, Config, OrderStatus, OrderType, OrderSide
+<Tabs groupId="request-example">
+  <TabItem value="python" label="Python" default>
 
-config = Config.from_env()
+```python
+from longport.openapi import TradeContext, Config, OrderType, OrderSide, OAuthBuilder
+
+oauth = OAuthBuilder("your-client-id").build(lambda url: print("Visit:", url))
+config = Config.from_oauth(oauth)
 ctx = TradeContext(config)
 
 resp = ctx.estimate_max_purchase_quantity(
@@ -50,6 +59,186 @@ resp = ctx.estimate_max_purchase_quantity(
 )
 print(resp)
 ```
+
+  </TabItem>
+  <TabItem value="python-async" label="Python (async)">
+
+```python
+import asyncio
+from longport.openapi import AsyncTradeContext, Config, OrderType, OrderSide, OAuthBuilder
+
+async def main() -> None:
+    oauth = await OAuthBuilder("your-client-id").build_async(lambda url: print("Visit:", url))
+    config = Config.from_oauth(oauth)
+    ctx = AsyncTradeContext.create(config)
+
+    resp = await ctx.estimate_max_purchase_quantity(
+        symbol = "700.HK",
+        order_type = OrderType.LO,
+        side = OrderSide.Buy,
+    )
+    print(resp)
+
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+
+  </TabItem>
+  <TabItem value="nodejs" label="Node.js">
+
+```javascript
+const { Config, TradeContext, OAuth, OrderType, OrderSide, Decimal } = require('longport')
+
+async function main() {
+  const oauth = await OAuth.build("your-client-id", (_, url) => { console.log("Open this URL to authorize: " + url) })
+  const config = Config.fromOAuth(oauth)
+  const ctx = TradeContext.new(config)
+  const resp = await ctx.estimateMaxPurchaseQuantity({ symbol: "700.HK", orderType: OrderType.LO, side: OrderSide.Buy, price: new Decimal("400"), fractionalShares: false })
+  console.log(resp)
+}
+main().catch(console.error)
+```
+
+  </TabItem>
+  <TabItem value="java" label="Java">
+
+```java
+import com.longport.*;
+import com.longport.trade.*;
+import java.math.BigDecimal;
+class Main {
+    public static void main(String[] args) throws Exception {
+        try (OAuth oauth = new OAuthBuilder("your-client-id").build(url -> System.out.println("Open to authorize: " + url)).get();
+             Config config = Config.fromOAuth(oauth);
+             TradeContext ctx = TradeContext.create(config)) {
+            EstimateMaxPurchaseQuantityResponse resp = ctx.getEstimateMaxPurchaseQuantity(new EstimateMaxPurchaseQuantityOptions("700.HK", OrderType.LO, OrderSide.Buy).setPrice(new BigDecimal("400"))).get();
+            System.out.println(resp);
+        }
+    }
+}
+```
+
+  </TabItem>
+  <TabItem value="rust" label="Rust">
+
+```rust
+use std::sync::Arc;
+use longport::{oauth::OAuthBuilder, trade::{TradeContext, EstimateMaxPurchaseQuantityOptions, OrderType, OrderSide}, Config};
+use rust_decimal::Decimal;
+
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let oauth = OAuthBuilder::new("your-client-id").build(|url| println!("Open this URL to authorize: {url}")).await?;
+    let config = Arc::new(Config::from_oauth(oauth));
+    let (ctx, _) = TradeContext::new(config);
+    let resp = ctx.estimate_max_purchase_quantity(
+        EstimateMaxPurchaseQuantityOptions::new("700.HK", OrderType::LO, OrderSide::Buy)
+            .price(Decimal::from(400))
+    ).await?;
+    println!("{:?}", resp);
+    Ok(())
+}
+```
+
+  </TabItem>
+  <TabItem value="cpp" label="C++">
+
+```cpp
+#include <iostream>
+#include <longport.hpp>
+
+#ifdef WIN32
+#include <windows.h>
+#endif
+
+using namespace longport;
+using namespace longport::trade;
+
+static void
+run(const OAuth& oauth)
+{
+    Config config = Config::from_oauth(oauth);
+    TradeContext ctx = TradeContext::create(config);
+
+    EstimateMaxPurchaseQuantityOptions opts{"700.HK", OrderType::LO, OrderSide::Buy, Decimal(400.0), 100};
+    ctx.estimate_max_purchase_quantity(opts, [](auto res) {
+        if (!res) { std::cout << "failed" << std::endl; return; }
+        std::cout << "max_cash_buy: " << res->max_cash_buy << std::endl;
+    });
+}
+
+int main(int argc, char const* argv[]) {
+#ifdef WIN32
+    SetConsoleOutputCP(CP_UTF8);
+#endif
+
+    const std::string client_id = "your-client-id";
+    OAuthBuilder(client_id).build(
+    [](const std::string& url) {
+        std::cout << "Open this URL to authorize: " << url << std::endl;
+    },
+    [](auto res) {
+        if (!res) {
+            std::cout << "authorization failed: " << *res.status().message() << std::endl;
+            return;
+        }
+        run(*res);
+    });
+
+    std::cin.get();
+    return 0;
+}
+```
+
+  </TabItem>
+  <TabItem value="go" label="Go">
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"log"
+
+	"github.com/longportapp/openapi-go/config"
+	"github.com/longportapp/openapi-go/oauth"
+	"github.com/longportapp/openapi-go/trade"
+	"github.com/shopspring/decimal"
+)
+
+func main() {
+	o := oauth.New("your-client-id").
+		OnOpenURL(func(url string) { fmt.Println("Open this URL to authorize:", url) })
+	if err := o.Build(context.Background()); err != nil {
+		log.Fatal(err)
+	}
+	conf, err := config.New(config.WithOAuthClient(o))
+	if err != nil {
+		log.Fatal(err)
+	}
+	tctx, err := trade.NewFromCfg(conf)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer tctx.Close()
+	resp, err := tctx.EstimateMaxPurchaseQuantity(context.Background(), &trade.GetEstimateMaxPurchaseQuantity{
+		Symbol:    "AAPL.US",
+		OrderType: trade.OrderTypeLO,
+		Price:     decimal.NewFromFloat(175.62),
+		Currency:  "USD",
+		Side:      trade.OrderSideBuy,
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println("max_cash_buy:", resp.MaxCashBuy)
+}
+```
+
+  </TabItem>
+</Tabs>
+
 
 ## Response
 

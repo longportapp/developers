@@ -1,13 +1,14 @@
 ---
-sidebar_position: 4
+sidebar_position: 1
 slug: getting-started
 title: 快速开始
 id: getting-started
+sidebar_icon: zap
 ---
 
 ## 前言
 
-[LongPort Developers SDK](https://github.com/longportapp/openapi) 基于 Rust 底层提供标准实现，目前我们已经发布了 Python、Node.js、Rust、C++/C、Java 等多种编程语言 SDK，其他语言的支持后面会陆续推出。
+[LongPort OpenAPI SDK](https://github.com/longportapp/openapi) 基于 Rust 底层提供标准实现，目前我们已经发布了 Python、Node.js、Rust、C++/C、Java 等多种编程语言 SDK，其他语言的支持后面会陆续推出。
 
 ## API Host
 
@@ -16,9 +17,13 @@ id: getting-started
 - WebSocket Trade - `wss://openapi-trade.longportapp.com`
 
 :::info
-中国大陆地区访问，建议采用 `openapi.longportapp.cn`, `openapi-quote.longportapp.cn`, `openapi-trade.longportapp.cn` 以提升访问速度。
+中国大陆地区可使用 `.cn` 域名提升访问速度：
 
-如果使用我们的 SDK，可以通过设置环境变量 `LONGPORT_REGION=cn` 来使用中国大陆的接入点，当前我们仅有 `hk` 和 `cn` 两个地区可选。
+- HTTP API - `https://openapi.longport.cn`
+- WebSocket Quote - `wss://openapi-quote.longport.cn`
+- WebSocket Trade - `wss://openapi-trade.longport.cn`
+
+SDK 会自动选择接入点；若判断不正确，可设置环境变量 `LONGPORT_REGION`（如 `cn`、`hk`）。
 :::
 
 ## 时间格式
@@ -29,27 +34,96 @@ id: getting-started
 
 <Tabs groupId="programming-language">
   <TabItem value="python" label="Python" default>
-    <li><a href="https://www.python.org/">Python 3</a></li>
-    <li>Pip</li>
+    <ul>
+      <li><a href="https://www.python.org/">Python 3</a></li>
+      <li>Pip</li>
+    </ul>
   </TabItem>
   <TabItem value="javascript" label="JavaScript">
-    <li><a href="https://nodejs.org/">Node.js</a></li>
-    <li>Yarn</li>
+    <ul>
+      <li><a href="https://nodejs.org/">Node.js</a></li>
+      <li>Yarn</li>
+    </ul>
   </TabItem>
   <TabItem value="rust" label="Rust">
-    <li><a href="https://www.rust-lang.org/">Rust</a></li>
+    <ul>
+      <li><a href="https://www.rust-lang.org/">Rust</a></li>
+    </ul>
   </TabItem>
   <TabItem value="java" label="Java">
-    <li><a href="https://openjdk.org/">JDK</a></li>
-    <li><a href="https://maven.apache.org/">Maven</a></li>
+    <ul>
+      <li><a href="https://openjdk.org/">JDK</a></li>
+      <li><a href="https://maven.apache.org/">Maven</a></li>
+    </ul>
   </TabItem>
   <TabItem value="go" label="Go">
-    <li><a href="https://go.dev">Go</a></li>
-    <li><a href="https://pkg.go.dev/github.com/longportapp/openapi-go">Go Docs</a></li>
+    <ul>
+      <li><a href="https://go.dev">Go</a></li>
+      <li><a href="https://pkg.go.dev/github.com/longportapp/openapi-go">Go Docs</a></li>
+    </ul>
   </TabItem>
 </Tabs>
 
+## CLI 快速入门
+
+如果你不需要写代码，[LongPort CLI](/docs/cli) 提供更轻量的接入方式——安装即用，OAuth 一键授权，无需配置环境变量。
+
+### 安装
+
+<Tabs groupId="cli-install">
+  <TabItem value="homebrew" label="macOS (Homebrew)" default>
+
+```bash
+brew install --cask longport/tap/longport-terminal
+```
+
+  </TabItem>
+  <TabItem value="script" label="Linux / macOS (脚本)">
+
+```bash
+curl -sSL https://open.longport.com/longport/longport-terminal/install | sh
+```
+
+  </TabItem>
+  <TabItem value="scoop" label="Windows (Scoop)">
+
+```powershell
+scoop install https://open.longport.com/longport/longport-terminal/longport.json
+```
+
+  </TabItem>
+  <TabItem value="powershell" label="Windows (PowerShell)">
+
+```powershell
+iwr https://open.longport.com/longport/longport-terminal/install.ps1 | iex
+```
+
+  </TabItem>
+</Tabs>
+
+### 登录
+
+```bash
+longport auth login
+```
+
+浏览器会自动打开授权页面，完成后 Token 自动保存，后续无需重复操作。
+
+### 快速验证
+
+```bash
+longport quote AAPL.US TSLA.US    # 实时行情
+longport positions                 # 查看持仓
+longport --help                    # 查看全部可用命令
+```
+
+查看完整命令列表见 [CLI 参考文档](/docs/cli)。
+
 ## 安装 SDK
+
+:::warning 包名变更
+SDK 包名已从 `longport` 更名为 `longport`，旧包名 `longport` 已废弃。如果你之前使用的是 `longport`，请先卸载旧包再安装新包。
+:::
 
 <Tabs groupId="programming-language">
   <TabItem value="python" label="Python" default>
@@ -70,7 +144,7 @@ yarn add longport
 
 ```toml
 [dependencies]
-longport = "3.0.17"
+longport = "4.0.5"
 tokio = { version = "1", features = "rt-multi-thread" }
 ```
 
@@ -80,9 +154,9 @@ tokio = { version = "1", features = "rt-multi-thread" }
 ```xml
 <dependencies>
     <dependency>
-        <groupId>io.github.longportapp</groupId>
+        <groupId>io.github.longport</groupId>
         <artifactId>openapi-sdk</artifactId>
-        <version>LATEST</version>
+        <version>4.0.5</version>
     </dependency>
 </dependencies>
 ```
@@ -103,16 +177,242 @@ go get github.com/longportapp/openapi-go
 
 ## 配置
 
-### 开通开发中账户
+### 开通开发者账户
 
-1. 下载 [LongPort](https://longportapp.com/download)，并完成开户
-2. 从 [LongPort Developers](https://open.longportapp.com) 官网获取 `App Key`, `App Secret`, `Access Token` 等信息。
+1. 下载 [LongPort](https://longport.com/download)，并完成开户
+2. 从 [LongPort Developers](https://open.longport.com) 官网获取认证信息
 
-   **_获取 App Key, App Secret, Access Token 等信息_**
+### 认证方式
 
-   访问 [LongPort Developers](https://open.longportapp.com) 网站，登录后，进入“个人中心”。
+LongPort Developers 支持两种认证方式：
 
-   在页面上会给出“应用凭证”凭证信息，我们拿到以后设置环境变量，便于后面开发使用方便。
+#### 方式一：OAuth 2.0（推荐） ⭐
+
+OAuth 2.0 是现代化的认证方式，使用 Bearer Token，无需 HMAC 签名，更加安全便捷。
+
+**第一步：注册 OAuth 客户端**
+
+执行以下命令注册 OAuth 客户端，获取 `client_id`：
+
+<Tabs groupId="shell">
+<TabItem value="bash" label="Bash" default>
+
+```bash
+curl -X POST https://openapi.longportapp.com/oauth2/register \
+     -H "Content-Type: application/json" \
+     -d '{
+            "redirect_uris": ["http://localhost:60355/callback"],
+            "token_endpoint_auth_method": "none",
+            "grant_types": ["authorization_code","refresh_token"],
+            "response_types": ["code"],
+            "client_name": "My LongPort OpenAPI"
+        }'
+```
+
+</TabItem>
+<TabItem value="powershell" label="PowerShell">
+
+```powershell
+$body = @{
+    redirect_uris                = @("http://localhost:60355/callback")
+    token_endpoint_auth_method   = "none"
+    grant_types                  = @("authorization_code", "refresh_token")
+    response_types               = @("code")
+    client_name                  = "My LongPort OpenAPI"
+} | ConvertTo-Json
+
+Invoke-RestMethod -Method POST `
+    -Uri "https://openapi.longportapp.com/oauth2/register" `
+    -ContentType "application/json" `
+    -Body $body
+```
+
+</TabItem>
+</Tabs>
+
+响应示例：
+
+```json
+{
+  "client_id": "72d9caaf-0bd4-4000-85a7-8c7978c74544",
+  "client_id_issued_at": 1773311221,
+  "client_secret_expires_at": 1773314821,
+  "client_name": "My LongPort OpenAPI",
+  "redirect_uris": ["http://localhost:60355/callback"],
+  "grant_types": ["authorization_code", "refresh_token"],
+  "token_endpoint_auth_method": "none",
+  "response_types": ["code"],
+  "registration_access_token": "BVlMLEtNUUu4FoRFNItC2FfeR/rLpqLNyEuCJNNTCWE=",
+  "registration_client_uri": "https://openapi.longportapp.com/oauth2/register/72d9caaf-0bd4-4000-85a7-8c7978c74544"
+}
+```
+
+保存 `client_id` 供后续使用。
+
+**第二步：授权并获取 Token**
+
+SDK 提供内置 OAuth 支持。使用 `OAuthBuilder` 完成浏览器授权流程，授权后使用 `Config.from_oauth()` 创建配置。Token 会自动持久化，过期时自动刷新。
+
+**Token 存储路径：** macOS/Linux 为 `~/.longport/openapi/tokens/<client_id>`，Windows 为 `%USERPROFILE%\.longport\openapi\tokens\<client_id>`。
+
+<Tabs groupId="programming-language">
+  <TabItem value="python" label="Python" default>
+
+```python
+from longport.openapi import Config, OAuthBuilder
+
+oauth = OAuthBuilder("your-client-id").build(
+    lambda url: print(f"请访问此 URL 进行授权：{url}")
+)
+config = Config.from_oauth(oauth)
+```
+
+  </TabItem>
+  <TabItem value="python-async" label="Python (async)">
+
+```python
+import asyncio
+from longport.openapi import Config, OAuthBuilder
+
+async def main() -> None:
+    oauth = await OAuthBuilder("your-client-id").build_async(
+        lambda url: print(f"请访问此 URL 进行授权：{url}")
+    )
+    config = Config.from_oauth(oauth)
+
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+
+  </TabItem>
+  <TabItem value="javascript" label="JavaScript">
+
+```javascript
+const { Config, OAuth } = require('longport')
+
+const oauth = await OAuth.build('your-client-id', (_, url) => {
+  console.log('请访问此 URL 进行授权：' + url)
+})
+const config = Config.fromOAuth(oauth)
+```
+
+  </TabItem>
+  <TabItem value="rust" label="Rust">
+
+```rust
+use std::sync::Arc;
+use longport::{Config, oauth::OAuthBuilder};
+
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let oauth = OAuthBuilder::new("your-client-id")
+        .build(|url| println!("请访问此 URL 进行授权：{url}"))
+        .await?;
+    let config = Arc::new(Config::from_oauth(oauth));
+    Ok(())
+}
+```
+
+  </TabItem>
+  <TabItem value="java" label="Java">
+
+```java
+import com.longport.*;
+
+public class Main {
+    public static void main(String[] args) throws Exception {
+        String clientId = "your-client-id";
+        OAuth oauth = new OAuthBuilder(clientId)
+                .build(url -> System.out.println("请打开此 URL 授权：" + url))
+                .get();
+        try (oauth) {
+            Config config = Config.fromOAuth(oauth);
+        }
+    }
+}
+```
+
+  </TabItem>
+  <TabItem value="go" label="Go">
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"log"
+
+	"github.com/longportapp/openapi-go/config"
+	"github.com/longportapp/openapi-go/oauth"
+)
+
+func main() {
+	o := oauth.New("your-client-id").
+		OnOpenURL(func(url string) { fmt.Println("请访问此 URL 进行授权：", url) })
+	if err := o.Build(context.Background()); err != nil {
+		log.Fatal(err)
+	}
+	conf, err := config.New(config.WithOAuthClient(o))
+	if err != nil {
+		log.Fatal(err)
+	}
+	_ = conf // 用于创建 TradeContext 或 QuoteContext
+}
+```
+
+  </TabItem>
+  <TabItem value="cpp" label="C++">
+
+```cpp
+#include <iostream>
+#include <longport.hpp>
+
+using namespace longport;
+
+int main(int argc, char const* argv[]) {
+    const std::string client_id = "your-client-id";
+    OAuthBuilder(client_id).build(
+    [](const std::string& url) {
+        std::cout << "请访问此 URL 进行授权：" << url << std::endl;
+    },
+    [](auto res) {
+        if (!res) {
+            std::cout << "authorization failed: " << *res.status().message() << std::endl;
+            return;
+        }
+        Config config = Config::from_oauth(*res);
+        // 使用 config 创建 QuoteContext 或 TradeContext
+    });
+
+    std::cin.get();
+    return 0;
+}
+```
+
+  </TabItem>
+
+</Tabs>
+
+:::tip OAuth 优势
+
+- ✅ 更安全（无需共享密钥）
+- ✅ 更简单（无需计算签名）
+- ✅ 基于 Token 的现代认证方式
+- ✅ 更适合现代应用程序
+  :::
+
+:::caution Token 安全
+OAuth Token 应安全存储在应用程序中（如加密文件、安全密钥链），**不要存储在环境变量中**。
+:::
+
+#### 方式二：传统 API Key（兼容）
+
+**_获取 App Key, App Secret, Access Token 等信息_**
+
+请登录 [https://open.longport.com/](https://open.longport.com/)，进入**用户中心**。
+
+页面会展示**应用凭证**（App Key、App Secret、Access Token）。此处的 Access Token 为**旧版** API Key 凭证，与 OAuth 或 Refresh Token API 返回的 access token **不是**同一种东西。获取后请设置为环境变量以便开发使用。
 
 ### 环境变量
 
@@ -120,13 +420,31 @@ go get github.com/longportapp/openapi-go
 请注意保护好您的 **Access Token** 信息，任何人获得到它，都可以通过 OpenAPI 来交易你的账户！
 :::
 
-| 环境变量                    | 说明                                                       | 值范围          |
-|-----------------------------|------------------------------------------------------------|-----------------|
-| `LONGPORT_APP_KEY`          | 从页面上获取到的 App Key                                   |                 |
-| `LONGPORT_APP_SECRET`       | 从页面上获取到的 App Secret                                |                 |
-| `LONGPORT_ACCESS_TOKEN`     | 从页面上获取到的 Access Token                              |                 |
-| `LONGPORT_REGION`           | API 服务器接入点，请根据你所在地区设置，以获得更好的连接速度 | `hk`, `cn`      |
-| `LONGPORT_ENABLE_OVERNIGHT` | 是否开启夜盘行情，设置 `true` 开启，`false` 关闭             | `true`, `false` |
+**传统 API Key 凭证（仅需设置以下 3 个）：**
+
+| 环境变量                  | 说明                                                                                                                                 |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| `LONGPORT_APP_KEY`      | 从页面上获取到的 App Key                                                                                                             |
+| `LONGPORT_APP_SECRET`   | 从页面上获取到的 App Secret                                                                                                          |
+| `LONGPORT_ACCESS_TOKEN` | 在 [https://open.longport.com/](https://open.longport.com/)（用户中心 → 应用凭证）获取的旧版 Access Token，非 OAuth access token |
+
+**其他环境变量：**
+
+| 名称                               | 说明                                                                                                                    |
+| ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| `LONGPORT_LANGUAGE`              | 语言标识，`zh-CN`、`zh-HK` 或 `en`（默认：`en`）                                                                        |
+| `LONGPORT_HTTP_URL`              | HTTP 接口地址（默认：`https://openapi.longportapp.com`）                                                                 |
+| `LONGPORT_QUOTE_WS_URL`          | 行情 WebSocket 地址（默认：`wss://openapi-quote.longportapp.com/v2`）                                                    |
+| `LONGPORT_TRADE_WS_URL`          | 交易 WebSocket 地址（默认：`wss://openapi-trade.longportapp.com/v2`）                                                    |
+| `LONGPORT_REGION`                | 覆盖接入点；SDK 会按网络自动选择，若判断不正确可设置（如 `cn`、`hk`）                                                   |
+| `LONGPORT_ENABLE_OVERNIGHT`      | 是否开启夜盘行情，`true` 或 `false`（默认：`false`）；夜盘行情已包含在 US LV1 中免费提供，仅支持美股 |
+| `LONGPORT_PUSH_CANDLESTICK_MODE` | K 线推送模式，`realtime` 或 `confirmed`（默认：`realtime`）                                                             |
+| `LONGPORT_PRINT_QUOTE_PACKAGES`  | 连接时是否打印行情包，`true` 或 `false`（默认：`true`）                                                                 |
+| `LONGPORT_LOG_PATH`              | 日志文件路径（默认：不写日志）                                                                                          |
+
+:::info
+SDK 同时支持旧版 `LONGPORT_*` 环境变量名以保持兼容。
+:::
 
 建议您设置好这几个环境变量，我们后面各章节文档中的示例代码都会使用这几个环境变量。
 
@@ -134,7 +452,7 @@ go get github.com/longportapp/openapi-go
 
 环境变量**非必要**条件，如设置不方便或遇到问题难以解决，可不用环境变量，而是直接在代码里用参数来初始化。
 
-LongPort Developers SDK 的 `Config` 均可以直接传入 `app_key`, `app_secret`, `access_token` 等参数来初始化，注意看后面的例子注释内 `Init config without ENV` 的部分。
+LongPort OpenAPI SDK 的 `Config` 可使用 `Config.from_apikey_env()`（或 Node/Java 的 `Config.fromApikeyEnv()`）从环境变量创建，或使用 `Config.from_apikey(app_key, app_secret, access_token)` 直接传参。见下方示例代码中的「不使用 ENV 初始化」注释。
 
 :::
 
@@ -152,13 +470,12 @@ export LONGPORT_ACCESS_TOKEN="从页面上获取到的 Access Token"
 
 Windows 要稍微复杂一些，有下面两种方式可以设置环境变量：
 
-1. **通过图形界面设置**：在桌面上找到“我的电脑”，右键点击，选择“属性”，在弹出的窗口中点击“高级系统设置”。
-
-   - 在弹出的窗口中点击“环境变量”。
+1. **通过图形界面设置**：在桌面上找到"我的电脑"，右键点击，选择"属性"，在弹出的窗口中点击"高级系统设置"。
+   - 在弹出的窗口中点击"环境变量"。
 
      <img src="https://assets.lbkrs.com/uploads/82e31e5e-6062-4726-966b-2a72954f4192/windows-env-set.png" width="500" />
 
-   - 在弹出的窗口中点击“新建”，然后输入环境变量名称，比如 `LONGPORT_APP_KEY`，`Value` 分别填写从页面上获取到的 App Key，App Secret，Access Token，Region。
+   - 在弹出的窗口中点击"新建"，然后输入环境变量名称，比如 `LONGPORT_APP_KEY`，`Value` 分别填写从页面上获取到的 App Key、App Secret、Access Token。
 
 2. **CMD 命令行设置**：按下 `Win + R` 快捷键，输入 `cmd` 命令启动命令行（建议使用 [Windows Terminal](https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701) 获得更好的开发体验）。
 
@@ -184,13 +501,125 @@ Windows 要稍微复杂一些，有下面两种方式可以设置环境变量：
    注销或重新启动后，再次打开命令行，输入下面的命令验证一下环境变量是否设置正确：
 
    ```bash
-   C:\Users\jason> set LONGPORT
+   C:\Users\jason> set LONGBRIDGE
    LONGPORT_APP_KEY=xxxxxxx
    LONGPORT_APP_SECRET=xxxxxx
    LONGPORT_ACCESS_TOKEN=xxxxxxx
    ```
 
    如果能正确打印你刚才设置的值，那么环境变量就是对了。
+
+### 刷新 Access Token
+
+:::info
+本节仅适用于**传统 API Key** 认证方式。OAuth 2.0 的 Token 由 SDK 自动刷新。
+:::
+
+传统 API Key 的 `Access Token` 默认 90 天后过期。在过期前调用 `Config.refresh_access_token()` 获取新 Token，然后将返回值更新到 `LONGPORT_ACCESS_TOKEN`。
+
+<Tabs groupId="programming-language">
+  <TabItem value="python" label="Python" default>
+
+```python
+from datetime import datetime, timedelta
+from longport.openapi import Config
+
+config = Config.from_apikey("YOUR_APP_KEY", "YOUR_APP_SECRET", "YOUR_ACCESS_TOKEN")
+# 指定 3 年后过期
+new_token = config.refresh_access_token(expired_at=datetime.now() + timedelta(days=365 * 3))
+print("新 Access Token：", new_token)
+# 用新 token 创建新 Config，或将其持久化为 LONGPORT_ACCESS_TOKEN
+new_config = Config.from_apikey("YOUR_APP_KEY", "YOUR_APP_SECRET", new_token)
+```
+
+  </TabItem>
+  <TabItem value="javascript" label="JavaScript">
+
+```javascript
+const { Config } = require('longport')
+
+const config = Config.fromApikey('YOUR_APP_KEY', 'YOUR_APP_SECRET', 'YOUR_ACCESS_TOKEN')
+// 指定 3 年后过期
+const expiredAt = new Date()
+expiredAt.setFullYear(expiredAt.getFullYear() + 3)
+const newToken = await config.refreshAccessToken(expiredAt)
+console.log('新 Access Token：', newToken)
+// 用新 token 创建新 Config，或将其持久化为 LONGPORT_ACCESS_TOKEN
+const newConfig = Config.fromApikey('YOUR_APP_KEY', 'YOUR_APP_SECRET', newToken)
+```
+
+  </TabItem>
+  <TabItem value="rust" label="Rust">
+
+```rust
+use longport::Config;
+use time::{Duration, OffsetDateTime};
+
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let config = Config::from_apikey("YOUR_APP_KEY", "YOUR_APP_SECRET", "YOUR_ACCESS_TOKEN")?;
+    // 指定 3 年后过期
+    let expired_at = OffsetDateTime::now_utc() + Duration::days(365 * 3);
+    let new_token = config.refresh_access_token(Some(expired_at)).await?;
+    println!("新 Access Token：{}", new_token);
+    // 用新 token 创建新 Config，或将其持久化为 LONGPORT_ACCESS_TOKEN
+    let new_config = Config::from_apikey("YOUR_APP_KEY", "YOUR_APP_SECRET", &new_token)?;
+    Ok(())
+}
+```
+
+  </TabItem>
+  <TabItem value="java" label="Java">
+
+```java
+import com.longport.Config;
+import java.time.OffsetDateTime;
+
+public class Main {
+    public static void main(String[] args) throws Exception {
+        Config config = Config.fromApikey("YOUR_APP_KEY", "YOUR_APP_SECRET", "YOUR_ACCESS_TOKEN");
+        // 指定 3 年后过期
+        OffsetDateTime expiredAt = OffsetDateTime.now().plusYears(3);
+        String newToken = config.refreshAccessToken(expiredAt).get();
+        System.out.println("新 Access Token：" + newToken);
+        // 用新 token 创建新 Config，或将其持久化为 LONGPORT_ACCESS_TOKEN
+        Config newConfig = Config.fromApikey("YOUR_APP_KEY", "YOUR_APP_SECRET", newToken);
+    }
+}
+```
+
+  </TabItem>
+  <TabItem value="cpp" label="C++">
+
+```cpp
+#include <ctime>
+#include <iostream>
+#include <longport.hpp>
+
+using namespace longport;
+
+int main() {
+    Config config = Config::from_apikey("YOUR_APP_KEY", "YOUR_APP_SECRET", "YOUR_ACCESS_TOKEN");
+    // 指定 3 年后过期（Unix 时间戳）
+    int64_t expired_at = static_cast<int64_t>(std::time(nullptr)) + 3LL * 365 * 24 * 3600;
+    config.refresh_access_token(expired_at, [](auto res) {
+        if (!res) {
+            std::cerr << "错误：" << *res.status().message() << std::endl;
+            return;
+        }
+        std::cout << "新 Access Token：" << *res << std::endl;
+        // 用新 token 创建新 Config，或将其持久化为 LONGPORT_ACCESS_TOKEN
+        Config new_config = Config::from_apikey("YOUR_APP_KEY", "YOUR_APP_SECRET", *res);
+    });
+    std::cin.get();
+    return 0;
+}
+```
+
+  </TabItem>
+</Tabs>
+
+`expired_at` 参数用于指定新 Token 的过期时间（默认：从现在起 **90 天**后）。
 
 ## 场景示范
 
@@ -202,15 +631,16 @@ Windows 要稍微复杂一些，有下面两种方式可以设置环境变量：
 创建 `account_asset.py` 贴入下面的代码：
 
 ```python
-from longport.openapi import TradeContext, Config
+from longport.openapi import TradeContext, Config, OAuthBuilder
 
-config = Config.from_env()
-
-# Init config without ENV
-# config = Config(app_key = "YOUR_APP_KEY", app_secret = "YOUR_APP_SECRET", access_token = "YOUR_ACCESS_TOKEN")
+oauth = OAuthBuilder("your-client-id").build(
+    lambda url: print(f"请访问此 URL 进行授权：{url}")
+)
+config = Config.from_oauth(oauth)
+# 或使用 API Key：config = Config.from_apikey_env()
+# 或不使用 ENV：config = Config.from_apikey("YOUR_APP_KEY", "YOUR_APP_SECRET", "YOUR_ACCESS_TOKEN")
 
 ctx = TradeContext(config)
-
 resp = ctx.account_balance()
 print(resp)
 ```
@@ -222,25 +652,53 @@ python account_asset.py
 ```
 
   </TabItem>
+  <TabItem value="python-async" label="Python (async)">
+
+创建 `account_asset_async.py` 贴入下面的代码：
+
+```python
+import asyncio
+from longport.openapi import AsyncTradeContext, Config, OAuthBuilder
+
+async def main() -> None:
+    oauth = await OAuthBuilder("your-client-id").build_async(
+        lambda url: print(f"请访问此 URL 进行授权：{url}")
+    )
+    config = Config.from_oauth(oauth)
+    ctx = AsyncTradeContext.create(config)
+    resp = await ctx.account_balance()
+    print(resp)
+
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+
+运行
+
+```bash
+python account_asset_async.py
+```
+
+  </TabItem>
   <TabItem value="javascript" label="JavaScript">
 
 创建 `account_asset.js` 贴入下面的代码：
 
-```js
-const { Config, TradeContext } = require('longport')
+```javascript
+const { Config, TradeContext, OAuth } = require('longport')
 
-let config = Config.fromEnv()
-
-// Init config without ENV
-// let config = new Config({ appKey: "YOUR_APP_KEY", appSecret: "YOUR_APP_SECRET", accessToken: "YOUR_ACCESS_TOKEN" })
-
-TradeContext.new(config)
-  .then((ctx) => ctx.accountBalance())
-  .then((resp) => {
-    for (let obj of resp) {
-      console.log(obj.toString())
-    }
+async function main() {
+  const oauth = await OAuth.build('your-client-id', (_, url) => {
+    console.log('请访问此 URL 进行授权：' + url)
   })
+  const config = Config.fromOAuth(oauth)
+  const ctx = TradeContext.new(config)
+  const resp = await ctx.accountBalance()
+  for (const obj of resp) {
+    console.log(obj.toString())
+  }
+}
+main().catch(console.error)
 ```
 
 运行
@@ -257,18 +715,16 @@ node account_asset.js
 ```rust
 use std::sync::Arc;
 
-use longport::{trade::TradeContext, Config};
+use longport::{oauth::OAuthBuilder, trade::TradeContext, Config};
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let config = Arc::new(Config::from_env()?);
-
-    // Init config without ENV
-    // let config = Arc::new(Config::new("YOUR_APP_KEY", "YOUR_APP_SECRET", "YOUR_ACCESS_TOKEN")?);
-
-    let (ctx, _) = TradeContext::try_new(config).await?;
-
-    let resp = ctx.account_balance().await?;
+    let oauth = OAuthBuilder::new("your-client-id")
+        .build(|url| println!("请访问此 URL 进行授权：{url}"))
+        .await?;
+    let config = Arc::new(Config::from_oauth(oauth));
+    let (ctx, _) = TradeContext::new(config);
+    let resp = ctx.account_balance(None).await?;
     println!("{:?}", resp);
     Ok(())
 }
@@ -291,13 +747,13 @@ import com.longport.trade.*;
 
 class Main {
     public static void main(String[] args) throws Exception {
-        Config config = Config.fromEnv();
-
-        // Init config without ENV
-        // https://longportapp.github.io/openapi/java/com/longport/ConfigBuilder.html
-        // Config config = ConfigBuilder("YOUR_APP_KEY", "YOUR_APP_SECRET", "YOUR_ACCESS_TOKEN").build();
-
-        try (TradeContext ctx = TradeContext.create(config).get()) {
+        String clientId = "your-client-id";
+        OAuth oauth = new OAuthBuilder(clientId)
+                .build(url -> System.out.println("请打开此 URL 授权：" + url))
+                .get();
+        try (oauth;
+             Config config = Config.fromOAuth(oauth);
+             TradeContext ctx = TradeContext.create(config)) {
             for (AccountBalance obj : ctx.getAccountBalance().get()) {
                 System.out.println(obj);
             }
@@ -322,36 +778,38 @@ mvn compile exec:exec
 package main
 
 import (
-    "context"
-    "fmt"
-    "log"
+	"context"
+	"fmt"
+	"log"
 
-    "github.com/longportapp/openapi-go/config"
-    "github.com/longportapp/openapi-go/trade"
+	"github.com/longportapp/openapi-go/config"
+	"github.com/longportapp/openapi-go/oauth"
+	"github.com/longportapp/openapi-go/trade"
 )
 
 func main() {
-    conf, err := config.New()
-
-    // Init config without ENV
-    // https://github.com/longportapp/openapi-go/blob/v0.9.2/config/config_test.go#L11
-    // conf, err := config.New(config.WithConfigKey("YOUR_APP_KEY", "YOUR_APP_SECRET", "YOUR_ACCESS_TOKEN"))
-
-    if err != nil {
-        log.Fatal(err)
-    }
-    tradeContext, err := trade.NewFromCfg(conf)
-    if err != nil {
-        log.Fatal(err)
-    }
-    defer tradeContext.Close()
-    ctx := context.Background()
-    // Get AccountBalance infomation
-    ab, err := tradeContext.AccountBalance(ctx)
-    if err != nil {
-        log.Fatal(err)
-    }
-    fmt.Printf("%+v", ab)
+	o := oauth.New("your-client-id").
+		OnOpenURL(func(url string) { fmt.Println("请访问此 URL 进行授权：", url) })
+	if err := o.Build(context.Background()); err != nil {
+		log.Fatal(err)
+	}
+	conf, err := config.New(config.WithOAuthClient(o))
+	// 或使用 API Key 环境变量：config.New()
+	// 或不使用 ENV：config.New(config.WithConfigKey("YOUR_APP_KEY", "YOUR_APP_SECRET", "YOUR_ACCESS_TOKEN"))
+	if err != nil {
+		log.Fatal(err)
+	}
+	tradeContext, err := trade.NewFromCfg(conf)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer tradeContext.Close()
+	ctx := context.Background()
+	ab, err := tradeContext.AccountBalance(ctx, &trade.GetAccountBalance{})
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Printf("%+v\n", ab[0])
 }
 ```
 
@@ -363,6 +821,69 @@ go run ./
 ```
 
   </TabItem>
+  <TabItem value="cpp" label="C++">
+
+创建 `account_asset.cpp` 贴入下面的代码：
+
+```cpp
+#include <iostream>
+#include <longport.hpp>
+
+#ifdef WIN32
+#include <windows.h>
+#endif
+
+using namespace longport;
+using namespace longport::trade;
+
+static void
+run(const OAuth& oauth)
+{
+    Config config = Config::from_oauth(oauth);
+    TradeContext ctx = TradeContext::create(config);
+
+    ctx.account_balance([](auto res) {
+        if (!res) {
+            std::cout << "failed: " << *res.status().message() << std::endl;
+            return;
+        }
+        for (const auto& b : *res) {
+            std::cout << b.currency << " " << (double)b.available_cash << std::endl;
+        }
+    });
+}
+
+int main(int argc, char const* argv[]) {
+#ifdef WIN32
+    SetConsoleOutputCP(CP_UTF8);
+#endif
+
+    const std::string client_id = "your-client-id";
+    OAuthBuilder(client_id).build(
+    [](const std::string& url) {
+        std::cout << "Open this URL to authorize: " << url << std::endl;
+    },
+    [](auto res) {
+        if (!res) {
+            std::cout << "authorization failed: " << *res.status().message() << std::endl;
+            return;
+        }
+        run(*res);
+    });
+
+    std::cin.get();
+    return 0;
+}
+```
+
+运行
+
+```bash
+g++ -std=c++17 account_asset.cpp -o account_asset -llongport && ./account_asset
+```
+
+  </TabItem>
+
 </Tabs>
 
 运行后，会输出如下：
@@ -398,18 +919,18 @@ go run ./
 
 ### 订阅实时行情
 
-订阅行情数据请检查 [开发者中心](https://open.longportapp.com/account) - “行情权限”是否正确
+订阅行情数据请检查 [开发者中心](https://open.longport.com/dashboard) - "行情权限"是否正确
 
 - 港股 - BMP 基础报价，无实时行情推送，无法用 WebSocket 订阅
-- 美股 - LV1 纳斯达克最优报价 (只限 OpenAPI）
+- 美股 - 纳斯达克 Basic 行情（只限 OpenAPI）
 
-运行前访问 [开发者中心](https://open.longportapp.com/account)，检查确保账户有正确的行情权限。
+运行前访问 [开发者中心](https://open.longport.com/dashboard)，检查确保账户有正确的行情权限。
 
 :::info
 
-如没有开通行情权限，可以通过“LongPort”手机客户端，并进入“我的 - 我的行情 - 行情商城”购买开通行情权限。
+如没有开通行情权限，可以通过"LongPort"手机客户端，并进入"我的 - 我的行情 - 行情商城"购买开通行情权限。
 
-https://longportapp.com/download
+https://longport.com/download
 :::
 
 当你有正确的行情权限，看起来可能会是这样：
@@ -423,19 +944,20 @@ https://longportapp.com/download
 
 ```python
 from time import sleep
-from longport.openapi import QuoteContext, Config, SubType, PushQuote
+from longport.openapi import QuoteContext, Config, OAuthBuilder, SubType, PushQuote
 
 
 def on_quote(symbol: str, quote: PushQuote):
     print(symbol, quote)
 
 
-config = Config.from_env()
+oauth = OAuthBuilder("your-client-id").build(
+    lambda url: print(f"请访问此 URL 进行授权：{url}")
+)
+config = Config.from_oauth(oauth)
 ctx = QuoteContext(config)
 ctx.set_on_quote(on_quote)
-
-symbols = ["700.HK", "AAPL.US", "TSLA.US", "NFLX.US"]
-ctx.subscribe(symbols, [SubType.Quote], True)
+ctx.subscribe(["700.HK", "AAPL.US", "TSLA.US", "NFLX.US"], [SubType.Quote])
 sleep(30)
 ```
 
@@ -446,18 +968,58 @@ python subscribe_quote.py
 ```
 
   </TabItem>
+  <TabItem value="python-async" label="Python (async)">
+
+创建 `subscribe_quote_async.py` 贴入下面的代码：
+
+```python
+import asyncio
+from longport.openapi import AsyncQuoteContext, Config, OAuthBuilder, SubType, PushQuote
+
+
+async def on_quote(symbol: str, quote: PushQuote) -> None:
+    print(symbol, quote)
+
+
+async def main() -> None:
+    oauth = await OAuthBuilder("your-client-id").build_async(
+        lambda url: print(f"请访问此 URL 进行授权：{url}")
+    )
+    config = Config.from_oauth(oauth)
+    ctx = AsyncQuoteContext.create(config, loop_=asyncio.get_running_loop())
+    ctx.set_on_quote(on_quote)
+    await ctx.subscribe(["700.HK", "AAPL.US", "TSLA.US", "NFLX.US"], [SubType.Quote])
+    await asyncio.sleep(30)
+
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+
+运行
+
+```bash
+python subscribe_quote_async.py
+```
+
+  </TabItem>
   <TabItem value="javascript" label="JavaScript">
 
 创建 `subscribe_quote.js` 贴入下面的代码：
 
 ```javascript
-const { Config, QuoteContext, SubType } = require('longport')
+const { Config, QuoteContext, SubType, OAuth } = require('longport')
 
-let config = Config.fromEnv()
-QuoteContext.new(config).then((ctx) => {
+async function main() {
+  const oauth = await OAuth.build('your-client-id', (_, url) => {
+    console.log('请访问此 URL 进行授权：' + url)
+  })
+  const config = Config.fromOAuth(oauth)
+  const ctx = QuoteContext.new(config)
   ctx.setOnQuote((_, event) => console.log(event.toString()))
-  ctx.subscribe(['700.HK', 'AAPL.US', 'TSLA.US', 'NFLX.US'], [SubType.Quote], true)
-})
+  await ctx.subscribe(['700.HK', 'AAPL.US', 'TSLA.US', 'NFLX.US'], [SubType.Quote])
+  await new Promise(() => {})
+}
+main().catch(console.error)
 ```
 
 运行
@@ -475,21 +1037,21 @@ node subscribe_quote.js
 use std::sync::Arc;
 
 use longport::{
+    oauth::OAuthBuilder,
     quote::{QuoteContext, SubFlags},
     Config,
 };
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let config = Arc::new(Config::from_env()?);
-    let (ctx, mut receiver) = QuoteContext::try_new(config).await?;
+    let oauth = OAuthBuilder::new("your-client-id")
+        .build(|url| println!("请访问此 URL 进行授权：{url}"))
+        .await?;
+    let config = Arc::new(Config::from_oauth(oauth));
+    let (ctx, mut receiver) = QuoteContext::new(config);
 
-    ctx.subscribe(
-        ["700.HK", "AAPL.US", "TSLA.US", "NFLX.US"],
-        SubFlags::QUOTE,
-        true,
-    )
-    .await?;
+    ctx.subscribe(["700.HK", "AAPL.US", "TSLA.US", "NFLX.US"], SubFlags::QUOTE)
+        .await?;
 
     while let Some(event) = receiver.recv().await {
         println!("{:?}", event);
@@ -515,11 +1077,17 @@ import com.longport.quote.*;
 
 class Main {
     public static void main(String[] args) throws Exception {
-        try (Config config = Config.fromEnv(); QuoteContext ctx = QuoteContext.create(config).get()) {
+        String clientId = "your-client-id";
+        OAuth oauth = new OAuthBuilder(clientId)
+                .build(url -> System.out.println("请打开此 URL 授权：" + url))
+                .get();
+        try (oauth;
+             Config config = Config.fromOAuth(oauth);
+             QuoteContext ctx = QuoteContext.create(config)) {
             ctx.setOnQuote((symbol, quote) -> {
                 System.out.printf("%s\t%s\n", symbol, quote);
             });
-            ctx.subscribe(new String[] { "700.HK", "AAPL.US", "TSLA.US", "NFLX.US" }, SubFlags.Quote, true).get();
+            ctx.subscribe(new String[] { "700.HK", "AAPL.US", "TSLA.US", "NFLX.US" }, SubFlags.Quote).get();
             Thread.sleep(30000);
         }
     }
@@ -601,6 +1169,74 @@ go run ./
 
   </TabItem>
 
+  <TabItem value="cpp" label="C++">
+
+创建 `subscribe_quote.cpp` 贴入下面的代码：
+
+```cpp
+#include <iostream>
+#include <longport.hpp>
+
+#ifdef WIN32
+#include <windows.h>
+#endif
+
+using namespace longport;
+using namespace longport::quote;
+
+static QuoteContext g_ctx;
+
+static void
+run(const OAuth& oauth)
+{
+    Config config = Config::from_oauth(oauth);
+    g_ctx = QuoteContext::create(config);
+
+    g_ctx.set_on_quote([](auto event) {
+        std::cout << event->symbol
+                  << " last_done=" << (double)event->last_done
+                  << " volume=" << event->volume << std::endl;
+    });
+
+    std::vector<std::string> symbols = {"700.HK", "AAPL.US", "TSLA.US", "NFLX.US"};
+    g_ctx.subscribe(symbols, SubFlags::QUOTE(), [](auto res) {
+        if (!res) {
+            std::cout << "failed to subscribe: " << *res.status().message() << std::endl;
+        }
+    });
+}
+
+int main(int argc, char const* argv[]) {
+#ifdef WIN32
+    SetConsoleOutputCP(CP_UTF8);
+#endif
+
+    const std::string client_id = "your-client-id";
+    OAuthBuilder(client_id).build(
+    [](const std::string& url) {
+        std::cout << "Open this URL to authorize: " << url << std::endl;
+    },
+    [](auto res) {
+        if (!res) {
+            std::cout << "authorization failed: " << *res.status().message() << std::endl;
+            return;
+        }
+        run(*res);
+    });
+
+    std::cin.get();
+    return 0;
+}
+```
+
+运行
+
+```bash
+g++ -std=c++17 subscribe_quote.cpp -o subscribe_quote -llongport && ./subscribe_quote
+```
+
+  </TabItem>
+
 </Tabs>
 
 运行后，会输出如下：
@@ -643,7 +1279,7 @@ NFLX.US PushQuote {
 
 ### 委托下单
 
-下面我们做一次 [委托下单](https://open.longportapp.com/docs/trade/order/submit) 动作，我们假设要以 50 HKD 买入 `700.HK` 的数量为 `100`。
+下面我们做一次 [委托下单](https://open.longport.com/docs/trade/order/submit) 动作，我们假设要以 50 HKD 买入 `700.HK` 的数量为 `100`。
 
 > NOTE: 为了防止测试买入成功，这里演示给了一个较低的价格，避免成交。OpenAPI 操作均等同与线上交易，请谨慎操作，开发调试注意参数细节。
 
@@ -654,9 +1290,12 @@ NFLX.US PushQuote {
 
 ```python
 from decimal import Decimal
-from longport.openapi import TradeContext, Config, OrderSide, OrderType, TimeInForceType
+from longport.openapi import TradeContext, Config, OAuthBuilder, OrderSide, OrderType, TimeInForceType
 
-config = Config.from_env()
+oauth = OAuthBuilder("your-client-id").build(
+    lambda url: print(f"请访问此 URL 进行授权：{url}")
+)
+config = Config.from_oauth(oauth)
 ctx = TradeContext(config)
 
 resp = ctx.submit_order(
@@ -678,26 +1317,67 @@ python submit_order.py
 ```
 
   </TabItem>
+  <TabItem value="python-async" label="Python (async)">
+
+创建 `submit_order_async.py` 贴入下面的代码：
+
+```python
+import asyncio
+from decimal import Decimal
+from longport.openapi import AsyncTradeContext, Config, OAuthBuilder, OrderSide, OrderType, TimeInForceType
+
+async def main() -> None:
+    oauth = await OAuthBuilder("your-client-id").build_async(
+        lambda url: print(f"请访问此 URL 进行授权：{url}")
+    )
+    config = Config.from_oauth(oauth)
+    ctx = AsyncTradeContext.create(config)
+    resp = await ctx.submit_order(
+        side=OrderSide.Buy,
+        symbol="700.HK",
+        order_type=OrderType.LO,
+        submitted_price=Decimal(50),
+        submitted_quantity=Decimal(200),
+        time_in_force=TimeInForceType.Day,
+        remark="Hello from Python SDK",
+    )
+    print(resp)
+
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+
+运行
+
+```bash
+python submit_order_async.py
+```
+
+  </TabItem>
   <TabItem value="javascript" label="JavaScript">
 
 创建 `submit_order.js` 贴入下面的代码：
 
 ```javascript
-const { Config, TradeContext, OrderType, OrderSide, Decimal, TimeInForceType } = require('longport')
+const { Config, TradeContext, OrderType, OrderSide, Decimal, TimeInForceType, OAuth } = require('longport')
 
-let config = Config.fromEnv()
-TradeContext.new(config)
-  .then((ctx) =>
-    ctx.submitOrder({
-      symbol: '700.HK',
-      orderType: OrderType.LO,
-      side: OrderSide.Buy,
-      timeInForce: TimeInForceType.Day,
-      submittedQuantity: new Decimal(200),
-      submittedPrice: new Decimal('300'),
-    })
-  )
-  .then((resp) => console.log(resp.toString()))
+async function main() {
+  const oauth = await OAuth.build('your-client-id', (_, url) => {
+    console.log('请访问此 URL 进行授权：' + url)
+  })
+  const config = Config.fromOAuth(oauth)
+  const ctx = TradeContext.new(config)
+  const resp = await ctx.submitOrder({
+    symbol: '700.HK',
+    orderType: OrderType.LO,
+    side: OrderSide.Buy,
+    timeInForce: TimeInForceType.Day,
+    submittedPrice: new Decimal(50),
+    submittedQuantity: new Decimal(200),
+  })
+  console.log(resp.toString())
+}
+main().catch(console.error)
 ```
 
 运行
@@ -716,20 +1396,24 @@ use std::sync::Arc;
 
 use longport::{
     decimal,
+    oauth::OAuthBuilder,
     trade::{OrderSide, OrderType, SubmitOrderOptions, TimeInForceType, TradeContext},
     Config,
 };
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let config = Arc::new(Config::from_env()?);
-    let (ctx, _) = TradeContext::try_new(config).await?;
+    let oauth = OAuthBuilder::new("your-client-id")
+        .build(|url| println!("请访问此 URL 进行授权：{url}"))
+        .await?;
+    let config = Arc::new(Config::from_oauth(oauth));
+    let (ctx, _) = TradeContext::new(config);
 
     let opts = SubmitOrderOptions::new(
         "700.HK",
         OrderType::LO,
         OrderSide::Buy,
-        decimal!(200i32),
+        decimal!(200),
         TimeInForceType::Day,
     )
     .submitted_price(decimal!(50i32));
@@ -757,7 +1441,13 @@ import java.math.BigDecimal;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        try (Config config = Config.fromEnv(); TradeContext ctx = TradeContext.create(config).get()) {
+        String clientId = "your-client-id";
+        OAuth oauth = new OAuthBuilder(clientId)
+                .build(url -> System.out.println("请打开此 URL 授权：" + url))
+                .get();
+        try (oauth;
+             Config config = Config.fromOAuth(oauth);
+             TradeContext ctx = TradeContext.create(config)) {
             SubmitOrderOptions opts = new SubmitOrderOptions("700.HK",
                     OrderType.LO,
                     OrderSide.Buy,
@@ -851,6 +1541,74 @@ go run ./
 
   </TabItem>
 
+  <TabItem value="cpp" label="C++">
+
+创建 `submit_order.cpp` 贴入下面的代码：
+
+```cpp
+#include <iostream>
+#include <longport.hpp>
+
+#ifdef WIN32
+#include <windows.h>
+#endif
+
+using namespace longport;
+using namespace longport::trade;
+
+static void
+run(const OAuth& oauth)
+{
+    Config config = Config::from_oauth(oauth);
+    TradeContext ctx = TradeContext::create(config);
+
+    SubmitOrderOptions opts{
+        "700.HK",     OrderType::LO,        OrderSide::Buy,
+        Decimal(200), TimeInForceType::Day,  Decimal(50.0),
+        std::nullopt, std::nullopt,          std::nullopt,
+        std::nullopt, std::nullopt,          std::nullopt,
+        std::nullopt,
+    };
+    ctx.submit_order(opts, [](auto res) {
+        if (!res) {
+            std::cout << "failed: " << *res.status().message() << std::endl;
+            return;
+        }
+        std::cout << "order id: " << res->order_id << std::endl;
+    });
+}
+
+int main(int argc, char const* argv[]) {
+#ifdef WIN32
+    SetConsoleOutputCP(CP_UTF8);
+#endif
+
+    const std::string client_id = "your-client-id";
+    OAuthBuilder(client_id).build(
+    [](const std::string& url) {
+        std::cout << "Open this URL to authorize: " << url << std::endl;
+    },
+    [](auto res) {
+        if (!res) {
+            std::cout << "authorization failed: " << *res.status().message() << std::endl;
+            return;
+        }
+        run(*res);
+    });
+
+    std::cin.get();
+    return 0;
+}
+```
+
+运行
+
+```bash
+g++ -std=c++17 submit_order.cpp -o submit_order -llongport && ./submit_order
+```
+
+  </TabItem>
+
 </Tabs>
 
 运行后，会输出如下：
@@ -867,11 +1625,13 @@ SubmitOrderResponse { order_id: "718437534753550336" }
 创建 `today_orders.py` 贴入下面的代码：
 
 ```python
-from longport.openapi import TradeContext, Config
+from longport.openapi import TradeContext, Config, OAuthBuilder
 
-config = Config.from_env()
+oauth = OAuthBuilder("your-client-id").build(
+    lambda url: print(f"请访问此 URL 进行授权：{url}")
+)
+config = Config.from_oauth(oauth)
 ctx = TradeContext(config)
-
 resp = ctx.today_orders()
 print(resp)
 ```
@@ -883,21 +1643,53 @@ python today_orders.py
 ```
 
   </TabItem>
+  <TabItem value="python-async" label="Python (async)">
+
+创建 `today_orders_async.py` 贴入下面的代码：
+
+```python
+import asyncio
+from longport.openapi import AsyncTradeContext, Config, OAuthBuilder
+
+async def main() -> None:
+    oauth = await OAuthBuilder("your-client-id").build_async(
+        lambda url: print(f"请访问此 URL 进行授权：{url}")
+    )
+    config = Config.from_oauth(oauth)
+    ctx = AsyncTradeContext.create(config)
+    resp = await ctx.today_orders()
+    print(resp)
+
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+
+运行
+
+```bash
+python today_orders_async.py
+```
+
+  </TabItem>
   <TabItem value="javascript" label="JavaScript">
 
 创建 `today_orders.js` 贴入下面的代码：
 
-```js
-const { Config, TradeContext } = require('longport')
+```javascript
+const { Config, TradeContext, OAuth } = require('longport')
 
-let config = Config.fromEnv()
-TradeContext.new(config)
-  .then((ctx) => ctx.todayOrders())
-  .then((resp) => {
-    for (let obj of resp) {
-      console.log(obj.toString())
-    }
+async function main() {
+  const oauth = await OAuth.build('your-client-id', (_, url) => {
+    console.log('请访问此 URL 进行授权：' + url)
   })
+  const config = Config.fromOAuth(oauth)
+  const ctx = TradeContext.new(config)
+  const resp = await ctx.todayOrders()
+  for (const obj of resp) {
+    console.log(obj.toString())
+  }
+}
+main().catch(console.error)
 ```
 
 运行
@@ -914,12 +1706,15 @@ node today_orders.js
 ```rust
 use std::sync::Arc;
 
-use longport::{trade::TradeContext, Config};
+use longport::{oauth::OAuthBuilder, trade::TradeContext, Config};
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let config = Arc::new(Config::from_env()?);
-    let (ctx, _) = TradeContext::try_new(config).await?;
+    let oauth = OAuthBuilder::new("your-client-id")
+        .build(|url| println!("请访问此 URL 进行授权：{url}"))
+        .await?;
+    let config = Arc::new(Config::from_oauth(oauth));
+    let (ctx, _) = TradeContext::new(config);
 
     let resp = ctx.today_orders(None).await?;
     for obj in resp {
@@ -946,7 +1741,13 @@ import com.longport.trade.*;
 
 class Main {
     public static void main(String[] args) throws Exception {
-        try (Config config = Config.fromEnv(); TradeContext ctx = TradeContext.create(config).get()) {
+        String clientId = "your-client-id";
+        OAuth oauth = new OAuthBuilder(clientId)
+                .build(url -> System.out.println("请打开此 URL 授权：" + url))
+                .get();
+        try (oauth;
+             Config config = Config.fromOAuth(oauth);
+             TradeContext ctx = TradeContext.create(config)) {
             Order[] orders = ctx.getTodayOrders(null).get();
             for (Order order : orders) {
                 System.out.println(order);
@@ -1005,6 +1806,70 @@ func main() {
 ```
 
   </TabItem>
+  <TabItem value="cpp" label="C++">
+
+创建 `today_orders.cpp` 贴入下面的代码：
+
+```cpp
+#include <iostream>
+#include <longport.hpp>
+
+#ifdef WIN32
+#include <windows.h>
+#endif
+
+using namespace longport;
+using namespace longport::trade;
+
+static void
+run(const OAuth& oauth)
+{
+    Config config = Config::from_oauth(oauth);
+    TradeContext ctx = TradeContext::create(config);
+
+    ctx.today_orders(std::nullopt, [](auto res) {
+        if (!res) {
+            std::cout << "failed: " << *res.status().message() << std::endl;
+            return;
+        }
+        for (auto it = res->cbegin(); it != res->cend(); ++it) {
+            std::cout << "order_id=" << it->order_id
+                      << " quantity=" << it->quantity << std::endl;
+        }
+    });
+}
+
+int main(int argc, char const* argv[]) {
+#ifdef WIN32
+    SetConsoleOutputCP(CP_UTF8);
+#endif
+
+    const std::string client_id = "your-client-id";
+    OAuthBuilder(client_id).build(
+    [](const std::string& url) {
+        std::cout << "Open this URL to authorize: " << url << std::endl;
+    },
+    [](auto res) {
+        if (!res) {
+            std::cout << "authorization failed: " << *res.status().message() << std::endl;
+            return;
+        }
+        run(*res);
+    });
+
+    std::cin.get();
+    return 0;
+}
+```
+
+运行
+
+```bash
+g++ -std=c++17 today_orders.cpp -o today_orders -llongport && ./today_orders
+```
+
+  </TabItem>
+
 </Tabs>
 
 运行后，会输出如下：
@@ -1039,17 +1904,17 @@ Order {
 }
 ```
 
-上面例子已经完整演示了如何使用 SDK 访问 OpenAPI 的接口，更多其他接口请详细阅读 [LongPort Developers 文档](https://longportapp.github.io/openapi/)，根据不同的接口使用。
+上面例子已经完整演示了如何使用 SDK 访问 OpenAPI 的接口，更多其他接口请详细阅读 [LongPort Developers 文档](https://longport.github.io/openapi/)，根据不同的接口使用。
 
 ## 更多例子
 
-我们在 LongPort Developers Python SDK 的 GitHub 仓库中提供了上面几个例子的完整代码，当然后期我们也会持续往里面补充或更新。
+我们在 LongPort OpenAPI Python SDK 的 GitHub 仓库中提供了上面几个例子的完整代码，当然后期我们也会持续往里面补充或更新。
 
 https://github.com/longportapp/openapi/tree/master/examples
 
 ## SDK API 文档
 
-SDK 的详细 API 文档请访问：https://longportapp.github.io/openapi/
+SDK 的详细 API 文档请访问：https://longport.github.io/openapi/
 
 ## 反馈及沟通
 
@@ -1059,4 +1924,4 @@ SDK 的详细 API 文档请访问：https://longportapp.github.io/openapi/
 
 在 GitHub 上，也有很多历史的讨论和问题可以参考，你也可以试着搜索一下，或许也能找到问题的解决方案。
 
-访问地址：https://github.com/longportapp/openapi/issues
+访问地址：https://github.com/longportapp/developers/issues

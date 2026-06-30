@@ -2,7 +2,7 @@
 id: trade_push
 title: Trade Push
 slug: trade-push
-sidebar_position: 5
+sidebar_position: 6
 ---
 
 Client can get real-time trade updates from trade gateway.
@@ -12,12 +12,13 @@ Client can get real-time trade updates from trade gateway.
 ```python
 from time import sleep
 from decimal import Decimal
-from longport.openapi import TradeContext, Config, OrderSide, OrderType, TimeInForceType, PushOrderChanged, TopicType
+from longport.openapi import TradeContext, Config, OrderSide, OrderType, TimeInForceType, PushOrderChanged, TopicType, OAuthBuilder
 
 def on_order_changed(event: PushOrderChanged):
     print(event)
 
-config = Config.from_env()
+oauth = OAuthBuilder("your-client-id").build(lambda url: print("Visit:", url))
+config = Config.from_oauth(oauth)
 ctx = TradeContext(config)
 ctx.set_on_order_changed(on_order_changed)
 ctx.subscribe([TopicType.Private])
@@ -40,7 +41,7 @@ ctx.unsubscribe([TopicType.Private])
 
 ## Subscribe
 
-<SDKLinks title={false} module="trade" klass="TradeContext" method="subscribe" />
+<SDKLinks :title="false" module="trade" klass="TradeContext" method="subscribe" />
 
 :::info
 Cmd: `16`
@@ -72,7 +73,7 @@ Current support topics:
 
 ## Cancel Subscribe
 
-<SDKLinks title={false} module="trade" klass="TradeContext" method="unsubscribe" />
+<SDKLinks :title="false" module="trade" klass="TradeContext" method="unsubscribe" />
 
 :::info
 Cmd: `17`
@@ -96,7 +97,7 @@ message UnsubResponse {
 
 After we `subscribe` to the trade gateway, we can get real-time trade updates from the trade gateway. The trade gateway will push the corresponding push message to the client. The SDK's `set_on_order_changed` (In Go is: `OnTrade`) can set the callback function of the push message. When the client receives the trade push message, the callback function will be called.
 
-<SDKLinks title={false} module="trade" klass="TradeContext" method="set_on_order_changed" go="OnTrade" />
+<SDKLinks :title="false" module="trade" klass="TradeContext" method="set_on_order_changed" go="OnTrade" />
 
 :::info
 Cmd: `18`
