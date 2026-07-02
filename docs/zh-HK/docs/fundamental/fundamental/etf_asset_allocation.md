@@ -15,15 +15,15 @@ headingLevel: 2
 <SDKLinks module="fundamental" klass="FundamentalContext" method="etf_asset_allocation" />
 
 
-## 請求參數
+## Parameters
 
 > **SDK 方法參數。**
 
-| 字段名 | 類型 | 必填 | 描述 |
+| Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | symbol | string | 是 | ETF 標的代碼，如 `QQQ.US` |
 
-## 請求示例
+## Request Example
 
 <Tabs groupId="request-example">
   <TabItem value="python" label="Python">
@@ -180,10 +180,10 @@ func main() {
   </TabItem>
 </Tabs>
 
-## 響應
+## Response
 
 
-### 響應示例
+### Response Example
 
 ```json
 {
@@ -230,14 +230,14 @@ func main() {
 }
 ```
 
-### 響應狀態
+### Response Status
 
 | 狀態碼 | 描述 | 數據結構 |
 | ------ | ----------- | ------ |
 | 200    | 成功     | [AssetAllocationResponse](#AssetAllocationResponse) |
 | 400    | 請求錯誤 | 無   |
 
-## 數據結構
+## Schemas
 
 ### AssetAllocationResponse
 
