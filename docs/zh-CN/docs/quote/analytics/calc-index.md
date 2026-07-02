@@ -1,7 +1,7 @@
 ---
 id: quote_calc_index.md
 title: 关键指标
-slug: /quote/pull/calc-index
+slug: /quote/analytics/calc-index
 sidebar_position: 19
 ---
 

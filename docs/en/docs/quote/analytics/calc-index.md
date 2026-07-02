@@ -1,7 +1,7 @@
 ---
 id: quote_calc_index.md
 title: Calc Index
-slug: /quote/pull/calc-index
+slug: /quote/analytics/calc-index
 sidebar_position: 19
 ---
 
