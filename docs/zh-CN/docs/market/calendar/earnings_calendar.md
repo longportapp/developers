@@ -31,13 +31,13 @@ headingLevel: 2
   <TabItem value="python" label="Python">
 
 ```python
-from longport.openapi import CalendarContext, Config, OAuthBuilder
+from longport.openapi import CalendarContext, CalendarCategory, Config, OAuthBuilder
 
 oauth = OAuthBuilder("your-client-id").build(lambda url: print("Visit:", url))
 config = Config.from_oauth(oauth)
 ctx = CalendarContext(config)
 
-resp = ctx.earnings_calendar("AAPL.US")
+resp = ctx.finance_calendar(CalendarCategory.Report, "2026-01-01", "2026-12-31")
 print(resp)
 ```
 
@@ -46,14 +46,14 @@ print(resp)
 
 ```python
 import asyncio
-from longport.openapi import AsyncCalendarContext, Config, OAuthBuilder
+from longport.openapi import AsyncCalendarContext, CalendarCategory, Config, OAuthBuilder
 
 async def main() -> None:
     oauth = await OAuthBuilder("your-client-id").build_async(lambda url: print("Visit:", url))
     config = Config.from_oauth(oauth)
     ctx = AsyncCalendarContext.create(config)
 
-    resp = await ctx.earnings_calendar("AAPL.US")
+    resp = await ctx.finance_calendar(CalendarCategory.Report, "2026-01-01", "2026-12-31")
     print(resp)
 
 if __name__ == "__main__":
@@ -72,7 +72,7 @@ async function main() {
   })
   const config = Config.fromOAuth(oauth)
   const ctx = CalendarContext.new(config)
-  const resp = await ctx.earnings_calendar('AAPL.US')
+  const resp = await ctx.finance_calendar(CalendarCategory.Report, "2026-01-01", "2026-12-31")
   console.log(resp)
 }
 main().catch(console.error)
@@ -90,7 +90,7 @@ class Main {
         try (OAuth oauth = new OAuthBuilder("your-client-id").build(url -> System.out.println("Open to authorize: " + url)).get();
              Config config = Config.fromOAuth(oauth);
              CalendarContext ctx = CalendarContext.create(config)) {
-            var resp = ctx.getEarningsCalendar("AAPL.US").get();
+            var resp = ctx.getFinanceCalendar(CalendarCategory.Report, "2026-01-01", "2026-12-31").get();
             System.out.println(resp);
         }
     }
@@ -109,7 +109,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let oauth = OAuthBuilder::new("your-client-id").build(|url| println!("Open: {url}")).await?;
     let config = Arc::new(Config::from_oauth(oauth));
     let ctx = CalendarContext::new(config);
-    let resp = ctx.earnings_calendar("AAPL.US").await?;
+    let resp = ctx.finance_calendar(CalendarCategory.Report, "2026-01-01", "2026-12-31").await?;
     println!("{:?}", resp);
     Ok(())
 }
@@ -132,7 +132,7 @@ int main() {
             if (!res) return;
             Config config = Config::from_oauth(*res);
             CalendarContext ctx = CalendarContext::create(config);
-            ctx.earnings_calendar("AAPL.US", [](auto resp) {
+            ctx.finance_calendar(CalendarCategory.Report, "2026-01-01", "2026-12-31") {
                 if (resp) std::cout << "OK" << std::endl;
             });
         });
@@ -171,7 +171,7 @@ func main() {
 		log.Fatal(err)
 	}
 	defer c.Close()
-	resp, err := c.EarningsCalendar(context.Background(), "AAPL.US")
+	resp, err := c.FinanceCalendar(context.Background(), "Report", "2026-01-01", "2026-12-31")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -248,6 +248,7 @@ func main() {
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | date | string | 是 | 日期 |
+| next_date | string | 否 | 翻页游标；传为 `start` 请求下一页，为空时无更多数据 |
 | count | integer | 否 | 该日期的事件数量 |
 | infos | object[] | 是 | 日历事件列表，见 [CalendarEventInfo](#CalendarEventInfo) |
 

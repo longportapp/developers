@@ -23,7 +23,6 @@ headingLevel: 2
 | indicator_code | string | 是 | 指标代码，来自 `macroeconomic_indicators` |
 | start_date | string | 否 | 开始日期，格式 `YYYY-MM-DD` |
 | end_date | string | 否 | 结束日期，格式 `YYYY-MM-DD` |
-| offset | int | 否 | 分页偏移量，默认 0 |
 | limit | int | 否 | 最大返回条数，默认 100，最大 100 |
 
 ## 请求示例

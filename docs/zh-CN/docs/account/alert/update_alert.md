@@ -1,6 +1,6 @@
 ---
 slug: update-alert
-title: 更新股价提醒
+title: Update Alert
 sidebar_position: 3
 language_tabs: false
 toc_footers: []
@@ -10,19 +10,18 @@ highlight_theme: ''
 headingLevel: 2
 ---
 
-启用或禁用已有的股价提醒。先通过 `list` 获取完整的 `AlertItem`，修改 `item.enabled` 后调用 `update(item)`。
+启用或停用已有的股价提醒。传入提醒 ID，使用 `enable(alert_id)` 启用，使用 `disable(alert_id)` 停用。
 
 <SDKLinks module="alert" klass="AlertContext" method="enable" />
 
 
 ## Parameters
 
-> **SDK 方法参数。**
+> **SDK method parameters.**
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| id | int64 | 是 | 提醒 ID（路径参数） |
-| enabled | bool | 是 | 设为 `true` 启用，`false` 禁用 |
+| alert_id | string | YES | Alert ID (from `list()` response `indicators[].id`) |
 
 ## Request Example
 
@@ -36,7 +35,15 @@ oauth = OAuthBuilder("your-client-id").build(lambda url: print("Visit:", url))
 config = Config.from_oauth(oauth)
 ctx = AlertContext(config)
 
-resp = ctx.update_alert("112326", enabled=True)
+# Get the alert ID from list()
+alerts = ctx.list()
+alert_id = alerts.lists[0].indicators[0].id
+
+# Enable the alert
+ctx.enable(alert_id)
+
+# Disable the alert
+ctx.disable(alert_id)
 ```
 
   </TabItem>
@@ -51,7 +58,10 @@ async def main() -> None:
     config = Config.from_oauth(oauth)
     ctx = AsyncAlertContext.create(config)
 
-    resp = await ctx.update_alert("112326", enabled=True)
+    alerts = await ctx.list()
+    alert_id = alerts.lists[0].indicators[0].id
+    await ctx.enable(alert_id)
+    # await ctx.disable(alert_id)  # to disable
 
 if __name__ == "__main__":
     asyncio.run(main())
@@ -69,8 +79,10 @@ async function main() {
   })
   const config = Config.fromOAuth(oauth)
   const ctx = AlertContext.new(config)
-  const resp = await ctx.update_alert()
-  console.log(resp)
+  const alerts = await ctx.list()
+  const alertId = alerts.lists[0].indicators[0].id
+  await ctx.enable(alertId)
+  // await ctx.disable(alertId)  // to disable
 }
 main().catch(console.error)
 ```
@@ -87,8 +99,10 @@ class Main {
         try (OAuth oauth = new OAuthBuilder("your-client-id").build(url -> System.out.println("Open to authorize: " + url)).get();
              Config config = Config.fromOAuth(oauth);
              AlertContext ctx = AlertContext.create(config)) {
-            var resp = ctx.getUpdateAlert().get();
-            System.out.println(resp);
+            var alerts = ctx.getList().get();
+            String alertId = alerts.getLists().get(0).getIndicators().get(0).getId();
+            ctx.enable(alertId).get();
+            // ctx.disable(alertId).get();  // to disable
         }
     }
 }
@@ -106,7 +120,10 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let oauth = OAuthBuilder::new("your-client-id").build(|url| println!("Open: {url}")).await?;
     let config = Arc::new(Config::from_oauth(oauth));
     let ctx = AlertContext::new(config);
-    let resp = ctx.update_alert().await?;
+    let list = ctx.list().await?;
+    let alert_id = &list.lists[0].indicators[0].id;
+    ctx.enable(alert_id).await?;
+    // ctx.disable(alert_id).await?;  // to disable
     Ok(())
 }
 ```
@@ -128,8 +145,12 @@ int main() {
             if (!res) return;
             Config config = Config::from_oauth(*res);
             AlertContext ctx = AlertContext::create(config);
-            ctx.update_alert([](auto resp) {
-                if (resp) std::cout << "OK" << std::endl;
+            ctx.list([&ctx](auto list_resp) {
+                if (!list_resp) return;
+                auto alert_id = (*list_resp).lists[0].indicators[0].id;
+                ctx.enable(alert_id, [](auto resp) {
+                    if (resp) std::cout << "OK" << std::endl;
+                });
             });
         });
     std::cin.get();
@@ -167,11 +188,15 @@ func main() {
 		log.Fatal(err)
 	}
 	defer c.Close()
-	resp, err := c.UpdateAlert(context.Background())
+	list, err := c.List(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Printf("%+v\n", resp)
+	alertID := list.Lists[0].Indicators[0].ID
+	if err = c.Enable(context.Background(), alertID); err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println("OK")
 }
 ```
 
@@ -195,13 +220,5 @@ func main() {
 
 | Status | Description | Schema |
 | ------ | ----------- | ------ |
-| 200    | 成功        | [UpdateAlertResponse](#UpdateAlertResponse) |
-| 400    | 请求错误    | None   |
-
-## Schemas
-
-### UpdateAlertResponse
-
-<a id="UpdateAlertResponse"></a>
-
-无响应体字段。
+| 200    | Success     | None |
+| 400    | Bad request | None   |

@@ -12,7 +12,7 @@ headingLevel: 2
 
 Delete a price alert by its ID.
 
-<SDKLinks module="alert" klass="AlertContext" method="delete_alert" />
+<SDKLinks module="alert" klass="AlertContext" method="delete" />
 
 
 ## Parameters
@@ -35,7 +35,7 @@ oauth = OAuthBuilder("your-client-id").build(lambda url: print("Visit:", url))
 config = Config.from_oauth(oauth)
 ctx = AlertContext(config)
 
-resp = ctx.delete_alert("486469")
+resp = ctx.delete("486469")
 print(resp)
 ```
 
@@ -51,7 +51,7 @@ async def main() -> None:
     config = Config.from_oauth(oauth)
     ctx = AsyncAlertContext.create(config)
 
-    resp = await ctx.delete_alert("486469")
+    resp = await ctx.delete("486469")
     print(resp)
 
 if __name__ == "__main__":
@@ -70,7 +70,7 @@ async function main() {
   })
   const config = Config.fromOAuth(oauth)
   const ctx = AlertContext.new(config)
-  const resp = await ctx.delete_alert()
+  const resp = await ctx.delete()
   console.log(resp)
 }
 main().catch(console.error)
@@ -88,7 +88,7 @@ class Main {
         try (OAuth oauth = new OAuthBuilder("your-client-id").build(url -> System.out.println("Open to authorize: " + url)).get();
              Config config = Config.fromOAuth(oauth);
              AlertContext ctx = AlertContext.create(config)) {
-            var resp = ctx.getDeleteAlert().get();
+            var resp = ctx.getDelete().get();
             System.out.println(resp);
         }
     }
@@ -107,7 +107,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let oauth = OAuthBuilder::new("your-client-id").build(|url| println!("Open: {url}")).await?;
     let config = Arc::new(Config::from_oauth(oauth));
     let ctx = AlertContext::new(config);
-    let resp = ctx.delete_alert().await?;
+    let resp = ctx.delete().await?;
     println!("{:?}", resp);
     Ok(())
 }
@@ -130,7 +130,7 @@ int main() {
             if (!res) return;
             Config config = Config::from_oauth(*res);
             AlertContext ctx = AlertContext::create(config);
-            ctx.delete_alert([](auto resp) {
+            ctx.delete([](auto resp) {
                 if (resp) std::cout << "OK" << std::endl;
             });
         });
@@ -169,7 +169,7 @@ func main() {
 		log.Fatal(err)
 	}
 	defer c.Close()
-	resp, err := c.DeleteAlert(context.Background())
+	resp, err := c.Delete(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}

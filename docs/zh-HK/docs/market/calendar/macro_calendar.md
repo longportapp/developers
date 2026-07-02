@@ -31,13 +31,13 @@ headingLevel: 2
   <TabItem value="python" label="Python">
 
 ```python
-from longport.openapi import CalendarContext, Config, OAuthBuilder
+from longport.openapi import CalendarContext, CalendarCategory, Config, OAuthBuilder
 
 oauth = OAuthBuilder("your-client-id").build(lambda url: print("Visit:", url))
 config = Config.from_oauth(oauth)
 ctx = CalendarContext(config)
 
-resp = ctx.macro_calendar("AAPL.US")
+resp = ctx.finance_calendar(CalendarCategory.MacroData, "2026-01-01", "2026-12-31")
 print(resp)
 ```
 
@@ -46,14 +46,14 @@ print(resp)
 
 ```python
 import asyncio
-from longport.openapi import AsyncCalendarContext, Config, OAuthBuilder
+from longport.openapi import AsyncCalendarContext, CalendarCategory, Config, OAuthBuilder
 
 async def main() -> None:
     oauth = await OAuthBuilder("your-client-id").build_async(lambda url: print("Visit:", url))
     config = Config.from_oauth(oauth)
     ctx = AsyncCalendarContext.create(config)
 
-    resp = await ctx.macro_calendar("AAPL.US")
+    resp = await ctx.finance_calendar(CalendarCategory.MacroData, "2026-01-01", "2026-12-31")
     print(resp)
 
 if __name__ == "__main__":
@@ -72,7 +72,7 @@ async function main() {
   })
   const config = Config.fromOAuth(oauth)
   const ctx = CalendarContext.new(config)
-  const resp = await ctx.macro_calendar('AAPL.US')
+  const resp = await ctx.finance_calendar(CalendarCategory.MacroData, "2026-01-01", "2026-12-31")
   console.log(resp)
 }
 main().catch(console.error)
@@ -90,7 +90,7 @@ class Main {
         try (OAuth oauth = new OAuthBuilder("your-client-id").build(url -> System.out.println("Open to authorize: " + url)).get();
              Config config = Config.fromOAuth(oauth);
              CalendarContext ctx = CalendarContext.create(config)) {
-            var resp = ctx.getMacroCalendar("AAPL.US").get();
+            var resp = ctx.getFinanceCalendar(CalendarCategory.MacroData, "2026-01-01", "2026-12-31").get();
             System.out.println(resp);
         }
     }
@@ -109,7 +109,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let oauth = OAuthBuilder::new("your-client-id").build(|url| println!("Open: {url}")).await?;
     let config = Arc::new(Config::from_oauth(oauth));
     let ctx = CalendarContext::new(config);
-    let resp = ctx.macro_calendar("AAPL.US").await?;
+    let resp = ctx.finance_calendar(CalendarCategory.MacroData, "2026-01-01", "2026-12-31").await?;
     println!("{:?}", resp);
     Ok(())
 }
@@ -132,7 +132,7 @@ int main() {
             if (!res) return;
             Config config = Config::from_oauth(*res);
             CalendarContext ctx = CalendarContext::create(config);
-            ctx.macro_calendar("AAPL.US", [](auto resp) {
+            ctx.finance_calendar(CalendarCategory.MacroData, "2026-01-01", "2026-12-31") {
                 if (resp) std::cout << "OK" << std::endl;
             });
         });
@@ -171,7 +171,7 @@ func main() {
 		log.Fatal(err)
 	}
 	defer c.Close()
-	resp, err := c.MacroCalendar(context.Background(), "AAPL.US")
+	resp, err := c.FinanceCalendar(context.Background(), "MacroData", "2026-01-01", "2026-12-31")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -248,6 +248,7 @@ func main() {
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | date | string | 是 | 日期 |
+| next_date | string | 否 | 翻頁游標；傳為 `start` 請求下一頁，為空時無更多數據 |
 | count | integer | 否 | 該日期的事件數量 |
 | infos | object[] | 是 | 日曆事件列表，見 [CalendarEventInfo](#CalendarEventInfo) |
 

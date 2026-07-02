@@ -10,7 +10,7 @@ highlight_theme: ''
 headingLevel: 2
 ---
 
-Enable or disable an existing price alert. First call `list` to obtain the full `AlertItem`, set `item.enabled` to `True` or `False`, then call `update(item)`.
+Enable or disable an existing price alert by its ID. Use `enable(alert_id)` to activate and `disable(alert_id)` to deactivate.
 
 <SDKLinks module="alert" klass="AlertContext" method="enable" />
 
@@ -21,8 +21,7 @@ Enable or disable an existing price alert. First call `list` to obtain the full 
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| id | int64 | YES | Alert ID (path parameter) |
-| enabled | bool | YES | New enabled state: `true` to enable, `false` to disable — set on the `AlertItem` before calling `update` |
+| alert_id | string | YES | Alert ID (from `list()` response `indicators[].id`) |
 
 ## Request Example
 
@@ -36,15 +35,15 @@ oauth = OAuthBuilder("your-client-id").build(lambda url: print("Visit:", url))
 config = Config.from_oauth(oauth)
 ctx = AlertContext(config)
 
-# Get the alert from list()
+# Get the alert ID from list()
 alerts = ctx.list()
-item = alerts.lists[0].indicators[0]  # pick the alert you want
-# Enable: set enabled=True then call update
-item.enabled = True
-ctx.update(item)
-# Disable: set enabled=False then call update
-item.enabled = False
-ctx.update(item)
+alert_id = alerts.lists[0].indicators[0].id
+
+# Enable the alert
+ctx.enable(alert_id)
+
+# Disable the alert
+ctx.disable(alert_id)
 ```
 
   </TabItem>
@@ -60,9 +59,9 @@ async def main() -> None:
     ctx = AsyncAlertContext.create(config)
 
     alerts = await ctx.list()
-    item = alerts.lists[0].indicators[0]
-    item.enabled = True   # or False to disable
-    await ctx.update(item)
+    alert_id = alerts.lists[0].indicators[0].id
+    await ctx.enable(alert_id)
+    # await ctx.disable(alert_id)  # to disable
 
 if __name__ == "__main__":
     asyncio.run(main())
@@ -81,10 +80,9 @@ async function main() {
   const config = Config.fromOAuth(oauth)
   const ctx = AlertContext.new(config)
   const alerts = await ctx.list()
-  const item = alerts.lists[0].indicators[0]
-  item.enabled = true   // or false to disable
-  await ctx.update(item)
-  console.log(resp)
+  const alertId = alerts.lists[0].indicators[0].id
+  await ctx.enable(alertId)
+  // await ctx.disable(alertId)  // to disable
 }
 main().catch(console.error)
 ```
@@ -101,11 +99,10 @@ class Main {
         try (OAuth oauth = new OAuthBuilder("your-client-id").build(url -> System.out.println("Open to authorize: " + url)).get();
              Config config = Config.fromOAuth(oauth);
              AlertContext ctx = AlertContext.create(config)) {
-            var alerts = ctx.list().get();
-            var item = alerts.getLists().get(0).getIndicators().get(0);
-            item.setEnabled(true);  // or false to disable
-            ctx.update(item).get();
-            System.out.println(resp);
+            var alerts = ctx.getList().get();
+            String alertId = alerts.getLists().get(0).getIndicators().get(0).getId();
+            ctx.enable(alertId).get();
+            // ctx.disable(alertId).get();  // to disable
         }
     }
 }
@@ -123,9 +120,10 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let oauth = OAuthBuilder::new("your-client-id").build(|url| println!("Open: {url}")).await?;
     let config = Arc::new(Config::from_oauth(oauth));
     let ctx = AlertContext::new(config);
-    let mut item = ctx.list().await?.lists.remove(0).indicators.remove(0);
-    item.enabled = true;  // or false to disable
-    ctx.update(&item).await?;
+    let list = ctx.list().await?;
+    let alert_id = &list.lists[0].indicators[0].id;
+    ctx.enable(alert_id).await?;
+    // ctx.disable(alert_id).await?;  // to disable
     Ok(())
 }
 ```
@@ -148,9 +146,11 @@ int main() {
             Config config = Config::from_oauth(*res);
             AlertContext ctx = AlertContext::create(config);
             ctx.list([&ctx](auto list_resp) {
-              auto& item = (*list_resp).lists[0].indicators[0];
-              ctx.enable(item, [](auto resp) {
-                if (resp) std::cout << "OK" << std::endl;
+                if (!list_resp) return;
+                auto alert_id = (*list_resp).lists[0].indicators[0].id;
+                ctx.enable(alert_id, [](auto resp) {
+                    if (resp) std::cout << "OK" << std::endl;
+                });
             });
         });
     std::cin.get();
@@ -189,16 +189,14 @@ func main() {
 	}
 	defer c.Close()
 	list, err := c.List(context.Background())
-	if err != nil { log.Fatal(err) }
-	item := list.Lists[0].Indicators[0]
-	item.Enabled = true  // or false to disable
-	if err = c.Update(context.Background(), &item); err != nil {
-		log.Fatal(err)
-	}
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Printf("%+v\n", resp)
+	alertID := list.Lists[0].Indicators[0].ID
+	if err = c.Enable(context.Background(), alertID); err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println("OK")
 }
 ```
 
@@ -222,13 +220,5 @@ func main() {
 
 | Status | Description | Schema |
 | ------ | ----------- | ------ |
-| 200    | Success     | [UpdateAlertResponse](#UpdateAlertResponse) |
+| 200    | Success     | None |
 | 400    | Bad request | None   |
-
-## Schemas
-
-### UpdateAlertResponse
-
-<a id="UpdateAlertResponse"></a>
-
-No response body fields.

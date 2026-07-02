@@ -12,7 +12,7 @@ headingLevel: 2
 
 为指定证券创建股价提醒，当价格高于或低于目标价时触发通知。
 
-<SDKLinks module="alert" klass="AlertContext" method="create_alert" />
+<SDKLinks module="alert" klass="AlertContext" method="add" />
 
 
 ## Parameters
@@ -32,13 +32,13 @@ headingLevel: 2
   <TabItem value="python" label="Python">
 
 ```python
-from longport.openapi import AlertContext, Config, OAuthBuilder
+from longport.openapi import AlertContext, AlertCondition, AlertFrequency, Config, OAuthBuilder
 
 oauth = OAuthBuilder("your-client-id").build(lambda url: print("Visit:", url))
 config = Config.from_oauth(oauth)
 ctx = AlertContext(config)
 
-resp = ctx.create_alert()
+resp = ctx.add("TSLA.US", AlertCondition.PriceRise, "600", AlertFrequency.Once)
 print(resp)
 ```
 
@@ -47,14 +47,14 @@ print(resp)
 
 ```python
 import asyncio
-from longport.openapi import AsyncAlertContext, Config, OAuthBuilder
+from longport.openapi import AsyncAlertContext, AlertCondition, AlertFrequency, Config, OAuthBuilder
 
 async def main() -> None:
     oauth = await OAuthBuilder("your-client-id").build_async(lambda url: print("Visit:", url))
     config = Config.from_oauth(oauth)
     ctx = AsyncAlertContext.create(config)
 
-    resp = await ctx.create_alert()
+    resp = await ctx.add("TSLA.US", AlertCondition.PriceRise, "600", AlertFrequency.Once)
     print(resp)
 
 if __name__ == "__main__":
@@ -73,7 +73,7 @@ async function main() {
   })
   const config = Config.fromOAuth(oauth)
   const ctx = AlertContext.new(config)
-  const resp = await ctx.create_alert()
+  const resp = await ctx.add("TSLA.US", AlertCondition.PriceRise, "600", AlertFrequency.Once)
   console.log(resp)
 }
 main().catch(console.error)
@@ -91,7 +91,7 @@ class Main {
         try (OAuth oauth = new OAuthBuilder("your-client-id").build(url -> System.out.println("Open to authorize: " + url)).get();
              Config config = Config.fromOAuth(oauth);
              AlertContext ctx = AlertContext.create(config)) {
-            var resp = ctx.getCreateAlert().get();
+            var resp = ctx.getAdd().get();
             System.out.println(resp);
         }
     }
@@ -110,7 +110,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let oauth = OAuthBuilder::new("your-client-id").build(|url| println!("Open: {url}")).await?;
     let config = Arc::new(Config::from_oauth(oauth));
     let ctx = AlertContext::new(config);
-    let resp = ctx.create_alert().await?;
+    let resp = ctx.add("TSLA.US", AlertCondition.PriceRise, "600", AlertFrequency.Once).await?;
     println!("{:?}", resp);
     Ok(())
 }
@@ -133,7 +133,7 @@ int main() {
             if (!res) return;
             Config config = Config::from_oauth(*res);
             AlertContext ctx = AlertContext::create(config);
-            ctx.create_alert([](auto resp) {
+            ctx.add("TSLA.US", ...)[](auto resp) {
                 if (resp) std::cout << "OK" << std::endl;
             });
         });
@@ -172,7 +172,7 @@ func main() {
 		log.Fatal(err)
 	}
 	defer c.Close()
-	resp, err := c.CreateAlert(context.Background())
+	resp, err := c.Add(context.Background())
 	if err != nil {
 		log.Fatal(err)
 	}

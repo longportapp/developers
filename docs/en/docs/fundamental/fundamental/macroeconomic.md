@@ -23,7 +23,6 @@ Get historical releases for a specific macroeconomic indicator — actual values
 | indicator_code | string | YES | Indicator code from `macroeconomic_indicators` |
 | start_date | string | NO | Start date in `YYYY-MM-DD` format |
 | end_date | string | NO | End date in `YYYY-MM-DD` format |
-| offset | int | NO | Pagination offset. Default: 0 |
 | limit | int | NO | Max records. Default: 100, max: 100 |
 
 ## Request Example
