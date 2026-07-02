@@ -87,7 +87,11 @@ class Main {
         try (OAuth oauth = new OAuthBuilder("your-client-id").build(url -> System.out.println("Open: " + url)).get();
              Config config = Config.fromOAuth(oauth);
              CalendarContext ctx = CalendarContext.create(config)) {
-            var resp = ctx.financeCalendar(CalendarCategory.Merge, "2024-01-01", "2024-03-31", null).get();
+            var opts = new FinanceCalendarOptions();
+            opts.category = CalendarCategory.Merge;
+            opts.start = "2024-01-01";
+            opts.end = "2024-03-31";
+            var resp = ctx.getFinanceCalendar(opts).get();
             System.out.println(resp);
         }
     }

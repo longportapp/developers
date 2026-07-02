@@ -64,7 +64,7 @@ if __name__ == "__main__":
   <TabItem value="nodejs" label="Node.js">
 
 ```javascript
-const { Config, CalendarContext, OAuth } = require('longport')
+const { Config, CalendarContext, CalendarCategory, OAuth } = require('longport')
 
 async function main() {
   const oauth = await OAuth.build('your-client-id', (_, url) => {
@@ -72,7 +72,7 @@ async function main() {
   })
   const config = Config.fromOAuth(oauth)
   const ctx = CalendarContext.new(config)
-  const resp = await ctx.finance_calendar(CalendarCategory.Split, "2026-01-01", "2026-12-31")
+  const resp = await ctx.financeCalendar(CalendarCategory.Split, "2026-01-01", "2026-12-31")
   console.log(resp)
 }
 main().catch(console.error)
@@ -90,7 +90,11 @@ class Main {
         try (OAuth oauth = new OAuthBuilder("your-client-id").build(url -> System.out.println("Open to authorize: " + url)).get();
              Config config = Config.fromOAuth(oauth);
              CalendarContext ctx = CalendarContext.create(config)) {
-            var resp = ctx.getFinanceCalendar(CalendarCategory.Split, "2026-01-01", "2026-12-31").get();
+            var opts = new FinanceCalendarOptions();
+            opts.category = CalendarCategory.Split;
+            opts.start = "2026-01-01";
+            opts.end = "2026-12-31";
+            var resp = ctx.getFinanceCalendar(opts).get();
             System.out.println(resp);
         }
     }
@@ -102,14 +106,14 @@ class Main {
 
 ```rust
 use std::sync::Arc;
-use longport::{oauth::OAuthBuilder, calendar::CalendarContext, Config};
+use longport::{oauth::OAuthBuilder, calendar::{CalendarContext, CalendarCategory}, Config};
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let oauth = OAuthBuilder::new("your-client-id").build(|url| println!("Open: {url}")).await?;
     let config = Arc::new(Config::from_oauth(oauth));
     let ctx = CalendarContext::new(config);
-    let resp = ctx.finance_calendar(CalendarCategory.Split, "2026-01-01", "2026-12-31").await?;
+    let resp = ctx.finance_calendar(CalendarCategory::Split, "2026-01-01", "2026-12-31").await?;
     println!("{:?}", resp);
     Ok(())
 }
@@ -132,7 +136,7 @@ int main() {
             if (!res) return;
             Config config = Config::from_oauth(*res);
             CalendarContext ctx = CalendarContext::create(config);
-            ctx.finance_calendar(CalendarCategory.Split, "2026-01-01", "2026-12-31") {
+            ctx.finance_calendar(CalendarCategory::Split, "2026-01-01", "2026-12-31", "", [](auto resp) {
                 if (resp) std::cout << "OK" << std::endl;
             });
         });

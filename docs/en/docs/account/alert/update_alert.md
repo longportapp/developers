@@ -10,7 +10,7 @@ highlight_theme: ''
 headingLevel: 2
 ---
 
-Enable or disable an existing price alert by its ID. Use `enable(alert_id)` to activate and `disable(alert_id)` to deactivate.
+Enable or disable a price alert. Python and Java expose `enable(alert_id)` / `disable(alert_id)`; other languages use `update(item)` after setting `item.enabled = true` or `false`.
 
 <SDKLinks module="alert" klass="AlertContext" method="enable" />
 
@@ -80,9 +80,9 @@ async function main() {
   const config = Config.fromOAuth(oauth)
   const ctx = AlertContext.new(config)
   const alerts = await ctx.list()
-  const alertId = alerts.lists[0].indicators[0].id
-  await ctx.enable(alertId)
-  // await ctx.disable(alertId)  // to disable
+  const item = alerts.lists[0].indicators[0]
+  item.enabled = true  // set false to disable
+  await ctx.update(item)
 }
 main().catch(console.error)
 ```
@@ -121,9 +121,9 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let config = Arc::new(Config::from_oauth(oauth));
     let ctx = AlertContext::new(config);
     let list = ctx.list().await?;
-    let alert_id = &list.lists[0].indicators[0].id;
-    ctx.enable(alert_id).await?;
-    // ctx.disable(alert_id).await?;  // to disable
+    let mut item = list.lists[0].indicators[0].clone();
+    item.enabled = true;  // set false to disable
+    ctx.update(&item).await?;
     Ok(())
 }
 ```
@@ -147,8 +147,9 @@ int main() {
             AlertContext ctx = AlertContext::create(config);
             ctx.list([&ctx](auto list_resp) {
                 if (!list_resp) return;
-                auto alert_id = (*list_resp).lists[0].indicators[0].id;
-                ctx.enable(alert_id, [](auto resp) {
+                auto item = (*list_resp).lists[0].indicators[0];
+                item.enabled = true;  // set false to disable
+                ctx.update(item, [](auto resp) {
                     if (resp) std::cout << "OK" << std::endl;
                 });
             });

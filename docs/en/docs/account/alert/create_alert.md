@@ -10,7 +10,7 @@ highlight_theme: ''
 headingLevel: 2
 ---
 
-Create a new price alert for a security when it rises above or falls below a target price.
+Create a new price alert for a security. The alert fires when the specified condition is met.
 
 <SDKLinks module="alert" klass="AlertContext" method="add" />
 
@@ -22,9 +22,9 @@ Create a new price alert for a security when it rises above or falls below a tar
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | symbol | string | YES | Security symbol, e.g. `TSLA.US` |
-| price | string | YES | Target price |
-| direction | string | YES | Alert direction: `rise` or `fall` |
-| frequency | string | NO | Trigger frequency: `once` (default) or `every` |
+| condition | AlertCondition | YES | Trigger condition: `PriceRise`, `PriceFall`, `PercentRise`, `PercentFall` |
+| trigger_value | string | YES | Threshold value, e.g. `"600"` (price) or `"5"` (percentage) |
+| frequency | AlertFrequency | YES | How often to trigger: `Daily`, `EveryTime`, `Once` |
 
 ## Request Example
 
@@ -38,8 +38,7 @@ oauth = OAuthBuilder("your-client-id").build(lambda url: print("Visit:", url))
 config = Config.from_oauth(oauth)
 ctx = AlertContext(config)
 
-resp = ctx.add("TSLA.US", AlertCondition.PriceRise, "600", AlertFrequency.Once)
-print(resp)
+ctx.add("TSLA.US", AlertCondition.PriceRise, "600", AlertFrequency.Once)
 ```
 
   </TabItem>
@@ -54,8 +53,7 @@ async def main() -> None:
     config = Config.from_oauth(oauth)
     ctx = AsyncAlertContext.create(config)
 
-    resp = await ctx.add("TSLA.US", AlertCondition.PriceRise, "600", AlertFrequency.Once)
-    print(resp)
+    await ctx.add("TSLA.US", AlertCondition.PriceRise, "600", AlertFrequency.Once)
 
 if __name__ == "__main__":
     asyncio.run(main())
@@ -65,7 +63,7 @@ if __name__ == "__main__":
   <TabItem value="nodejs" label="Node.js">
 
 ```javascript
-const { Config, AlertContext, OAuth } = require('longport')
+const { Config, AlertContext, AlertCondition, AlertFrequency, OAuth } = require('longport')
 
 async function main() {
   const oauth = await OAuth.build('your-client-id', (_, url) => {
@@ -73,8 +71,7 @@ async function main() {
   })
   const config = Config.fromOAuth(oauth)
   const ctx = AlertContext.new(config)
-  const resp = await ctx.add("TSLA.US", AlertCondition.PriceRise, "600", AlertFrequency.Once)
-  console.log(resp)
+  await ctx.add("TSLA.US", AlertCondition.PriceRise, "600", AlertFrequency.Once)
 }
 main().catch(console.error)
 ```
@@ -91,8 +88,12 @@ class Main {
         try (OAuth oauth = new OAuthBuilder("your-client-id").build(url -> System.out.println("Open to authorize: " + url)).get();
              Config config = Config.fromOAuth(oauth);
              AlertContext ctx = AlertContext.create(config)) {
-            var resp = ctx.getAdd().get();
-            System.out.println(resp);
+            var opts = new AddAlertOptions();
+            opts.symbol = "TSLA.US";
+            opts.condition = AlertCondition.PriceRise;
+            opts.triggerValue = "600";
+            opts.frequency = AlertFrequency.Once;
+            ctx.add(opts).get();
         }
     }
 }
@@ -103,15 +104,14 @@ class Main {
 
 ```rust
 use std::sync::Arc;
-use longport::{oauth::OAuthBuilder, alert::AlertContext, Config};
+use longport::{oauth::OAuthBuilder, alert::{AlertContext, AlertCondition, AlertFrequency}, Config};
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let oauth = OAuthBuilder::new("your-client-id").build(|url| println!("Open: {url}")).await?;
     let config = Arc::new(Config::from_oauth(oauth));
     let ctx = AlertContext::new(config);
-    let resp = ctx.add("TSLA.US", AlertCondition.PriceRise, "600", AlertFrequency.Once).await?;
-    println!("{:?}", resp);
+    ctx.add("TSLA.US", AlertCondition::PriceRise, "600", AlertFrequency::Once).await?;
     Ok(())
 }
 ```
@@ -133,9 +133,10 @@ int main() {
             if (!res) return;
             Config config = Config::from_oauth(*res);
             AlertContext ctx = AlertContext::create(config);
-            ctx.add("TSLA.US", ...)[](auto resp) {
-                if (resp) std::cout << "OK" << std::endl;
-            });
+            ctx.add("TSLA.US", AlertCondition::PriceRise, "600", AlertFrequency::Once,
+                [](auto resp) {
+                    if (resp) std::cout << "OK" << std::endl;
+                });
         });
     std::cin.get();
 }
@@ -172,11 +173,10 @@ func main() {
 		log.Fatal(err)
 	}
 	defer c.Close()
-	resp, err := c.Add(context.Background())
-	if err != nil {
+	if err = c.Add(context.Background(), "TSLA.US", alert.AlertConditionPriceRise, "600", alert.AlertFrequencyOnce); err != nil {
 		log.Fatal(err)
 	}
-	fmt.Printf("%+v\n", resp)
+	fmt.Println("OK")
 }
 ```
 
@@ -192,9 +192,7 @@ func main() {
 {
   "code": 0,
   "message": "success",
-  "data": {
-    "id": 486469
-  }
+  "data": {}
 }
 ```
 
@@ -202,15 +200,5 @@ func main() {
 
 | Status | Description | Schema |
 | ------ | ----------- | ------ |
-| 200    | Success     | [CreateAlertResponse](#CreateAlertResponse) |
+| 200    | Success     | None |
 | 400    | Bad request | None   |
-
-## Schemas
-
-### CreateAlertResponse
-
-<a id="CreateAlertResponse"></a>
-
-| Name | Type | Required | Description |
-| ---- | ---- | -------- | ----------- |
-| id | int64 | true | ID of the newly created alert |

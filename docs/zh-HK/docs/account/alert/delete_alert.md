@@ -21,7 +21,7 @@ headingLevel: 2
 
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
-| id | int64 | 是 | 提醒 ID（路徑參數） |
+| alert_ids | string[] | 是 | 要刪除的提醒 ID 列表（來自 `list()` 響應的 `indicators[].id`） |
 
 ## Request Example
 
@@ -35,8 +35,7 @@ oauth = OAuthBuilder("your-client-id").build(lambda url: print("Visit:", url))
 config = Config.from_oauth(oauth)
 ctx = AlertContext(config)
 
-resp = ctx.delete("486469")
-print(resp)
+ctx.delete(["486469"])
 ```
 
   </TabItem>
@@ -51,8 +50,7 @@ async def main() -> None:
     config = Config.from_oauth(oauth)
     ctx = AsyncAlertContext.create(config)
 
-    resp = await ctx.delete("486469")
-    print(resp)
+    await ctx.delete(["486469"])
 
 if __name__ == "__main__":
     asyncio.run(main())
@@ -70,8 +68,7 @@ async function main() {
   })
   const config = Config.fromOAuth(oauth)
   const ctx = AlertContext.new(config)
-  const resp = await ctx.delete()
-  console.log(resp)
+  await ctx.delete(["486469"])
 }
 main().catch(console.error)
 ```
@@ -88,8 +85,9 @@ class Main {
         try (OAuth oauth = new OAuthBuilder("your-client-id").build(url -> System.out.println("Open to authorize: " + url)).get();
              Config config = Config.fromOAuth(oauth);
              AlertContext ctx = AlertContext.create(config)) {
-            var resp = ctx.getDelete().get();
-            System.out.println(resp);
+            var opts = new DeleteAlertOptions();
+            opts.ids = java.util.Arrays.asList("486469");
+            ctx.delete(opts).get();
         }
     }
 }
@@ -107,34 +105,8 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let oauth = OAuthBuilder::new("your-client-id").build(|url| println!("Open: {url}")).await?;
     let config = Arc::new(Config::from_oauth(oauth));
     let ctx = AlertContext::new(config);
-    let resp = ctx.delete().await?;
-    println!("{:?}", resp);
+    ctx.delete(vec!["486469".to_string()]).await?;
     Ok(())
-}
-```
-
-  </TabItem>
-  <TabItem value="cpp" label="C++">
-
-```cpp
-#include <iostream>
-#include <longport.hpp>
-
-using namespace longport;
-using namespace longport::alert;
-
-int main() {
-    OAuthBuilder("your-client-id").build(
-        [](const std::string& url) { std::cout << "Open: " << url << std::endl; },
-        [](auto res) {
-            if (!res) return;
-            Config config = Config::from_oauth(*res);
-            AlertContext ctx = AlertContext::create(config);
-            ctx.delete([](auto resp) {
-                if (resp) std::cout << "OK" << std::endl;
-            });
-        });
-    std::cin.get();
 }
 ```
 
@@ -169,12 +141,11 @@ func main() {
 		log.Fatal(err)
 	}
 	defer c.Close()
-	resp, err := c.Delete(context.Background())
+	err = c.Delete(context.Background(), []string{"486469"})
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Printf("%+v\n", resp)
-}
+	}
 ```
 
   </TabItem>

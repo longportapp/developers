@@ -22,9 +22,9 @@ headingLevel: 2
 | Name | Type | Required | Description |
 | ---- | ---- | -------- | ----------- |
 | symbol | string | 是 | 證券代碼，例如 `TSLA.US` |
-| price | string | 是 | 目標價格 |
-| direction | string | 是 | 提醒方向：`rise`（上漲）或 `fall`（下跌） |
-| frequency | string | 否 | 觸發頻率：`once`（僅一次，默認）或 `every`（每次） |
+| trigger_value | string | 是 | 觸發閾值，如 `"600"`（價格）或 `"5"`（百分比） |
+| condition | AlertCondition | 是 | 觸發條件：`PriceRise`、`PriceFall`、`PercentRise`、`PercentFall` |
+| frequency | AlertFrequency | 是 | 觸發頻率：`Daily`、`EveryTime`、`Once` |
 
 ## Request Example
 
@@ -38,8 +38,7 @@ oauth = OAuthBuilder("your-client-id").build(lambda url: print("Visit:", url))
 config = Config.from_oauth(oauth)
 ctx = AlertContext(config)
 
-resp = ctx.add("TSLA.US", AlertCondition.PriceRise, "600", AlertFrequency.Once)
-print(resp)
+ctx.add("TSLA.US", AlertCondition.PriceRise, "600", AlertFrequency.Once)
 ```
 
   </TabItem>
@@ -54,8 +53,7 @@ async def main() -> None:
     config = Config.from_oauth(oauth)
     ctx = AsyncAlertContext.create(config)
 
-    resp = await ctx.add("TSLA.US", AlertCondition.PriceRise, "600", AlertFrequency.Once)
-    print(resp)
+    await ctx.add("TSLA.US", AlertCondition.PriceRise, "600", AlertFrequency.Once)
 
 if __name__ == "__main__":
     asyncio.run(main())
@@ -65,7 +63,7 @@ if __name__ == "__main__":
   <TabItem value="nodejs" label="Node.js">
 
 ```javascript
-const { Config, AlertContext, OAuth } = require('longport')
+const { Config, AlertContext, AlertCondition, AlertFrequency, OAuth } = require('longport')
 
 async function main() {
   const oauth = await OAuth.build('your-client-id', (_, url) => {
@@ -73,8 +71,7 @@ async function main() {
   })
   const config = Config.fromOAuth(oauth)
   const ctx = AlertContext.new(config)
-  const resp = await ctx.add("TSLA.US", AlertCondition.PriceRise, "600", AlertFrequency.Once)
-  console.log(resp)
+  await ctx.add("TSLA.US", AlertCondition.PriceRise, "600", AlertFrequency.Once)
 }
 main().catch(console.error)
 ```
@@ -91,8 +88,12 @@ class Main {
         try (OAuth oauth = new OAuthBuilder("your-client-id").build(url -> System.out.println("Open to authorize: " + url)).get();
              Config config = Config.fromOAuth(oauth);
              AlertContext ctx = AlertContext.create(config)) {
-            var resp = ctx.getAdd().get();
-            System.out.println(resp);
+            var opts = new AddAlertOptions();
+            opts.symbol = "TSLA.US";
+            opts.condition = AlertCondition.PriceRise;
+            opts.triggerValue = "600";
+            opts.frequency = AlertFrequency.Once;
+            ctx.add(opts).get();
         }
     }
 }
@@ -103,14 +104,14 @@ class Main {
 
 ```rust
 use std::sync::Arc;
-use longport::{oauth::OAuthBuilder, alert::AlertContext, Config};
+use longport::{oauth::OAuthBuilder, alert::{AlertContext, AlertCondition, AlertFrequency}, Config};
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let oauth = OAuthBuilder::new("your-client-id").build(|url| println!("Open: {url}")).await?;
     let config = Arc::new(Config::from_oauth(oauth));
     let ctx = AlertContext::new(config);
-    let resp = ctx.add("TSLA.US", AlertCondition.PriceRise, "600", AlertFrequency.Once).await?;
+    ctx.add("TSLA.US", AlertCondition::PriceRise, "600", AlertFrequency::Once).await?;
     println!("{:?}", resp);
     Ok(())
 }
@@ -133,7 +134,8 @@ int main() {
             if (!res) return;
             Config config = Config::from_oauth(*res);
             AlertContext ctx = AlertContext::create(config);
-            ctx.add("TSLA.US", ...)[](auto resp) {
+            ctx.add("TSLA.US", AlertCondition::PriceRise, "600", AlertFrequency::Once,
+                [](auto resp) {
                 if (resp) std::cout << "OK" << std::endl;
             });
         });
@@ -172,11 +174,10 @@ func main() {
 		log.Fatal(err)
 	}
 	defer c.Close()
-	resp, err := c.Add(context.Background())
+	err = c.Add(context.Background(), "TSLA.US", alert.AlertConditionPriceRise, "600", alert.AlertFrequencyOnce)
 	if err != nil {
 		log.Fatal(err)
 	}
-	fmt.Printf("%+v\n", resp)
 }
 ```
 
