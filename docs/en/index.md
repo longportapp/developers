@@ -1,31 +1,6 @@
 ---
-# https://vitepress.dev/reference/default-theme-home-page
-layout: home
-titleTemplate: Flexible Support for Programmatic Trading
-pageClass: longport-home-page
-hero:
-  image:
-    src: https://pub.lbkrs.com/files/202503/2CChxYnHQXeW9eRu/code.svg
-    alt: LongPort
-  text: 'LongPort Developers'
-  tagline: Stable · Safe · Fast
-  actions:
-    - theme: brand
-      text: Get Started
-      link: /auth
-      target: _self
-
-features:
-  - icon: <img src="https://pub.lbkrs.com/files/202503/7C3YBFzrQsnQ9rma/icon-code.svg" width="48" height="48"/>
-    title: Multiple Access Methods
-    details: Provides HTTP/WebSocket APIs, AI-friendly MCP, and API SDKs in multiple languages.
-
-  - icon: <img src="https://pub.lbkrs.com/files/202503/cHW5RsNJNYv6Z7RM/icon-cloud.svg" width="48" height="48" />
-    title: Resilient Scalability
-    details: Hybrid cloud-native microservices with 24/7 uptime, off-site failover, and elastic scaling for continuous reliability.
-
-  - icon: <img src="https://pub.lbkrs.com/files/202503/1Ys5ZZTHW7qJKve4/icon-lanuch.svg" width="48" height="48" />
-    title: Ultra Latency
-    details: Lightning-fast transactions with as low as 10ms delay, powered by cloud-native distributed in-memory databases and stateless architecture
+layout: false
+titleTemplate: APIs, LLM, MCP, CLI & More
 ---
-<HomePage/>
+
+<NewHomePage/>

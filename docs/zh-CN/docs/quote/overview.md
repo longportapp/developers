@@ -1,7 +1,8 @@
 ---
 sidebar_position: 0
 id: quote_overview
-title: Overview
+sidebar_label: 概览
+title: 概览
 slug: overview
 ---
 
@@ -62,10 +63,10 @@ slug: overview
         <td><a href="./pull/trade-day">获取市场交易日</a></td>
     </tr>
     <tr>
-        <td><a href="./pull/capital-flow-intraday">获取标的当日资金流向</a></td>
+        <td><a href="./pull/capital_flow_intraday">获取标的当日资金流向</a></td>
     </tr>
     <tr>
-        <td><a href="./pull/capital-distribution">获取标的当日资金分布</a></td>
+        <td><a href="./pull/capital_distribution">获取标的当日资金分布</a></td>
     </tr>
     <tr>
         <td><a href="./pull/calc-index">获取标的计算指标</a></td>
@@ -88,13 +89,13 @@ slug: overview
         <td><a href="./push/quote">实时价格推送</a></td>
     </tr>
     <tr>
-        <td><a href="./push/depth">实时盘口推送</a></td>
+        <td><a href="./push/depth">实时盘口订阅</a></td>
     </tr>
     <tr>
-        <td><a href="./push/broker">实时经纪队列推送</a></td>
+        <td><a href="./push/broker">实时经纪队列订阅</a></td>
     </tr>
     <tr>
-        <td><a href="./push/trade">实时成交明细推送</a></td>
+        <td><a href="./push/trade">实时成交明细订阅</a></td>
     </tr>
     <tr>
         <td rowspan="4">个性化</td>
@@ -122,12 +123,13 @@ slug: overview
 - 美股市场：`region` 为 `US`，例如：`AAPL.US`
 - 港股市场：`region` 为 `HK`，例如：`700.HK`
 - A 股市场：`region` 上交所为 `SH`，深交所为 `SZ`，例如：`399001.SZ`，`600519.SH`
-- 新加坡市场：`region` 为 `SG`，例如：`D05.SG`
+
+> **新加坡市场（SG）：** 新加坡市场的实时行情暂未通过 LongPort Developers（API / MCP）开放，如需查询新加坡股票行情，请使用 [LongPort 客户端](https://longport.com/download)查询。
 
 ## 接入方式
 
 1. 使用私有协议，长连接方式进行接入，接入方法请参考 <a href="../socket/protocol/overview" target="_blank">二进制通信协议</a>。
-2. 使用 SDK 进行接入，[SDK 介绍及下载地址](https://open.longportapp.com/sdk)。
+2. 使用 SDK 进行接入，[SDK 介绍及下载地址](https://open.longport.com/sdk)。
 
 ## 业务数据序列化方式
 
@@ -139,3 +141,16 @@ slug: overview
 - 较强的版本前向后向兼容性
 
 行情 Protobuf 协议文档[下载地址](https://github.com/longportapp/openapi-protobufs/blob/main/quote/api.proto)。
+
+## 行情权限等级
+
+所有行情接口均需要 OpenAPI 行情权限。**OpenAPI 行情权限与手机客户端/PC/网页端权限完全独立**，需单独开通。
+
+| 权限等级             | 包含内容                                                | 获取方式                                              |
+| -------------------- | ------------------------------------------------------- | ----------------------------------------------------- |
+| **基础行情**         | 美/A 股实时报价；港股 BMP（约 15 分钟延迟，不支持推送） | 开通 OpenAPI 后自动获得                               |
+| **LV1 实时**（港股） | 港股实时报价 + WebSocket 推送支持                       | 通过行情商城购买「LV1 实时行情 (OpenAPI)」            |
+| **LV2 订阅**         | Level 2 买卖盘（depth）、港股经纪商队列（brokers）      | 通过行情商城购买 LV2 订阅卡                           |
+| **盘前盘后**（美股） | 美股盘前/盘后延伸时段数据                               | 已包含在 US LV1 中免费提供，设置 `LONGPORT_ENABLE_OVERNIGHT=true` 即可 |
+
+查看当前权限：[开发者中心](https://open.longport.com/dashboard)。购买行情卡：**LongPort App → 我的 → 我的行情 → 行情商城**。

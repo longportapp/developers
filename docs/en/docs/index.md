@@ -1,37 +1,28 @@
 ---
-sidebar_position: 0
-title: Introduction
-id: getting_started_introduce
+sidebar_position: -999
+title: Overview
+id: overview
+sidebar_icon: book_open
 ---
 
-LongPort Developers provides OpenAPI, SDKs, MCP, Skill, and LLM-readable documentation for building market data, portfolio, trading, and AI-agent workflows.
+LongPort Developers provides programmatic interfaces for investors with research and development capabilities, enabling them to build trading or market analysis tools based on their own investment strategies. The platform covers the following categories:
 
-Use the platform directly through HTTP / WebSocket APIs, integrate through SDKs, or connect AI tools through LongPort Skill, MCP, and LLMs Text.
+- **Quote** — Real-time and historical quotes, market depth, candlesticks, options/warrants data, subscriptions
+- **Fundamental** — Company profiles, financials, valuations, analyst ratings, market data, calendars
+- **News & Contents** — Market news, community topics, sharelist management
+- **Trade** — Create, amend, and cancel orders; query orders, executions, and assets
+- **Account** — Portfolio analysis, price alerts, DCA plans, watchlist
+- **MCP** — Model Context Protocol integration for AI assistant workflows
 
-## What You Can Build
+## Interface Type
 
-LongPort Developers provides programmatic quote and trading interfaces for investors and developers. The capabilities include:
-
-- **Trading** - Create, amend, cancel orders, query today's/past orders and transaction details, etc.
-- **Quotes** - Real-time quotes, acquisition of historical quotes, etc.
-- **Portfolio** - Real-time query of the account assets, positions, funds
-- **Real-time subscription** - Provides real-time quotes and push notifications for order status changes
-
-## Access Methods
-
-| Method | Best for | Entry |
-| --- | --- | --- |
-| OpenAPI | Direct HTTP and WebSocket integration for market data, account, and trading systems | [Getting Started](/docs/getting-started) |
-| SDK | Application development in supported languages without hand-writing protocol details | [SDK](/sdk) |
-| Skill | Giving AI assistants reusable LongPort workflow knowledge and safe setup guidance | [Skill](/skill) |
-| MCP | Connecting MCP-compatible AI clients to 140+ LongPort Developers tools over HTTP | [MCP](/docs/mcp) |
-| LLMs Text | Feeding docs to AI tools through `llms.txt`, `llms-full.txt`, and page-level Markdown | [LLMs Text](/docs/llm) |
+LongPort provides diversified access methods such as HTTP / WebSockets interfaces for accessing the underlying services and SDK (Python / C++, etc.) encapsulated in the upper layer, allowing flexible choices.
 
 ## How to Enable OpenAPI
 
-1. Log in to the [LongPort App](https://longportapp.com/download) to complete the account opening process;
+1. Log in to the [LongPort App](https://longport.com/download) to complete the account opening process;
 
-2. Log in to the [longportapp.com](https://longportapp.com) and enter the developer platform, complete the developer verification (OpenAPI permission application), and obtain a token.
+2. Log in to the [longport.com](https://longport.com) and enter the developer platform, complete the developer verification (OpenAPI permission application), and obtain a token.
 
 ## Quote Coverage
 
@@ -42,6 +33,7 @@ LongPort Developers provides programmatic quote and trading interfaces for inves
         <th>Symbol</th>
     </tr>
     </thead>
+    <tbody>
     <tr>
         <td width="160" rowspan="2">HK Market</td>
         <td>Securities (including equities, ETFs, Warrants, CBBCs)</td>
@@ -66,6 +58,7 @@ LongPort Developers provides programmatic quote and trading interfaces for inves
     <tr>
         <td>Index</td>
     </tr>
+    </tbody>
 </table>
 
 ## Trading
@@ -86,7 +79,7 @@ Supported trading functions include:
 
 :::success
 
-The [OpenAPI SDK](https://open.longportapp.com/sdk) has done effective frequency control internally:
+The [OpenAPI SDK](https://open.longport.com/sdk) has done effective frequency control internally:
 
 - Quote: The methods under `QuoteContext` will be actively controlled by the SDK according to the server's rate limit. When the request is too fast, the SDK will automatically delay the request. Therefore, you do not need to implement the frequency control details separately.
 - Trade: The methods under `TradeContext` are not limited by the SDK. Due to the special nature of the trading order placement scenario, this is left to the user to handle.
@@ -95,7 +88,7 @@ The [OpenAPI SDK](https://open.longportapp.com/sdk) has done effective frequency
 
 ## Pricing {#pricing}
 
-LongPort does not charge any additional fees for activating or using interface services. You only need to open a LongPort Integrated A/C and get OpenAPI service permissions to use it for free. For actual transaction fees, please contact the brokerage firm where you have opened your securities account.
+LongPort does not charge any additional fees for activating or using interface services. You only need to [open a LongPort Integrated A/C](https://longport.com/hk/download) and get OpenAPI service permissions to use it for free. See the [Pricing](/pricing) page for details on quote data subscription fees. For actual transaction fees, please contact the brokerage firm where you have opened your securities account.
 
 ## Other
 

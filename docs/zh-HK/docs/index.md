@@ -1,35 +1,27 @@
 ---
-sidebar_position: 0
-title: OpenAPI 介紹
+sidebar_position: -999
+title: 平台介紹
 id: getting_started_introduce
+sidebar_icon: book_open
 ---
-LongPort Developers 提供 OpenAPI、SDK、MCP、Skill 和適合 LLM 讀取的文件入口，用於構建行情、資產組合、交易和 AI agent 工作流。
 
-你可以直接使用 HTTP / WebSocket API，也可以通過 SDK 集成，或通過 LongPort Skill、MCP、LLMs Text 將 AI 工具接入 LongPort Developers。
+LongPort Developers 為有研發能力的投資者提供程序化接口，助力投資者根據自身投資策略搭建交易或行情策略分析工具。平台覆蓋以下類別：
 
-## 可以構建什麼
+- **行情**（Quote）— 實時與歷史行情、盤口、K 線、期權/輪證數據、訂閱推送
+- **基本面**（Fundamental）— 公司概況、財務數據、估值、分析師評級、市場數據、日曆
+- **資訊與社區**（News & Contents）— 市場資訊、社區話題、自選股管理
+- **交易**（Trade）— 創建/修改/撤銷訂單，查詢訂單、成交、資產等
+- **帳戶**（Account）— 盈虧分析、股價提醒、定投計劃、自選股
+- **MCP** — Model Context Protocol，用於 AI 助手工作流集成
 
-LongPort Developers 為有研發能力的投資者和開發者提供程序化行情交易接口，覆蓋以下能力：
+## 接口類型
 
-- 交易類 - 創建、修改、撤銷訂單，當日/歷史訂單及成交記錄的查詢等
-- 行情類 - 實時行情報價、歷史行情數的獲取等
-- 資產類 - 實時賬戶資產、持倉、現金查詢等
-- 實時訂閱 - 提供行情實時報價以及訂單狀態實時變更信息推送
-
-## 接入方式
-
-| 方式 | 適用場景 | 入口 |
-| --- | --- | --- |
-| OpenAPI | 直接通過 HTTP 和 WebSocket 構建行情、帳戶和交易系統 | [快速開始](/zh-HK/docs/getting-started) |
-| SDK | 使用支持的語言開發應用，避免手寫協議細節 | [SDK](/zh-HK/sdk) |
-| Skill | 讓 AI 助手獲得可複用的 LongPort 工作流知識和安全安裝引導 | [Skill](/zh-HK/skill) |
-| MCP | 將支持 MCP 的 AI 客戶端通過 HTTP 接入 140+ LongPort Developers tools | [MCP](/zh-HK/docs/mcp) |
-| LLMs Text | 通過 `llms.txt`、`llms-full.txt` 和單頁 Markdown 向 AI 工具提供文件 | [LLMs Text](/zh-HK/docs/llm) |
+LongPort 提供接入底層服務的 HTTP / WebSockets 接口以及封裝在上層的 SDK（Python / C++ ...）等多種接入方式，靈活選擇。
 
 ## 如何開通
 
-1. 登錄 [LongPort App](https://longportapp.com/download) 完成開戶；
-2. 登錄 [longportapp.com](https://longportapp.com) 進入開發者平台，完成開發者認證即 OpenAPI 權限申請，獲取令牌。
+1. 登錄 [LongPort App](https://longport.com/download) 完成開戶；
+2. 登錄 [longport.com](https://longport.com) 進入開發者平台，完成開發者認證即 OpenAPI 權限申請，獲取令牌。
 
 ## 行情覆蓋
 
@@ -40,6 +32,7 @@ LongPort Developers 為有研發能力的投資者和開發者提供程序化行
            <th>標的</th>
        </tr>
      </thead>
+     <tbody>
      <tr>
          <td width="160" rowspan="2">港股</td>
          <td>證券類產品（含股票、ETFs、窩輪、牛熊、界內證）</td>
@@ -64,6 +57,7 @@ LongPort Developers 為有研發能力的投資者和開發者提供程序化行
      <tr>
          <td>指數</td>
      </tr>
+     </tbody>
 </table>
 
 ## 交易標的類別
@@ -84,7 +78,7 @@ LongPort Developers 為有研發能力的投資者和開發者提供程序化行
 
 :::success
 
-我們 [OpenAPI SDK](https://open.longportapp.com/sdk) 內部已經做了有效的頻率控制：
+我們 [OpenAPI SDK](https://open.longport.com/sdk) 內部已經做了有效的頻率控制：
 
 - 行情類：`QuoteContext`下的接口，SDK 內部會按照服務端的頻率限制來主動控制，當請求過快的時候，SDK 會自動延遲請求。因此你可以不需要額外實現頻率控制細節。
 - 交易類別：`TradeContext` 下的接口，SDK 沒有做限制，由於交易下單場景特殊性，將這個交由用戶自行處理。
@@ -93,7 +87,7 @@ LongPort Developers 為有研發能力的投資者和開發者提供程序化行
 
 ## 使用費用 {#pricing}
 
-LongPort 不針對介面服務額外收取開通或使用費用，只需開通 LongPort 帳戶及 OpenAPI 服務權限即可免費使用。實際交易費率請洽詢您開通證券帳戶的券商。
+LongPort 不針對接口服務額外收取開通或使用費用，只需[開通 LongPort 綜合帳戶](https://longport.com/hk/download)及 OpenAPI 服務權限即可免費使用。行情數據訂閱費用詳見[定價頁面](/zh-HK/pricing)。實際交易費率請洽詢您開通證券帳戶的券商。
 
 ## 其他
 

@@ -2,14 +2,60 @@
 id: changelog
 title: 更新日誌
 slug: changelog
-sidebar_position: 10
+sidebar_position: 7
+sidebar_icon: newspaper
 ---
+
+## 2026-06-25
+
+### SDK v4.3.3
+
+- **宏觀經濟數據接口** — 新增兩個 `FundamentalContext` 方法：`macroeconomic_indicators` 列出全部指標（支持按國家篩選、關鍵詞搜索），`macroeconomic` 查詢指定指標的歷史發布數據（實際值/預期值/前值）
+
+## 2026-06-02
+
+### SDK v4.2.0
+
+- **FundamentalContext** — 新增 `shareholder_top`、`shareholder_detail`、`valuation_comparison`
+- **QuoteContext** — `short_positions` 統一支持美股和港股；新增 `short_trades`
+- **MarketContext** — 新增 `top_movers`、`rank_categories`、`rank_list`
+- **新增 ScreenerContext** — `screener_recommend_strategies`、`screener_user_strategies`、`screener_strategy`、`screener_search`、`screener_indicators`
+- 覆蓋語言：Rust / Python / Node.js / Java / C / C++ / Go
+
+## 2026-05-13
+
+### SDK v4.1.0
+
+- **7 個新 Context 類型，共 66 個方法** — `FundamentalContext`（20 個方法：財報、分析師評級、股息、EPS 預測、一致性預期、估值），`MarketContext`（9 個方法：市場狀態、券商持倉、A/H 溢價、交易統計），`CalendarContext`（7 個方法：財報 / 股息 / 拆股 / IPO 日曆），`PortfolioContext`（5 個方法：匯率、盈虧分析），`AlertContext`（4 個方法：股價提醒），`DCAContext`（12 個方法：定投計劃全生命週期），`SharelistContext`（9 個方法：自選股列表）
+- **QuoteContext** — 新增 4 個方法：`short_positions`、`option_volume`、`option_volume_daily`、`update_pinned`
+- **ContentContext** — 新增 `topic_detail` 及話題回覆相關方法
+- **Rust SDK** — `Config::header()` 支援注入自訂 HTTP/WebSocket 請求頭
+- 參數類型改用 typed enum 替代原始整數；貨幣欄位使用 `Decimal` 類型
+
+### 文件
+
+- 側邊欄重構：新增 **資訊與社區** 分類（含資訊、話題、自選股）；行情 **Watchlist** 替代 Individual；**附錄** 替代 Socket Feed（預設折疊）
+- 文件總覽新增 **Fundamental** 和 **資訊與社區** 章節介紹
+
+## 2026-03-30
+
+- 新增結單 API：
+  - `GET /v1/statement/list` — 查詢日結單或月結單列表
+  - `GET /v1/statement/download` — 獲取指定結單文件的預簽名下載地址
+
+## 2026-03-25
+
+- 新增社區 API：
+  - `GET /content/topics/mine` — 獲取我發布的討論列表
+  - `POST /content/topics` — 創建社區討論
+  - `GET /content/topics/{id}` — 獲取討論詳情
+  - `GET /content/topics/{topic_id}/comments` — 獲取討論回覆列表
+  - `POST /content/topics/{topic_id}/comments` — 創建討論回覆
 
 ## 2025-06-17
 
 - 更新獲取賬戶資金接口
   - `GET /v1/asset/account` 增加 (frozen_transaction_fees) 返回字段
-
 
 ## 2024-10-09
 
@@ -42,11 +88,11 @@ sidebar_position: 10
 
 ## 2024-04-15
 
-- [交易推送](https://open.longportapp.com/docs/trade/trade-definition#websocket-%E6%8E%A8%E9%80%81%E9%80%9A%E7%9F%A5) 新增`last_share`, `last_price`。
+- [交易推送](https://open.longport.com/docs/trade/trade-definition#websocket-%E6%8E%A8%E9%80%81%E9%80%9A%E7%9F%A5) 新增`last_share`, `last_price`。
 
 ## 2024-04-13
 
-- [交易推送](https://open.longportapp.com/docs/trade/trade-definition#websocket-%E6%8E%A8%E9%80%81%E9%80%9A%E7%9F%A5) 新增`remark`。
+- [交易推送](https://open.longport.com/docs/trade/trade-definition#websocket-%E6%8E%A8%E9%80%81%E9%80%9A%E7%9F%A5) 新增`remark`。
 
 ## 2023-11-03
 
