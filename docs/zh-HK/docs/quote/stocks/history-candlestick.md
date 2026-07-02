@@ -1,7 +1,7 @@
 ---
 id: quote_history_candlestick
 title: 歷史 K 線
-slug: /quote/pull/history-candlestick
+slug: /quote/stocks/history-candlestick
 sidebar_position: 10
 ---
 

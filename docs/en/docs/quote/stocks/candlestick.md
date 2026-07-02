@@ -1,7 +1,7 @@
 ---
 id: quote_candlestick
 title: Candlesticks
-slug: /quote/pull/candlestick
+slug: /quote/stocks/candlestick
 sidebar_position: 20
 ---
 

@@ -1,7 +1,7 @@
 ---
 id: quote_option_quote
 title: 期权实时报价
-slug: /quote/pull/option-quote
+slug: /quote/options/option-quote
 sidebar_position: 3
 ---
 

@@ -1,7 +1,7 @@
 ---
 id: quote_issuer
 title: Issuers
-slug: /quote/pull/issuer
+slug: /quote/warrants/issuer
 sidebar_position: 13
 ---
 

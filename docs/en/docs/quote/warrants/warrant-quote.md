@@ -1,7 +1,7 @@
 ---
 id: quote_warrant_quote
 title: Quotes
-slug: /quote/pull/warrant-quote
+slug: /quote/warrants/warrant-quote
 sidebar_position: 4
 ---
 

@@ -1,7 +1,7 @@
 ---
 id: quote_broker_ids
 title: Broker IDs
-slug: /quote/pull/broker-ids
+slug: /quote/stocks/broker-ids
 sidebar_position: 7
 ---
 

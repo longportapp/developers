@@ -1,7 +1,7 @@
 ---
 id: quote_static
 title: 基本資訊
-slug: /quote/pull/static
+slug: /quote/stocks/static
 sidebar_position: 1
 ---
 

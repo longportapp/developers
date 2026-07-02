@@ -1,7 +1,7 @@
 ---
 id: quote_capital_distribution.md
 title: Capital Distribution
-slug: /quote/pull/capital-distribution
+slug: /quote/analytics/capital-distribution
 sidebar_position: 18
 ---
 

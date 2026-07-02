@@ -1,7 +1,7 @@
 ---
 id: quote_intraday
 title: 分時數據
-slug: /quote/pull/intraday
+slug: /quote/stocks/intraday
 sidebar_position: 9
 ---
 

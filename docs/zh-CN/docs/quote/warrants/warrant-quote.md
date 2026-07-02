@@ -1,7 +1,7 @@
 ---
 id: quote_warrant_quote
 title: 实时报价
-slug: /quote/pull/warrant-quote
+slug: /quote/warrants/warrant-quote
 sidebar_position: 4
 ---
 

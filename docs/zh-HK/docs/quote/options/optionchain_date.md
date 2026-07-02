@@ -1,7 +1,7 @@
 ---
 id: quote_optionchain_date
 title: 到期日列表
-slug: /quote/pull/optionchain-date
+slug: /quote/options/optionchain-date
 sidebar_position: 11
 ---
 

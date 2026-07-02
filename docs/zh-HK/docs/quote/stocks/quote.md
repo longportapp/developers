@@ -1,7 +1,7 @@
 ---
 id: quote_quote
 title: 實時報價
-slug: /quote/pull/quote
+slug: /quote/stocks/quote
 sidebar_position: 2
 ---
 

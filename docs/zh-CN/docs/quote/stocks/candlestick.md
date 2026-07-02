@@ -1,7 +1,7 @@
 ---
 id: quote_candlestick
 title: K 线
-slug: /quote/pull/candlestick
+slug: /quote/stocks/candlestick
 sidebar_position: 20
 ---
 

@@ -1,7 +1,7 @@
 ---
 id: quote_history_candlestick
 title: Historical Candlesticks
-slug: /quote/pull/history-candlestick
+slug: /quote/stocks/history-candlestick
 sidebar_position: 10
 ---
 

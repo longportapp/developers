@@ -1,7 +1,7 @@
 ---
 id: quote_broker_ids
 title: 券商席位 ID
-slug: /quote/pull/broker-ids
+slug: /quote/stocks/broker-ids
 sidebar_position: 7
 ---
 

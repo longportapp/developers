@@ -1,7 +1,7 @@
 ---
 id: quote_brokers
 title: 券商佇列
-slug: /quote/pull/brokers
+slug: /quote/stocks/brokers
 sidebar_position: 6
 ---
 

@@ -1,7 +1,7 @@
 ﻿---
 id: quote_warrant_filter
 title: 篩選器
-slug: /quote/pull/warrant-filter
+slug: /quote/warrants/warrant-filter
 sidebar_position: 14
 ---
 

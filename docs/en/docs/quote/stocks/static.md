@@ -1,7 +1,7 @@
 ---
 id: quote_static
 title: Static Info
-slug: /quote/pull/static
+slug: /quote/stocks/static
 sidebar_position: 1
 ---
 

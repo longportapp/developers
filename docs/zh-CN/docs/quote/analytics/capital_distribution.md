@@ -1,7 +1,7 @@
 ---
 id: quote_capital_distribution.md
 title: 资金分布
-slug: /quote/pull/capital-distribution
+slug: /quote/analytics/capital-distribution
 sidebar_position: 18
 ---
 

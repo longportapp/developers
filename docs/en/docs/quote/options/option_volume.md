@@ -1,5 +1,5 @@
 ---
-slug: /quote/pull/option-volume
+slug: /quote/options/option-volume
 title: Volume
 sidebar_position: 26
 language_tabs: false

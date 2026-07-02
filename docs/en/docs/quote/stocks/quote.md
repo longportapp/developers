@@ -1,7 +1,7 @@
 ---
 id: quote_quote
 title: Quotes
-slug: /quote/pull/quote
+slug: /quote/stocks/quote
 sidebar_position: 2
 ---
 

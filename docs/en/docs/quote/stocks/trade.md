@@ -1,7 +1,7 @@
 ---
 id: quote_trade
 title: Trades
-slug: /quote/pull/trade
+slug: /quote/stocks/trade
 sidebar_position: 8
 ---
 

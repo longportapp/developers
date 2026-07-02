@@ -1,7 +1,7 @@
 ---
 id: quote_capital_flow_intraday
 title: 資金流向
-slug: /quote/pull/capital-flow-intraday
+slug: /quote/analytics/capital-flow-intraday
 sidebar_position: 17
 ---
 

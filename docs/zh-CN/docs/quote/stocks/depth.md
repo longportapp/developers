@@ -1,7 +1,7 @@
 ---
 id: quote_depth
 title: 盘口
-slug: /quote/pull/depth
+slug: /quote/stocks/depth
 sidebar_position: 5
 ---
 

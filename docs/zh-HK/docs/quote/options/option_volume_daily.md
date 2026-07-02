@@ -1,5 +1,5 @@
 ---
-slug: /quote/pull/option-volume-daily
+slug: /quote/options/option-volume-daily
 title: 日度成交量
 sidebar_position: 27
 language_tabs: false

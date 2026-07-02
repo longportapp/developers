@@ -1,7 +1,7 @@
 ---
 id: quote_optionchain_date_strike
 title: 期权链
-slug: /quote/pull/optionchain-date-strike
+slug: /quote/options/optionchain-date-strike
 sidebar_position: 12
 ---
 
