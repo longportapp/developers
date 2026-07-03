@@ -12,7 +12,7 @@ layout: home
 <Tabs groupId="programming-language">
 <TabItem value="python" label="Python">
 
-## LongPort OpenAPI SDK for Python
+## LongPort Developers SDK for Python
 
 [https://github.com/longportapp/openapi/tree/master/python](https://github.com/longportapp/openapi/tree/master/python)
 
@@ -34,14 +34,10 @@ $ pip install longport -i https://mirrors.aliyun.com/pypi/simple
 
 - https://longportapp.github.io/openapi/python/index.html
 
-### 範例程式碼
-
-- https://github.com/longportapp/openapi/tree/master/examples/python
-
 </TabItem>
 <TabItem value="javascript" label="JavaScript">
 
-## LongPort OpenAPI SDK for Node.js
+## LongPort Developers SDK for Node.js
 
 [https://github.com/longportapp/openapi/tree/master/nodejs](https://github.com/longportapp/openapi/tree/master/nodejs)
 
@@ -59,14 +55,10 @@ $ npm install longport --save
 
 - https://longportapp.github.io/openapi/nodejs/index.html
 
-### 範例程式碼
-
-- https://github.com/longportapp/openapi/tree/master/examples/nodejs
-
 </TabItem>
 <TabItem value="rust" label="Rust">
 
-## LongPort OpenAPI SDK for Rust
+## LongPort Developers SDK for Rust
 
 [https://github.com/longportapp/openapi/tree/master/rust](https://github.com/longportapp/openapi/tree/master/rust)
 
@@ -76,7 +68,7 @@ $ npm install longport --save
 
 ```toml
 [dependencies]
-longport = "4.0.5"
+longport = "2.0.0"
 ```
 
 [https://crates.io/crates/longport](https://crates.io/crates/longport)
@@ -85,14 +77,10 @@ longport = "4.0.5"
 
 - https://longportapp.github.io/openapi/rust/longport/index.html
 
-### 範例程式碼
-
-- https://github.com/longportapp/openapi/tree/master/examples/rust
-
 </TabItem>
 <TabItem value="java" label="Java">
 
-## LongPort OpenAPI SDK for Java
+## LongPort Developers SDK for Java
 
 [https://github.com/longportapp/openapi/tree/master/java](https://github.com/longportapp/openapi/tree/master/java)
 
@@ -102,34 +90,28 @@ longport = "4.0.5"
 
 ```xml
 <dependency>
-  <groupId>io.github.longport</groupId>
+  <groupId>io.github.longportapp</groupId>
   <artifactId>openapi-sdk</artifactId>
-  <version>4.0.5</version>
+  <version>LATEST</version>
 </dependency>
 ```
 
-[https://search.maven.org/artifact/io.github.longport/openapi](https://search.maven.org/artifact/io.github.longport/openapi)
+[https://search.maven.org/artifact/io.github.longportapp/openapi](https://search.maven.org/artifact/io.github.longportapp/openapi)
 
 ### API 文檔
 
 - https://longportapp.github.io/openapi/java/index.html
 
-### 範例程式碼
-
-- https://github.com/longportapp/openapi/tree/master/examples/java
-
 </TabItem>
 <TabItem value="go" label="Go">
 
-## LongPort OpenAPI SDK for Go
+## LongPort Developers SDK for Go
 
 [https://github.com/longportapp/openapi-go](https://github.com/longportapp/openapi-go)
 
-### 安裝 SDK
+### 安裝 SDK for Go
 
-- Go 版本 >= 1.17
-
-在專案目錄下執行：
+Go 版本 >= 1.17
 
 ```bash
 $ go get github.com/longportapp/openapi-go
@@ -137,36 +119,23 @@ $ go get github.com/longportapp/openapi-go
 
 [https://pkg.go.dev/github.com/longportapp/openapi-go](https://pkg.go.dev/github.com/longportapp/openapi-go)
 
-### 範例程式碼
-
-- https://github.com/longportapp/openapi-go/tree/main/examples
-
 </TabItem>
 <TabItem value="c++" label="C++">
 
-## LongPort OpenAPI SDK for C/C++
+## LongPort Developers SDK for C/C++
 
 [https://github.com/longportapp/openapi/tree/master/cpp](https://github.com/longportapp/openapi/tree/master/cpp)
 
 ### 下載地址
 
-- [4.0.5](https://static.lbctrl.com/openapi-sdk/openapi-cpp-sdk-4.0.5.tar.gz)
+- [3.0.17](https://static.lbctrl.com/openapi-sdk/openapi-cpp-sdk-3.0.17.tar.gz)
 
 ### API 文檔
 
 <a href="https://longportapp.github.io/openapi/cpp/index.html">https://longportapp.github.io/openapi/cpp/index.html</a>
-
-### 範例程式碼
-
-- https://github.com/longportapp/openapi/tree/master/examples/cpp
-
 </TabItem>
 </Tabs>
 
-</div>
-
-<div class="max-w-4xl mx-auto px-6 md:px-0">
-  <Footer />
 </div>
 
 <style scoped>

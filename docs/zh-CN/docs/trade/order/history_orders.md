@@ -1,7 +1,6 @@
-﻿---
+---
 slug: history_orders
-sidebar_position: 3
-title: 历史订单
+title: 获取历史订单
 language_tabs: false
 toc_footers: []
 includes: []
@@ -38,15 +37,11 @@ headingLevel: 2
 
 ### Request Example
 
-<Tabs groupId="request-example">
-  <TabItem value="python" label="Python" default>
-
 ```python
 from datetime import datetime
-from longport.openapi import TradeContext, Config, OrderStatus, OrderSide, Market, OAuthBuilder
+from longport.openapi import TradeContext, Config, OrderStatus, OrderSide, Market
 
-oauth = OAuthBuilder("your-client-id").build(lambda url: print("Visit:", url))
-config = Config.from_oauth(oauth)
+config = Config.from_env()
 ctx = TradeContext(config)
 
 resp = ctx.history_orders(
@@ -59,181 +54,6 @@ resp = ctx.history_orders(
 )
 print(resp)
 ```
-
-  </TabItem>
-  <TabItem value="python-async" label="Python (async)">
-
-```python
-import asyncio
-from datetime import datetime
-from longport.openapi import AsyncTradeContext, Config, OrderStatus, OrderSide, Market, OAuthBuilder
-
-async def main() -> None:
-    oauth = await OAuthBuilder("your-client-id").build_async(lambda url: print("Visit:", url))
-    config = Config.from_oauth(oauth)
-    ctx = AsyncTradeContext.create(config)
-
-    resp = await ctx.history_orders(
-        symbol = "700.HK",
-        status = [OrderStatus.Filled, OrderStatus.New],
-        side = OrderSide.Buy,
-        market = Market.HK,
-        start_at = datetime(2022, 5, 9),
-        end_at = datetime(2022, 5, 12),
-    )
-    print(resp)
-
-if __name__ == "__main__":
-    asyncio.run(main())
-```
-
-  </TabItem>
-  <TabItem value="nodejs" label="Node.js">
-
-```javascript
-const { Config, TradeContext, OAuth } = require('longport')
-
-async function main() {
-  const oauth = await OAuth.build("your-client-id", (_, url) => { console.log("Open this URL to authorize: " + url) })
-  const config = Config.fromOAuth(oauth)
-  const ctx = TradeContext.new(config)
-  const resp = await ctx.historyOrders({})
-  console.log(resp)
-}
-main().catch(console.error)
-```
-
-  </TabItem>
-  <TabItem value="java" label="Java">
-
-```java
-import com.longport.*;
-import com.longport.trade.*;
-
-class Main {
-    public static void main(String[] args) throws Exception {
-        try (OAuth oauth = new OAuthBuilder("your-client-id").build(url -> System.out.println("Open to authorize: " + url)).get();
-             Config config = Config.fromOAuth(oauth);
-             TradeContext ctx = TradeContext.create(config)) {
-            Order[] resp = ctx.getHistoryOrders(null).get();
-            for (Order o : resp) System.out.println(o);
-        }
-    }
-}
-```
-
-  </TabItem>
-  <TabItem value="rust" label="Rust">
-
-```rust
-use std::sync::Arc;
-use longport::{oauth::OAuthBuilder, trade::TradeContext, Config};
-
-#[tokio::main]
-async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let oauth = OAuthBuilder::new("your-client-id").build(|url| println!("Open this URL to authorize: {url}")).await?;
-    let config = Arc::new(Config::from_oauth(oauth));
-    let (ctx, _) = TradeContext::new(config);
-    let resp = ctx.history_orders(None).await?;
-    println!("{:?}", resp);
-    Ok(())
-}
-```
-
-  </TabItem>
-  <TabItem value="cpp" label="C++">
-
-```cpp
-#include <iostream>
-#include <longport.hpp>
-
-#ifdef WIN32
-#include <windows.h>
-#endif
-
-using namespace longport;
-using namespace longport::trade;
-
-static void
-run(const OAuth& oauth)
-{
-    Config config = Config::from_oauth(oauth);
-    TradeContext ctx = TradeContext::create(config);
-
-    ctx.history_orders(std::nullopt, [](auto res) {
-        if (!res) { std::cout << "failed" << std::endl; return; }
-        for (const auto& o : *res) std::cout << o.order_id << std::endl;
-    });
-}
-
-int main(int argc, char const* argv[]) {
-#ifdef WIN32
-    SetConsoleOutputCP(CP_UTF8);
-#endif
-
-    const std::string client_id = "your-client-id";
-    OAuthBuilder(client_id).build(
-    [](const std::string& url) {
-        std::cout << "Open this URL to authorize: " << url << std::endl;
-    },
-    [](auto res) {
-        if (!res) {
-            std::cout << "authorization failed: " << *res.status().message() << std::endl;
-            return;
-        }
-        run(*res);
-    });
-
-    std::cin.get();
-    return 0;
-}
-```
-
-  </TabItem>
-  <TabItem value="go" label="Go">
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"log"
-
-	"github.com/longportapp/openapi-go/config"
-	"github.com/longportapp/openapi-go/oauth"
-	"github.com/longportapp/openapi-go/trade"
-)
-
-func main() {
-	o := oauth.New("your-client-id").
-		OnOpenURL(func(url string) { fmt.Println("Open this URL to authorize:", url) })
-	if err := o.Build(context.Background()); err != nil {
-		log.Fatal(err)
-	}
-	conf, err := config.New(config.WithOAuthClient(o))
-	if err != nil {
-		log.Fatal(err)
-	}
-	tctx, err := trade.NewFromCfg(conf)
-	if err != nil {
-		log.Fatal(err)
-	}
-	defer tctx.Close()
-	orders, hasMore, err := tctx.HistoryOrders(context.Background(), &trade.GetHistoryOrders{})
-	if err != nil {
-		log.Fatal(err)
-	}
-	for _, o := range orders {
-		fmt.Println(o.OrderId)
-	}
-	_ = hasMore
-}
-```
-
-  </TabItem>
-</Tabs>
-
 
 ## Response
 
@@ -275,10 +95,7 @@ func main() {
         "trigger_price": "",
         "trigger_status": "NOT_USED",
         "updated_at": "1651644898",
-        "remark": "",
-        "limit_depth_level": 0,
-        "monitor_price": "",
-        "trigger_count": 1
+        "remark": ""
       }
     ]
   }
@@ -332,6 +149,3 @@ func main() {
 | ∟ currency          | string   | true     | 结算货币                                                                                                                                                                            |
 | ∟ outside_rth       | string   | true     | 是否允许盘前盘后<br/> 当订单不是美股时，默认为 UnknownOutsideRth<br/><br/> **可选值：**<br/> `RTH_ONLY` - 不允许盘前盘后<br/> `ANY_TIME` - 允许盘前盘后<br/> `OVERNIGHT` - 夜盘"    |
 | ∟ remark            | string   | true     | 备注                                                                                                                                                                                |
-| ∟ limit_depth_level | int32    | true     | 指定买卖档位        |
-| ∟ monitor_price     | string   | true     | 监控价格            |
-| ∟ trigger_count     | int32    | true     | 触发次数            |

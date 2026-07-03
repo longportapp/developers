@@ -1,19 +1,17 @@
 ---
 id: quote_unsubscribe
-title: Unsubscribe
+title: Unsubscribe Quote
 slug: unsubscribe
-sidebar_position: 3
+sidebar_position: 2
 ---
 
 This API is used to unsubscribe quote.
-
-<QuotePermission command="subscriptions" />
 
 <SDKLinks module="quote" klass="QuoteContext" method="unsubscribe" />
 
 :::info
 
-[Business Command](../../socket/biz_command): `7`
+[Business Command](../../socket/biz-command): `7`
 
 :::
 
@@ -39,183 +37,24 @@ message UnsubscribeRequest {
 
 ### Request Example
 
-<Tabs groupId="request-example">
-  <TabItem value="python" label="Python" default>
-
 ```python
-from longport.openapi import QuoteContext, Config, SubType, OAuthBuilder
-oauth = OAuthBuilder("your-client-id").build(lambda url: print("Visit:", url))
-config = Config.from_oauth(oauth)
+# Unsubscribe Quote
+#
+# To subscribe quotes data, please check whether "Developers" - "Quote authority" is correct.
+# https://open.longportapp.com/account
+#
+# - HK Market - BMP basic quotation is unable to subscribe with WebSocket as it has no real-time quote push.
+# - US Market - LV1 Nasdaq Basic (Only OpenAPI).
+#
+# Before running, please visit the "Developers" to ensure that the account has the correct quotes authority.
+# If you do not have the quotes authority, you can enter "Me - My Quotes - Store" to purchase the authority through the "LongPort" mobile app.
+from longport.openapi import QuoteContext, Config, SubType
+config = Config.from_env()
 ctx = QuoteContext(config)
 
 ctx.subscribe(["700.HK", "AAPL.US"], [SubType.Quote])
 ctx.unsubscribe(["AAPL.US"], [SubType.Quote])
 ```
-
-  </TabItem>
-  <TabItem value="python-async" label="Python (async)">
-
-```python
-import asyncio
-from longport.openapi import AsyncQuoteContext, Config, SubType, OAuthBuilder
-
-async def main() -> None:
-    oauth = await OAuthBuilder("your-client-id").build_async(lambda url: print("Visit:", url))
-    config = Config.from_oauth(oauth)
-    ctx = AsyncQuoteContext.create(config)
-
-    await ctx.subscribe(["700.HK", "AAPL.US"], [SubType.Quote])
-    await ctx.unsubscribe(["AAPL.US"], [SubType.Quote])
-
-if __name__ == "__main__":
-    asyncio.run(main())
-```
-
-  </TabItem>
-  <TabItem value="nodejs" label="Node.js">
-
-```javascript
-const { Config, QuoteContext, OAuth, SubType } = require('longport')
-
-async function main() {
-  const oauth = await OAuth.build('your-client-id', (_, url) => {
-    console.log('Open this URL to authorize: ' + url)
-  })
-  const config = Config.fromOAuth(oauth)
-  const ctx = QuoteContext.new(config)
-  await ctx.unsubscribe(['700.HK', 'AAPL.US'], [SubType.Quote])
-  console.log('unsubscribed')
-}
-main().catch(console.error)
-```
-
-  </TabItem>
-  <TabItem value="java" label="Java">
-
-```java
-import com.longport.*;
-import com.longport.quote.*;
-
-class Main {
-    public static void main(String[] args) throws Exception {
-        try (OAuth oauth = new OAuthBuilder("your-client-id").build(url -> System.out.println("Open to authorize: " + url)).get();
-             Config config = Config.fromOAuth(oauth);
-             QuoteContext ctx = QuoteContext.create(config)) {
-            ctx.unsubscribe(new String[] { "700.HK", "AAPL.US" }, new SubType[] { SubType.Quote }).get();
-            System.out.println("unsubscribed");
-        }
-    }
-}
-```
-
-  </TabItem>
-  <TabItem value="rust" label="Rust">
-
-```rust
-use std::sync::Arc;
-use longport::{oauth::OAuthBuilder, quote::QuoteContext, Config, quote::SubFlags};
-
-#[tokio::main]
-async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let oauth = OAuthBuilder::new("your-client-id").build(|url| println!("Open this URL to authorize: {url}")).await?;
-    let config = Arc::new(Config::from_oauth(oauth));
-    let (ctx, _) = QuoteContext::new(config);
-    ctx.unsubscribe(vec!["700.HK".to_string(), "AAPL.US".to_string()], SubFlags::quote()).await?;
-    println!("unsubscribed");
-    Ok(())
-}
-```
-
-  </TabItem>
-  <TabItem value="cpp" label="C++">
-
-```cpp
-#include <iostream>
-#include <longport.hpp>
-
-#ifdef WIN32
-#include <windows.h>
-#endif
-
-using namespace longport;
-using namespace longport::quote;
-
-static void
-run(const OAuth& oauth)
-{
-    Config config = Config::from_oauth(oauth);
-    QuoteContext ctx = QuoteContext::create(config);
-
-    ctx.unsubscribe(symbols, SubFlags::QUOTE(), [](auto res) {
-        if (!res) { std::cout << "failed: " << *res.status().message() << std::endl; return; }
-        std::cout << "unsubscribed" << std::endl;
-    });
-}
-
-int main(int argc, char const* argv[]) {
-#ifdef WIN32
-    SetConsoleOutputCP(CP_UTF8);
-#endif
-
-    const std::string client_id = "your-client-id";
-    OAuthBuilder(client_id).build(
-    [](const std::string& url) {
-        std::cout << "Open this URL to authorize: " << url << std::endl;
-    },
-    [](auto res) {
-        if (!res) {
-            std::cout << "authorization failed: " << *res.status().message() << std::endl;
-            return;
-        }
-        run(*res);
-    });
-
-    std::cin.get();
-    return 0;
-}
-```
-
-  </TabItem>
-  <TabItem value="go" label="Go">
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"log"
-
-	"github.com/longportapp/openapi-go/config"
-	"github.com/longportapp/openapi-go/oauth"
-	"github.com/longportapp/openapi-go/quote"
-)
-
-func main() {
-	o := oauth.New("your-client-id").
-		OnOpenURL(func(url string) { fmt.Println("Open this URL to authorize:", url) })
-	if err := o.Build(context.Background()); err != nil {
-		log.Fatal(err)
-	}
-	conf, err := config.New(config.WithOAuthClient(o))
-	if err != nil {
-		log.Fatal(err)
-	}
-	qctx, err := quote.NewFromCfg(conf)
-	if err != nil {
-		log.Fatal(err)
-	}
-	defer qctx.Close()
-	err = qctx.Unsubscribe(context.Background(), false, []string{"700.HK", "AAPL.US"}, []quote.SubType{quote.SubTypeQuote})
-	if err != nil {
-		log.Fatal(err)
-	}
-	fmt.Println("unsubscribed")
-}
-```
-
-  </TabItem>
-</Tabs>
 
 ## Response
 
