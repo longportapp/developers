@@ -16,7 +16,7 @@ const closeTimer = ref<NodeJS.Timeout | null>(null)
 const isLogin = ref(false)
 
 onMounted(() => {
-  isLogin.value = window.longportInternal.isLogin()
+  isLogin.value = !!window.longportInternal?.isLogin()
 })
 
 const { avatar } = useAvatar()
