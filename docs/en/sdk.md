@@ -12,7 +12,7 @@ layout: home
 <Tabs groupId="programming-language">
 <TabItem value="python" label="Python" default>
 
-## LongPort Developers SDK for Python
+## LongPort OpenAPI SDK for Python
 
 [https://github.com/longportapp/openapi/tree/master/python](https://github.com/longportapp/openapi/tree/master/python)
 
@@ -30,10 +30,14 @@ $ pip install longport
 
 - https://longportapp.github.io/openapi/python/index.html
 
+### Examples
+
+- https://github.com/longportapp/openapi/tree/master/examples/python
+
 </TabItem>
 <TabItem value="javascript" label="JavaScript">
 
-## LongPort Developers SDK for Node.js
+## LongPort OpenAPI SDK for Node.js
 
 [https://github.com/longportapp/openapi/tree/master/nodejs](https://github.com/longportapp/openapi/tree/master/nodejs)
 
@@ -51,10 +55,14 @@ $ npm install longport --save
 
 - https://longportapp.github.io/openapi/nodejs/index.html
 
+### Examples
+
+- https://github.com/longportapp/openapi/tree/master/examples/nodejs
+
 </TabItem>
 <TabItem value="rust" label="Rust">
 
-## LongPort Developers SDK for Rust
+## LongPort OpenAPI SDK for Rust
 
 [https://github.com/longportapp/openapi/tree/master/rust](https://github.com/longportapp/openapi/tree/master/rust)
 
@@ -64,7 +72,7 @@ Add the following line to your `Cargo.toml` file
 
 ```toml
 [dependencies]
-longport = "3.0.17"
+longport = "4.0.5"
 ```
 
 [https://crates.io/crates/longport](https://crates.io/crates/longport)
@@ -73,10 +81,14 @@ longport = "3.0.17"
 
 - https://longportapp.github.io/openapi/rust/longport/index.html
 
+### Examples
+
+- https://github.com/longportapp/openapi/tree/master/examples/rust
+
 </TabItem>
 <TabItem value="java" label="Java">
 
-## LongPort Developers SDK for Java
+## LongPort OpenAPI SDK for Java
 
 [https://github.com/longportapp/openapi/tree/master/java](https://github.com/longportapp/openapi/tree/master/java)
 
@@ -86,28 +98,34 @@ Add the following line to your `pom.xml` file
 
 ```xml
 <dependency>
-  <groupId>io.github.longportapp</groupId>
+  <groupId>io.github.longport</groupId>
   <artifactId>openapi-sdk</artifactId>
-  <version>LATEST</version>
+  <version>4.0.5</version>
 </dependency>
 ```
 
-[https://search.maven.org/artifact/io.github.longportapp/openapi](https://search.maven.org/artifact/io.github.longportapp/openapi)
+[https://search.maven.org/artifact/io.github.longport/openapi](https://search.maven.org/artifact/io.github.longport/openapi)
 
 ### API Documents
 
 - https://longportapp.github.io/openapi/java/index.html
 
+### Examples
+
+- https://github.com/longportapp/openapi/tree/master/examples/java
+
 </TabItem>
 <TabItem value="go" label="Go">
 
-## LongPort Developers SDK for Go
+## LongPort OpenAPI SDK for Go
 
 [https://github.com/longportapp/openapi-go](https://github.com/longportapp/openapi-go)
 
-### Get SDK for Go
+### Install SDK
 
-Go version >= 1.17
+- Go version >= 1.17
+
+In your project directory, run:
 
 ```bash
 $ go get github.com/longportapp/openapi-go
@@ -115,20 +133,28 @@ $ go get github.com/longportapp/openapi-go
 
 [https://pkg.go.dev/github.com/longportapp/openapi-go](https://pkg.go.dev/github.com/longportapp/openapi-go)
 
+### Examples
+
+- https://github.com/longportapp/openapi-go/tree/main/examples
+
 </TabItem>
 <TabItem value="c++" label="C++">
 
-## LongPort Developers SDK for C/C++
+## LongPort OpenAPI SDK for C/C++
 
 [https://github.com/longportapp/openapi/tree/master/cpp](https://github.com/longportapp/openapi/tree/master/cpp)
 
 ### Download
 
-- [3.0.17](https://static.lbctrl.com/openapi-sdk/openapi-cpp-sdk-3.0.17.tar.gz)
+- [4.0.5](https://static.lbctrl.com/openapi-sdk/openapi-cpp-sdk-4.0.5.tar.gz)
 
 ### API Documents
 
 - https://longportapp.github.io/openapi/cpp/index.html
+
+### Examples
+
+- https://github.com/longportapp/openapi/tree/master/examples/cpp
 
 </TabItem>
 </Tabs>

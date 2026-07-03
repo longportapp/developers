@@ -1,5 +1,6 @@
----
+﻿---
 slug: replace
+sidebar_position: 5
 title: 修改訂單
 language_tabs: false
 toc_footers: []
@@ -32,18 +33,25 @@ headingLevel: 2
 | quantity         | string | YES      | 改單數量，例如：`200`                                                           |
 | price            | string | NO       | 改單價格，例如：`388.5`<br/><br/> `LO` / `ELO` / `ALO` / `ODD` / `LIT` 訂單必填 |
 | trigger_price    | string | NO       | 觸發價格，例如：`388.5`<br/><br/> `LIT` / `MIT` 訂單必填                        |
-| limit_offset     | string | NO       | 指定價差<br/><br/> `TSLPAMT` / `TSLPPCT` 訂單必填                               |
+| limit_offset     | string | NO       | 指定價差<br/><br/> `TSLPAMT` / `TSLPPCT` 訂單在 `limit_depth_level` 為 0 時必填 |
 | trailing_amount  | string | NO       | 跟蹤金額<br/><br/> `TSLPAMT` 訂單必填                                           |
 | trailing_percent | string | NO       | 跟蹤漲跌幅<br/><br/> `TSLPPCT` 訂單必填                                         |
 | remark           | string | NO       | 備註 (最大 64 字符)                                                             |
+| limit_depth_level | int32  | NO      | 指定買賣檔位，`TSLPAMT` / `TSLPPCT` 訂單必填                                     |
+| monitor_price     | string | NO      | 監控價格，`TSLPAMT` / `TSLPPCT` 訂單必填                                        |
+| trigger_count     | int32  | NO      | 觸發次數，`LIT` / `MIT` / `TSLPAMT` / `TSLPPCT` 訂單必填                         |
 
 ### Request Example
 
+<Tabs groupId="request-example">
+  <TabItem value="python" label="Python" default>
+
 ```python
 from decimal import Decimal
-from longport.openapi import TradeContext, Config
+from longport.openapi import TradeContext, Config, OAuthBuilder
 
-config = Config.from_env()
+oauth = OAuthBuilder("your-client-id").build(lambda url: print("Visit:", url))
+config = Config.from_oauth(oauth)
 ctx = TradeContext(config)
 
 ctx.replace_order(
@@ -52,6 +60,184 @@ ctx.replace_order(
     price = Decimal(50),
 )
 ```
+
+  </TabItem>
+  <TabItem value="python-async" label="Python (async)">
+
+```python
+import asyncio
+from decimal import Decimal
+from longport.openapi import AsyncTradeContext, Config, OAuthBuilder
+
+async def main() -> None:
+    oauth = await OAuthBuilder("your-client-id").build_async(lambda url: print("Visit:", url))
+    config = Config.from_oauth(oauth)
+    ctx = AsyncTradeContext.create(config)
+
+    ctx.replace_order(
+        order_id = "709043056541253632",
+        quantity = Decimal(100),
+        price = Decimal(50),
+    )
+
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+
+  </TabItem>
+  <TabItem value="nodejs" label="Node.js">
+
+```javascript
+const { Config, TradeContext, OAuth, Decimal } = require('longport')
+
+async function main() {
+  const oauth = await OAuth.build("your-client-id", (_, url) => { console.log("Open this URL to authorize: " + url) })
+  const config = Config.fromOAuth(oauth)
+  const ctx = TradeContext.new(config)
+  await ctx.replaceOrder({ orderId: "701276261045858304", quantity: new Decimal(400), price: new Decimal(60) })
+  console.log("replaced")
+}
+main().catch(console.error)
+```
+
+  </TabItem>
+  <TabItem value="java" label="Java">
+
+```java
+import com.longport.*;
+import com.longport.trade.*;
+import java.math.BigDecimal;
+class Main {
+    public static void main(String[] args) throws Exception {
+        try (OAuth oauth = new OAuthBuilder("your-client-id").build(url -> System.out.println("Open to authorize: " + url)).get();
+             Config config = Config.fromOAuth(oauth);
+             TradeContext ctx = TradeContext.create(config)) {
+            ctx.replaceOrder(new ReplaceOrderOptions("701276261045858304", new BigDecimal("400")).setPrice(new BigDecimal("60"))).get();
+            System.out.println("replaced");
+        }
+    }
+}
+```
+
+  </TabItem>
+  <TabItem value="rust" label="Rust">
+
+```rust
+use std::sync::Arc;
+use longport::{oauth::OAuthBuilder, trade::{TradeContext, ReplaceOrderOptions}, Config};
+use rust_decimal::Decimal;
+
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let oauth = OAuthBuilder::new("your-client-id").build(|url| println!("Open this URL to authorize: {url}")).await?;
+    let config = Arc::new(Config::from_oauth(oauth));
+    let (ctx, _) = TradeContext::new(config);
+    ctx.replace_order(
+        ReplaceOrderOptions::new("701276261045858304", Decimal::from(400))
+            .price(Decimal::from(60))
+    ).await?;
+    println!("replaced");
+    Ok(())
+}
+```
+
+  </TabItem>
+  <TabItem value="cpp" label="C++">
+
+```cpp
+#include <iostream>
+#include <longport.hpp>
+
+#ifdef WIN32
+#include <windows.h>
+#endif
+
+using namespace longport;
+using namespace longport::trade;
+
+static void
+run(const OAuth& oauth)
+{
+    Config config = Config::from_oauth(oauth);
+    TradeContext ctx = TradeContext::create(config);
+
+    ReplaceOrderOptions opts{"701276261045858304", 400, Decimal(60.0)};
+    ctx.replace_order(opts, [](auto res) {
+        if (!res) { std::cout << "failed" << std::endl; return; }
+        std::cout << "replaced" << std::endl;
+    });
+}
+
+int main(int argc, char const* argv[]) {
+#ifdef WIN32
+    SetConsoleOutputCP(CP_UTF8);
+#endif
+
+    const std::string client_id = "your-client-id";
+    OAuthBuilder(client_id).build(
+    [](const std::string& url) {
+        std::cout << "Open this URL to authorize: " << url << std::endl;
+    },
+    [](auto res) {
+        if (!res) {
+            std::cout << "authorization failed: " << *res.status().message() << std::endl;
+            return;
+        }
+        run(*res);
+    });
+
+    std::cin.get();
+    return 0;
+}
+```
+
+  </TabItem>
+  <TabItem value="go" label="Go">
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"log"
+
+	"github.com/longportapp/openapi-go/config"
+	"github.com/longportapp/openapi-go/oauth"
+	"github.com/longportapp/openapi-go/trade"
+	"github.com/shopspring/decimal"
+)
+
+func main() {
+	o := oauth.New("your-client-id").
+		OnOpenURL(func(url string) { fmt.Println("Open this URL to authorize:", url) })
+	if err := o.Build(context.Background()); err != nil {
+		log.Fatal(err)
+	}
+	conf, err := config.New(config.WithOAuthClient(o))
+	if err != nil {
+		log.Fatal(err)
+	}
+	tctx, err := trade.NewFromCfg(conf)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer tctx.Close()
+	err = tctx.ReplaceOrder(context.Background(), &trade.ReplaceOrder{
+		OrderId:  "701276261045858304",
+		Quantity: 400,
+		Price:    decimal.NewFromFloat(60),
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Println("replaced")
+}
+```
+
+  </TabItem>
+</Tabs>
+
 
 ## Response
 
