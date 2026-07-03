@@ -7,8 +7,6 @@ sidebar_position: 1
 
 該接口用於獲取標的的基礎信息。
 
-<QuotePermission command="static" />
-
 <SDKLinks module="quote" klass="QuoteContext" method="static_info" />
 
 :::info

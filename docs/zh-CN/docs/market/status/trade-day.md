@@ -7,8 +7,6 @@ sidebar_position: 6
 
 该接口用于获取市场的交易日信息。
 
-<QuotePermission command="trading" />
-
 <SDKLinks module="quote" klass="QuoteContext" method="trading_days" />
 
 :::info

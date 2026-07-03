@@ -12,8 +12,6 @@ headingLevel: 2
 
 删除自选股分组
 
-<QuotePermission level="basic" />
-
 <SDKLinks module="quote" klass="QuoteContext" method="delete_watchlist_group" />
 
 ## Request

@@ -12,8 +12,6 @@ headingLevel: 2
 
 Delete watched group
 
-<QuotePermission level="basic" />
-
 <SDKLinks module="quote" klass="QuoteContext" method="delete_watchlist_group" />
 
 ## Request

@@ -7,8 +7,6 @@ sidebar_position: 6
 
 该接口用于获取标的的实时经纪队列数据。
 
-<QuotePermission command="brokers" />
-
 <SDKLinks module="quote" klass="QuoteContext" method="brokers" />
 
 :::info

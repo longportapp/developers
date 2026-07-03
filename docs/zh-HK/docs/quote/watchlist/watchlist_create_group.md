@@ -12,8 +12,6 @@ headingLevel: 2
 
 創建自選股分組
 
-<QuotePermission level="basic" />
-
 <SDKLinks module="quote" klass="QuoteContext" method="create_watchlist_group" />
 
 ## Request

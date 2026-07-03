@@ -7,8 +7,6 @@ sidebar_position: 8
 
 This API is used to obtain the trades data of security.
 
-<QuotePermission command="trades" />
-
 <SDKLinks module="quote" klass="QuoteContext" method="trades" />
 
 :::info

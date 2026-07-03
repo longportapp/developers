@@ -7,8 +7,6 @@ sidebar_position: 2
 
 該接口用於獲取標的的實時行情 (支持所有類型標的）。如需查看這些實時數據流匯聚而成的實時指數、板塊熱力圖與宏觀市場概覽，可參考 ["全球市場"](https://longport.com/markets)。
 
-<QuotePermission command="quote" />
-
 <SDKLinks module="quote" klass="QuoteContext" method="quote" />
 
 :::info

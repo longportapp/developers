@@ -7,8 +7,6 @@ sidebar_position: 4
 
 This API is used to obtain the subscription information.
 
-<QuotePermission command="subscriptions" />
-
 <SDKLinks module="quote" klass="QuoteContext" method="subscriptions" />
 
 :::info

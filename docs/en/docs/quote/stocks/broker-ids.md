@@ -7,8 +7,6 @@ sidebar_position: 7
 
 This API is used to obtain participant IDs data (which can be synchronized once a day).
 
-<QuotePermission level="basic" />
-
 <SDKLinks module="quote" klass="QuoteContext" method="participants" />
 
 :::info

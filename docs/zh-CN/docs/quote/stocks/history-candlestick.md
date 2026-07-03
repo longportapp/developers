@@ -7,8 +7,6 @@ sidebar_position: 10
 
 该接口用于获取标的的历史 K 线数据。
 
-<QuotePermission command="kline" />
-
 <SDKLinks module="quote" klass="QuoteContext" method="history_candlesticks_by_offset" />
 
 :::info

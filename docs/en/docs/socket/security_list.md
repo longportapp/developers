@@ -11,8 +11,6 @@ headingLevel: 2
 
 Get the list of US stocks eligible for overnight trading.
 
-<QuotePermission command="security-list" />
-
 <SDKLinks module="quote" klass="QuoteContext" method="security_list" />
 
 ### Request

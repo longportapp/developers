@@ -12,8 +12,6 @@ headingLevel: 2
 
 Create watched group
 
-<QuotePermission level="basic" />
-
 <SDKLinks module="quote" klass="QuoteContext" method="create_watchlist_group" />
 
 ## Request

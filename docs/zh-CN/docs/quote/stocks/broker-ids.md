@@ -7,8 +7,6 @@ sidebar_position: 7
 
 该接口用于获取券商席位 ID 数据 (可每天同步一次)。
 
-<QuotePermission level="basic" />
-
 <SDKLinks module="quote" klass="QuoteContext" method="participants" />
 
 :::info

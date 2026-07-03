@@ -12,8 +12,6 @@ headingLevel: 2
 
 獲取關注分組
 
-<QuotePermission level="basic" />
-
 <SDKLinks module="quote" klass="QuoteContext" method="watchlist" />
 
 ## Request

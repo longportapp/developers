@@ -6,8 +6,6 @@ sidebar_position: 2
 
 获取当前市场温度
 
-<QuotePermission command="market-temp" />
-
 <SDKLinks module="quote" klass="QuoteContext" method="market_temperature" />
 
 ## Request

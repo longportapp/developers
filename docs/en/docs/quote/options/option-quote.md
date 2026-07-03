@@ -7,8 +7,6 @@ sidebar_position: 3
 
 This API is used to obtain the real-time quotes of US stock options, including the option-specific data.
 
-<QuotePermission command="option" />
-
 <SDKLinks module="quote" klass="QuoteContext" method="option_quote" />
 
 :::info

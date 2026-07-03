@@ -11,8 +11,6 @@ headingLevel: 2
 
 獲取支持夜盤交易的美股標的列表。
 
-<QuotePermission command="security-list" />
-
 <SDKLinks module="quote" klass="QuoteContext" method="security_list" />
 
 ### Request

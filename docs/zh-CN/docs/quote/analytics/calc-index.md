@@ -7,8 +7,6 @@ sidebar_position: 19
 
 该接口用于获取标的计算指标数据，根据请求指定的计算指标返回数据。
 
-<QuotePermission command="calc-index" />
-
 <SDKLinks module="quote" klass="QuoteContext" method="calc_indexes" go="CalcIndex" />
 
 :::info

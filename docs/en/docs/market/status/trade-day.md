@@ -7,8 +7,6 @@ sidebar_position: 6
 
 This API is used to obtain the trading days of the market.
 
-<QuotePermission command="trading" />
-
 <SDKLinks module="quote" klass="QuoteContext" method="trading_days" />
 
 :::info

@@ -7,8 +7,6 @@ sidebar_position: 9
 
 该接口用于获取标的的当日分时数据。
 
-<QuotePermission command="intraday" />
-
 <SDKLinks module="quote" klass="QuoteContext" method="intraday" />
 
 :::info

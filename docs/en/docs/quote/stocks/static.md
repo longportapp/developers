@@ -7,8 +7,6 @@ sidebar_position: 1
 
 This API is used to obtain the basic information of securities.
 
-<QuotePermission command="static" />
-
 <SDKLinks module="quote" klass="QuoteContext" method="static_info" />
 
 :::info

@@ -12,8 +12,6 @@ headingLevel: 2
 
 更新自选股分组
 
-<QuotePermission level="basic" />
-
 <SDKLinks module="quote" klass="QuoteContext" method="update_watchlist_group" />
 
 

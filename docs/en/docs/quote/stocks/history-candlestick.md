@@ -7,8 +7,6 @@ sidebar_position: 10
 
 This API is used to obtain the history candlestick data of security.
 
-<QuotePermission command="kline" />
-
 <SDKLinks module="quote" klass="QuoteContext" method="history_candlesticks_by_offset" />
 
 :::info

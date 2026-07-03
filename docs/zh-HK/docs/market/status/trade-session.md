@@ -7,8 +7,6 @@ sidebar_position: 4
 
 該接口用於獲取各市場當日交易時段。
 
-<QuotePermission command="market-status" />
-
 <SDKLinks module="quote" klass="QuoteContext" method="trading_session" />
 
 :::info

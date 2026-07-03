@@ -12,8 +12,6 @@ headingLevel: 2
 
 Get Watchlist groups
 
-<QuotePermission level="basic" />
-
 <SDKLinks module="quote" klass="QuoteContext" method="watchlist" />
 
 ## Request

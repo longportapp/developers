@@ -7,8 +7,6 @@ sidebar_position: 7
 
 訂閱標的的實時經紀隊列數據。
 
-<QuotePermission command="brokers" />
-
 <SDKLinks module="quote" klass="QuoteContext" method="set_on_brokers" go="OnBrokers" />
 
 :::info

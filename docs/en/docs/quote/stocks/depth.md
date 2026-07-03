@@ -7,8 +7,6 @@ sidebar_position: 5
 
 This API is used to obtain the depth data of security.
 
-<QuotePermission command="depth" />
-
 <SDKLinks module="quote" klass="QuoteContext" method="depth" />
 
 :::info

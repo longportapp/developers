@@ -12,8 +12,6 @@ headingLevel: 2
 
 Update watched group
 
-<QuotePermission level="basic" />
-
 <SDKLinks module="quote" klass="QuoteContext" method="update_watchlist_group" />
 
 ## Request

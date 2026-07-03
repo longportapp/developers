@@ -7,8 +7,6 @@ sidebar_position: 18
 
 This API is used to obtain the daily capital distribution of security.
 
-<QuotePermission command="capital" />
-
 <SDKLinks module="quote" klass="QuoteContext" method="capital_distribution" />
 
 :::info

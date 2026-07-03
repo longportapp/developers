@@ -12,8 +12,6 @@ headingLevel: 2
 
 Get the filings list for a specified security.
 
-<QuotePermission level="basic" />
-
 <SDKLinks module="quote" klass="QuoteContext" method="filings" />
 
 ## Request

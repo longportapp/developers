@@ -7,8 +7,6 @@ sidebar_position: 5
 
 該接口用於獲取標的的盤口數據。
 
-<QuotePermission command="depth" />
-
 <SDKLinks module="quote" klass="QuoteContext" method="depth" />
 
 :::info

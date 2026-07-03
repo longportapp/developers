@@ -7,8 +7,6 @@ sidebar_position: 12
 
 該接口用於獲取標的的期權鏈到期日期權標的列表。
 
-<QuotePermission level="basic" />
-
 <SDKLinks module="quote" klass="QuoteContext" method="option_chain_info_by_date" />
 
 :::info

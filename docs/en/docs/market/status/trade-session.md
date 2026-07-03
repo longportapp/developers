@@ -7,8 +7,6 @@ sidebar_position: 4
 
 This API is used to obtain the daily trading hours of each market.
 
-<QuotePermission command="market-status" />
-
 <SDKLinks module="quote" klass="QuoteContext" method="trading_session" />
 
 :::info

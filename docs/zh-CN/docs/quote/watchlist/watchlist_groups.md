@@ -12,8 +12,6 @@ headingLevel: 2
 
 获取自选股分组
 
-<QuotePermission level="basic" />
-
 <SDKLinks module="quote" klass="QuoteContext" method="watchlist" />
 
 

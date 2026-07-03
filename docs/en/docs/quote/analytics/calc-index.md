@@ -7,8 +7,6 @@ sidebar_position: 19
 
 This API is used to obtain the calculate indexes of securities.
 
-<QuotePermission command="calc-index" />
-
 <SDKLinks module="quote" klass="QuoteContext" method="calc_indexes" go="CalcIndex" />
 
 :::info

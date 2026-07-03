@@ -7,8 +7,6 @@ sidebar_position: 6
 
 已订阅标的的实时盘口数据推送。
 
-<QuotePermission command="depth" />
-
 <SDKLinks module="quote" klass="QuoteContext" method="set_on_depth" go="OnDepth" />
 
 :::info

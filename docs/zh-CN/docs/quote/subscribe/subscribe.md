@@ -7,8 +7,6 @@ sidebar_position: 2
 
 该接口用于订阅标的行情数据。
 
-<QuotePermission command="subscriptions" />
-
 <SDKLinks module="quote" klass="QuoteContext" method="subscribe" />
 
 :::info

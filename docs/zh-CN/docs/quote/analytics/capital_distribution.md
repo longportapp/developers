@@ -7,8 +7,6 @@ sidebar_position: 18
 
 该接口用于获取标的当日的资金分布。
 
-<QuotePermission command="capital" />
-
 <SDKLinks module="quote" klass="QuoteContext" method="capital_distribution" />
 
 :::info

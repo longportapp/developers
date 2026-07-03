@@ -7,8 +7,6 @@ sidebar_position: 4
 
 This API is used to obtain the real-time quotes of HK warrants, including the warrant-specific data.
 
-<QuotePermission command="warrant" />
-
 <SDKLinks module="quote" klass="QuoteContext" method="warrant_quote" />
 
 :::info

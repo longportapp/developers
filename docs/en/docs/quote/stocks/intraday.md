@@ -7,8 +7,6 @@ sidebar_position: 9
 
 This API is used to obtain the intraday data of security.
 
-<QuotePermission command="intraday" />
-
 <SDKLinks module="quote" klass="QuoteContext" method="intraday" />
 
 :::info

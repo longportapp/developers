@@ -7,8 +7,6 @@ sidebar_position: 4
 
 該接口用於獲取當前連接已訂閱的標的行情。
 
-<QuotePermission command="subscriptions" />
-
 <SDKLinks module="quote" klass="QuoteContext" method="subscriptions" />
 
 :::info

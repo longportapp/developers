@@ -7,8 +7,6 @@ sidebar_position: 3
 
 該接口用於獲取美股期權標的的實時行情，包括期權的特有數據。
 
-<QuotePermission command="option" />
-
 <SDKLinks module="quote" klass="QuoteContext" method="option_quote" />
 
 :::info

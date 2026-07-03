@@ -7,8 +7,6 @@ sidebar_position: 8
 
 該接口用於獲取標的的成交明細數據。
 
-<QuotePermission command="trades" />
-
 <SDKLinks module="quote" klass="QuoteContext" method="trades" />
 
 :::info

@@ -7,8 +7,6 @@ sidebar_position: 4
 
 該接口用於獲取港股輪證標的的實時行情，包括輪證的特有數據。
 
-<QuotePermission command="warrant" />
-
 <SDKLinks module="quote" klass="QuoteContext" method="warrant_quote" />
 
 :::info

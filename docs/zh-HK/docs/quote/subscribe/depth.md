@@ -7,8 +7,6 @@ sidebar_position: 6
 
 訂閱標的的實時盤口數據。
 
-<QuotePermission command="depth" />
-
 <SDKLinks module="quote" klass="QuoteContext" method="set_on_depth" go="OnDepth" />
 
 :::info

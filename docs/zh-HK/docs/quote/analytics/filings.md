@@ -12,8 +12,6 @@ headingLevel: 2
 
 獲取指定股票的公告列表。
 
-<QuotePermission level="basic" />
-
 <SDKLinks module="quote" klass="QuoteContext" method="filings" />
 
 ## Request

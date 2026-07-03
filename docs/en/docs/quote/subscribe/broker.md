@@ -7,8 +7,6 @@ sidebar_position: 7
 
 Real-time brokers data push of the subscribed security.
 
-<QuotePermission command="brokers" />
-
 <SDKLinks module="quote" klass="QuoteContext" method="set_on_brokers" go="OnBrokers" />
 
 :::info

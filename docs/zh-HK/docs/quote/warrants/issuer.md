@@ -7,8 +7,6 @@ sidebar_position: 13
 
 該接口用於獲取輪證發行商 ID 數據 (可每天同步一次)。
 
-<QuotePermission command="warrant" />
-
 <SDKLinks module="quote" klass="QuoteContext" method="warrant_issuers" />
 
 :::info

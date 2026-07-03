@@ -6,8 +6,6 @@ sidebar_position: 3
 
 该接口用于获取历史市场温度。
 
-<QuotePermission command="market-temp" />
-
 <SDKLinks module="quote" klass="QuoteContext" method="history_market_temperature" />
 
 ## Request

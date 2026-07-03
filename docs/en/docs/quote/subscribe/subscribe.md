@@ -7,8 +7,6 @@ sidebar_position: 2
 
 This API is used to subscribe quote.
 
-<QuotePermission command="subscriptions" />
-
 <SDKLinks module="quote" klass="QuoteContext" method="subscriptions" />
 
 :::info

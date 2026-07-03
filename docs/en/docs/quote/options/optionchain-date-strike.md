@@ -7,8 +7,6 @@ sidebar_position: 12
 
 This API is used to obtain a list of option securities by the option chain expiry date.
 
-<QuotePermission level="basic" />
-
 <SDKLinks module="quote" klass="QuoteContext" method="option_chain_info_by_date" />
 
 :::info

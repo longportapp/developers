@@ -7,8 +7,6 @@ sidebar_position: 17
 
 This API is used to obtain the daily capital flow intraday of security.
 
-<QuotePermission command="capital" />
-
 <SDKLinks module="quote" klass="QuoteContext" method="capital_flow" />
 
 :::info

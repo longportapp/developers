@@ -7,8 +7,6 @@ sidebar_position: 17
 
 該接口用於獲取標的當日的資金流向。
 
-<QuotePermission command="capital" />
-
 <SDKLinks module="quote" klass="QuoteContext" method="capital_flow" />
 
 :::info

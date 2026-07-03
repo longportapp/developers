@@ -7,8 +7,6 @@ sidebar_position: 13
 
 该接口用于获取轮证发行商 ID 数据 (可每天同步一次)。
 
-<QuotePermission command="warrant" />
-
 <SDKLinks module="quote" klass="QuoteContext" method="warrant_issuers" />
 
 :::info
