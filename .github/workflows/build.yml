@@ -20,6 +20,14 @@ jobs:
         with:
           fetch-depth: 1
 
+      - name: Increase swap space
+        run: |
+          sudo fallocate -l 8G /swapfile
+          sudo chmod 600 /swapfile
+          sudo mkswap /swapfile
+          sudo swapon /swapfile
+          free -h
+
       - uses: oven-sh/setup-bun@v2
 
       - name: Install dependencies

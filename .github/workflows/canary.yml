@@ -19,6 +19,14 @@ jobs:
         with:
           fetch-depth: 1
 
+      - name: Increase swap space
+        run: |
+          sudo fallocate -l 8G /swapfile
+          sudo chmod 600 /swapfile
+          sudo mkswap /swapfile
+          sudo swapon /swapfile
+          free -h
+
       - name: Install ossutil
         run: |
           wget https://github.com/aliyun/ossutil/releases/download/v1.7.17/ossutil-v1.7.17-linux-amd64.zip
