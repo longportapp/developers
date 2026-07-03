@@ -161,10 +161,6 @@ $ go get github.com/longportapp/openapi-go
 
 </div>
 
-<div class="max-w-4xl mx-auto px-6 md:px-0">
-  <Footer />
-</div>
-
 <style scoped>
 h2 {
   border: 0;
