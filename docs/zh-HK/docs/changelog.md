@@ -2,7 +2,7 @@
 id: changelog
 title: 更新日誌
 slug: changelog
-sidebar_position: 7
+sidebar_position: 21
 sidebar_icon: newspaper
 ---
 

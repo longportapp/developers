@@ -5,6 +5,7 @@ import { type DefaultTheme } from 'vitepress'
 
 interface CategoryConfig {
   position?: number
+  hidden?: boolean
   label?: string
   collapsible?: boolean
   collapsed?: boolean
@@ -84,6 +85,9 @@ function generateSidebarItems(dirPath: string, relativePath: string, rootPath: s
       const filePath = path.join(dirPath, file)
       const fileContent = fs.readFileSync(filePath, 'utf8')
       const { data } = matter(fileContent)
+      if (data['sidebar'] === false) {
+        continue
+      }
       const title = data['sidebar_label'] || data['title'] || getDefaultTitle(file)
       const slug = data['slug']
 
@@ -117,6 +121,9 @@ function generateSidebarItems(dirPath: string, relativePath: string, rootPath: s
       const subDirPath = path.join(dirPath, dir)
       const subRelativePath = path.join(relativePath, dir)
       const subCategoryConfig = readCategoryConfig(subDirPath)
+      if (subCategoryConfig?.hidden) {
+        continue
+      }
       const subItems = generateSidebarItems(subDirPath, subRelativePath, rootPath)
 
       if (subItems.length > 0) {
