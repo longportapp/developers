@@ -7,15 +7,15 @@ sidebar_position: 1
 
 ## Q1：订阅额度怎么算的，同一个标的订阅盘口，经济队列，是算 1 个还是多个？
 
-仅按照标的维度计算订阅额度，同一个标的同时订阅多种行情，算同一个订阅额度。
+A：仅按照标的维度计算订阅额度，同一个标的同时订阅多种行情，算同一个订阅额度。
 
 ## Q2：请求限频的具体限制逻辑是怎样？
 
-使用令牌桶进行限流，控制请求速率。1 秒内不超过 10 次调用，并发请求数不超过 5。
+A：使用令牌桶进行限流，控制请求速率。1 秒内不超过 10 次调用，并发请求数不超过 5。
 
 ## Q3：目前可以订阅的标的（包括指数）和对应的 symbol 格式？
 
-标的代码使用 `ticker.region` 格式，`ticker` 表示标的代码，例如特斯拉美股为 `TSLA.US`。支持订阅的标的如下：
+A：标的代码使用 `ticker.region` 格式，`ticker` 表示标的代码。支持订阅的标的如下：
 
 <table>
     <tr>
@@ -74,7 +74,12 @@ sidebar_position: 1
     </tr>
 </table>
 
+可以使用 LongPort App 查看标的的 symbol
+<img src="https://pub.pbkrs.com/files/202206/7CSoiaDR4wGZPNCT/20220629-180013.jpeg" className="max-w-2xl" />
+
 ## Q4：OpenAPI 的行情权限是怎么样？如何购买行情卡？
+
+A：
 
 - 行情权限
   应交易所规则，OpenAPI 的权限是独立的，和客户端（App、PC、Web）权限不共享。比如，你在客户端上拥有的港股 Level 2 权限并不能同样代入 OpenAPI 端使用。LongPort 也给 OpenAPI 用户赠送了基础的行情权益，如你需要更高级别的行情，可以通过券商行情商店，或联系券商购买行情卡激活高级别行情权限。
@@ -83,6 +88,8 @@ sidebar_position: 1
 
 ## Q5：各个市场的清盘时间
 
+A:
+
 - 美股市场：09:20:00 EST
 - 港股市场：08:50:00 CST
 - A 股市场：09:00:00 CST
@@ -90,9 +97,9 @@ sidebar_position: 1
 
 ## Q6：如何获取夜盘行情
 
-- **夜盘行情已包含在 US LV1 中免费提供**，无需购买行情卡。
-- 目前夜盘行情**仅支持美股**，港股暂不支持夜盘。
-- 开通夜盘权限后，还需要主动开启，方式为在鉴权接口的 `metadata` 字段填充 key `need_over_night_quote`, value `true`。
+A:
+
+- 夜盘行情需要主动开启，方式为在鉴权接口的 `metadata` 字段填充 key `need_over_night_quote`, value `true`。
 
 ```protobuf
 message AuthRequest {
@@ -108,11 +115,13 @@ message ReconnectRequest {
 
 - 开启夜盘行情后，拉取和推送接口都将可以在夜盘交易时段，获取到夜盘盘情。
 
-## Q7：OpenAPI SDK 中开启夜盘行情
+## Q7：OpenApi SDK 中开启夜盘行情
+
+A:
 
 -  从环境变量创建 `Config` 对象
 
-设置环境变量 `LONGPORT_ENABLE_OVERNIGHT` 为 `true`（兼容旧版 `LONGPORT_ENABLE_OVERNIGHT`）
+设置环境变量 `LONGPORT_ENABLE_OVERNIGHT` 为 `true`
 
 - 从构造函数创建 `Config` 对象
 

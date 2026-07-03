@@ -1,7 +1,6 @@
 ---
 id: trade_overview
-sidebar_label: 概览
-title: 概览
+title: Overview
 slug: trade-overview
 sidebar_position: 1
 ---
@@ -9,13 +8,10 @@ sidebar_position: 1
 # 交易接口总览
 
 <table>
-    <thead>
     <tr>
         <td>类型</td>
         <td>功能简介</td>
     </tr>
-    </thead>
-    <tbody>
     <tr>
         <td rowspan="7">交易</td>
         <td><a href="./order/submit">委托下单</a></td>
@@ -51,5 +47,4 @@ sidebar_position: 1
     <tr>
         <td><a href="./asset/stock">获取股票持仓信息</a></td>
     </tr>
-    </tbody>
 </table>

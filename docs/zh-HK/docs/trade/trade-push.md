@@ -2,7 +2,7 @@
 id: trade_push
 title: 交易推播
 slug: trade-push
-sidebar_position: 6
+sidebar_position: 5
 ---
 
 客戶端可以透過交易長連接網關取得到交易和資產的變更通知。
@@ -12,13 +12,12 @@ sidebar_position: 6
 ```python
 from time import sleep
 from decimal import Decimal
-from longport.openapi import TradeContext, Config, OrderSide, OrderType, TimeInForceType, PushOrderChanged, TopicType, OAuthBuilder
+from longport.openapi import TradeContext, Config, OrderSide, OrderType, TimeInForceType, PushOrderChanged, TopicType
 
 def on_order_changed(event: PushOrderChanged):
 print(event)
 
-oauth = OAuthBuilder("your-client-id").build(lambda url: print("Visit:", url))
-config = Config.from_oauth(oauth)
+config = Config.from_env()
 ctx = TradeContext(config)
 ctx.set_on_order_changed(on_order_changed)
 ctx.subscribe([TopicType.Private])
@@ -42,7 +41,7 @@ ctx.unsubscribe([TopicType.Private])
 
 ## 訂閱
 
-<SDKLinks :title="false" module="trade" klass="TradeContext" method="subscribe" />
+<SDKLinks title={false} module="trade" klass="TradeContext" method="subscribe" />
 
 :::info
 指令：`16`
@@ -78,7 +77,7 @@ message SubResponse {
 
 取消訂閱用於取消訂閱訊息，如前面 `subscribe` 訂閱成功後，可以透過 `unsubscribe` 函數來取消訂閱。
 
-<SDKLinks :title="false" module="trade" klass="TradeContext" method="unsubscribe" />
+<SDKLinks title={false} module="trade" klass="TradeContext" method="unsubscribe" />
 
 :::info
 指令：`17`
@@ -102,7 +101,7 @@ message UnsubResponse {
 
 我們可以透過 `set_on_order_changed` 方法（Go 裡面為 `OnTrade`）設定推播訊息的回呼函數，當收到交易推播訊息時，會呼叫該回呼函數。
 
-<SDKLinks :title="false" module="trade" klass="TradeContext" method="set_on_order_changed" go="OnTrade" />
+<SDKLinks title={false} module="trade" klass="TradeContext" method="set_on_order_changed" go="OnTrade" />
 
 :::info
 指令：`18`
