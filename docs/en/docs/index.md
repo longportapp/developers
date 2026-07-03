@@ -88,7 +88,7 @@ The [OpenAPI SDK](https://open.longport.com/sdk) has done effective frequency co
 
 ## Pricing {#pricing}
 
-LongPort does not charge any additional fees for activating or using interface services. You only need to [open a LongPort Integrated A/C](https://longport.com/hk/download) and get OpenAPI service permissions to use it for free. See the [Pricing](/pricing) page for details on quote data subscription fees. For actual transaction fees, please contact the brokerage firm where you have opened your securities account.
+LongPort does not charge any additional fees for activating or using interface services. You only need to [open a LongPort Integrated A/C](https://longport.com/hk/download) and get OpenAPI service permissions to use it for free. For quote data subscription fees, please enter "Me - My Quotes - Quote Store" in the "LongPort" mobile app. For actual transaction fees, please contact the brokerage firm where you have opened your securities account.
 
 ## Other
 
